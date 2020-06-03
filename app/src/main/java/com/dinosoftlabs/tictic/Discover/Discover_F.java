@@ -184,7 +184,7 @@ public class Discover_F extends RootFragment {
                         item.first_name = user_info.optString("first_name");
                         item.last_name = user_info.optString("last_name");
                         item.profile_pic = user_info.optString("profile_pic");
-
+                        //test
                         JSONObject count = itemdata.optJSONObject("count");
                         item.like_count = count.optString("like_count");
                         item.video_comment_count = count.optString("video_comment_count");
