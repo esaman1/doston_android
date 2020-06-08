@@ -24,7 +24,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-
+//test
 public class DiscoverByUser_Adapter extends RecyclerView.Adapter<DiscoverByUser_Adapter.MyViewHolder> {
     Context context;
     ArrayList<Discover_user_Model> user_list;

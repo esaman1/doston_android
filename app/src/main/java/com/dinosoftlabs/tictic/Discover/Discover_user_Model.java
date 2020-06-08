@@ -11,7 +11,7 @@ public class Discover_user_Model {
 
     public Discover_user_Model() {
     }
-
+//test
     public Discover_user_Model(String fb_id, String username, String first_name, String last_name, String profile_pic, String videoCount, String followersCount) {
         this.fb_id = fb_id;
         this.username = username;
