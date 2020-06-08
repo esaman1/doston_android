@@ -136,7 +136,7 @@ public class Discover_F extends RootFragment {
                 return false;
             }
         });
-
+//test
         swiperefresh=view.findViewById(R.id.swiperefresh);
         swiperefresh.setColorSchemeResources(R.color.black);
         swiperefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
