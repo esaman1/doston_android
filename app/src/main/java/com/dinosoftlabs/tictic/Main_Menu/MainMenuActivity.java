@@ -17,6 +17,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import com.dinosoftlabs.tictic.Chat.Chat_Activity;
+import com.dinosoftlabs.tictic.Main_Menu.RelateToFragment_OnBack.BackPressImplimentation;
 import com.dinosoftlabs.tictic.R;
 import com.dinosoftlabs.tictic.SimpleClasses.Variables;
 import com.google.android.material.tabs.TabLayout;
@@ -91,19 +92,20 @@ public class MainMenuActivity extends AppCompatActivity {
 
 
 
-
-
-
     @Override
     public void onBackPressed() {
-        if (!mainMenuFragment.onBackPressed()) {
+
+
+
+//       new BackPressImplimentation(mainMenuFragment).onBackPressed();
+        if (!new BackPressImplimentation(mainMenuFragment).onBackPressed()) {
             int count = this.getSupportFragmentManager().getBackStackEntryCount();
             if (count == 0) {
                 if (mBackPressed + 2000 > System.currentTimeMillis()) {
                     super.onBackPressed();
                     return;
                 } else {
-                    Toast.makeText(getBaseContext(), "Tap Again To Exit", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getBaseContext(), "Tap Again To Exit12321321", Toast.LENGTH_SHORT).show();
                     mBackPressed = System.currentTimeMillis();
 
                 }

@@ -11,10 +11,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -31,6 +34,7 @@ import com.dinosoftlabs.tictic.SimpleClasses.ApiRequest;
 import com.dinosoftlabs.tictic.SimpleClasses.Callback;
 import com.dinosoftlabs.tictic.SimpleClasses.Variables;
 import com.dinosoftlabs.tictic.WatchVideos.WatchVideos_F;
+import com.google.gson.JsonArray;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -57,8 +61,10 @@ public class Discover_F extends RootFragment {
     }
 
     ArrayList<Discover_Get_Set> datalist;
+    ArrayList<Discover_user_Model> dataUserList;
 
     Discover_Adapter adapter;
+    DiscoverByUser_Adapter adapter_user;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -68,6 +74,7 @@ public class Discover_F extends RootFragment {
 
 
         datalist=new ArrayList<>();
+        dataUserList=new ArrayList<>();
 
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recylerview);
@@ -81,6 +88,9 @@ public class Discover_F extends RootFragment {
                 OpenWatchVideo(postion,datalist);
             }
         });
+        adapter_user = new DiscoverByUser_Adapter(context,getFragmentManager(),dataUserList);
+
+
 
 
 
@@ -97,18 +107,35 @@ public class Discover_F extends RootFragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                String query=search_edit.getText().toString();
-                if(adapter!=null)
-                    adapter.getFilter().filter(query);
+//                String query=search_edit.getText().toString();
+//                if(adapter!=null) {
+//                    adapter.getFilter().filter(query);
+//                }
+                if(!search_edit.getText().toString().toLowerCase().equals(""))
+                {
+                    Call_Api_For_SerachUser(search_edit.getText().toString().toLowerCase());
+                }
+
 
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-
+//                Call_Api_For_SerachUser(search_edit.getText().toString().toLowerCase());
             }
         });
-
+        search_edit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    if(!search_edit.getText().toString().toLowerCase().equals("")) {
+                        Call_Api_For_SerachUser(search_edit.getText().toString().toLowerCase());
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
 
         swiperefresh=view.findViewById(R.id.swiperefresh);
         swiperefresh.setColorSchemeResources(R.color.black);
@@ -131,6 +158,32 @@ public class Discover_F extends RootFragment {
     // Bottom two function will get the Discover videos
     // from api and parse the json data which is shown in Discover tab
 
+    private void Call_Api_For_SerachUser(String stringToFind){
+//        dataUserList = new ArrayList<>();
+
+        dataUserList.clear();
+        JSONObject parameters = new JSONObject();
+        try {
+            parameters.put("username", stringToFind);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        Log.d("resp",parameters.toString());
+
+        ApiRequest.Call_Api(context, Variables.searchByUsername, parameters, new Callback() {
+            @Override
+            public void Responce(String resp) {
+                Log.d("Response_byUser",""+resp);
+                Parse_data_user(resp);
+                swiperefresh.setRefreshing(false);
+            }
+        });
+
+
+    }
+
     private void Call_Api_For_get_Allvideos() {
 
         JSONObject parameters = new JSONObject();
@@ -152,6 +205,53 @@ public class Discover_F extends RootFragment {
         });
 
 
+
+    }
+
+
+
+    public void Parse_data_user(String responce){
+
+//        dataUserList.clear();
+
+        try {
+            JSONObject jsonObject=new JSONObject(responce);
+            String code=jsonObject.optString("code");
+            Discover_user_Model discover_user_model = null;
+            if(code.equals("200")){
+                JSONArray msgArray=jsonObject.getJSONArray("msg");
+                for (int d=0;d<msgArray.length();d++) {
+
+                    discover_user_model=new Discover_user_Model();
+//                    JSONObject discover_object=msgArray.optJSONObject(d);
+                    JSONArray discoverArray=msgArray.getJSONArray(d);
+                    for (int j=0;j<discoverArray.length();j++) {
+                        JSONObject discover_object = discoverArray.optJSONObject(j);
+                        discover_user_model.setFb_id(discover_object.getString("fb_id"));
+                        discover_user_model.setUsername(discover_object.getString("username"));
+                        discover_user_model.setFirst_name(discover_object.getString("first_name"));
+                        discover_user_model.setLast_name(discover_object.getString("last_name"));
+                        discover_user_model.setProfile_pic(discover_object.getString("profile_pic"));
+                        discover_user_model.setVideoCount(discover_object.getString("videoCount"));
+                        discover_user_model.setFollowersCount(discover_object.getString("followersCount"));
+                        dataUserList.add(discover_user_model);
+                    }
+
+                    }
+
+//                    discover_get_set.arrayList=video_list;
+
+
+                    recyclerView.setAdapter(adapter_user);
+                adapter_user.notifyDataSetChanged();
+
+            }else {
+                Toast.makeText(context, ""+jsonObject.optString("msg"), Toast.LENGTH_SHORT).show();
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
     }
 
