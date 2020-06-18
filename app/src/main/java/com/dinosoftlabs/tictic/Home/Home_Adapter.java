@@ -104,10 +104,10 @@ public class Home_Adapter extends RecyclerView.Adapter<Home_Adapter.CustomViewHo
 
 
         if(item.liked.equals("1")){
-            holder.like_image.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_like_fill));
+//            holder.like_image.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_like_fill));
         }
        else {
-            holder.like_image.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_like));
+//            holder.like_image.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_like));
         }
 
 

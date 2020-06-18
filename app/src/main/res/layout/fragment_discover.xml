@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
+    android:background="@color/black"
     tools:context="com.dinosoftlabs.tictic.Discover.Discover_F">
 
     <RelativeLayout
@@ -15,7 +15,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
@@ -24,39 +24,51 @@
             android:id="@+id/search_layout"
             app:cardBackgroundColor="@color/lightgraycolor">
 
-        <RelativeLayout
+        <LinearLayout
+            android:background="#333333"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:weightSum="10"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="10dp">
+           >
+
+
+
+            <EditText
+
+                android:layout_weight="9"
+                android:maxLines="1"
+                android:imeOptions="actionSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Search"
+                android:padding="10dp"
+                android:textSize="14dp"
+                android:inputType="text"
+                android:id="@+id/search_edit"
+                android:textColorHint="#9e9e9e"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/transparent"
+                />
+
 
             <ImageButton
-                android:layout_width="24dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_toEndOf="@+id/search_edit"
+                android:layout_width="0dp"
                 android:layout_height="24dp"
                 android:id="@+id/search"
                 android:padding="4dp"
                 android:scaleType="fitCenter"
                 android:layout_centerVertical="true"
                 android:background="@color/transparent"
-                android:tint="@color/dimgray"
+                android:tint="@color/white"
                 android:src="@drawable/ic_discovery_gray"/>
 
-            <EditText
-                android:maxLines="1"
-                android:imeOptions="actionSearch"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Search"
-                android:padding="7dp"
-                android:textSize="14dp"
-                android:inputType="text"
-                android:id="@+id/search_edit"
-                android:textColorHint="@color/darkgray"
-                android:textColor="@color/black"
-                android:layout_toEndOf="@+id/search"
-                android:backgroundTint="@color/transparent"
-                />
-
-        </RelativeLayout>
+        </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 

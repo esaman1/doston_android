@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.dinosoftlabs.tictic.Chat.Chat_Activity;
 import com.dinosoftlabs.tictic.Main_Menu.RelateToFragment_OnBack.BackPressImplimentation;
 import com.dinosoftlabs.tictic.R;
+import com.dinosoftlabs.tictic.See_Full_Image_F;
 import com.dinosoftlabs.tictic.SimpleClasses.Variables;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -58,9 +59,9 @@ public class MainMenuActivity extends AppCompatActivity {
 
 
         token= FirebaseInstanceId.getInstance().getToken();
-        if(token==null || (token.equals("")||token.equals("null")))
-            token=Variables.sharedPreferences.getString(Variables.device_token,"null");
-
+        if(token==null || (token.equals("")||token.equals("null"))) {
+            token = Variables.sharedPreferences.getString(Variables.device_token, "null");
+        }
 
         if (savedInstanceState == null) {
 
@@ -96,24 +97,35 @@ public class MainMenuActivity extends AppCompatActivity {
     public void onBackPressed() {
 
 
-
+        Toast.makeText(getBaseContext(), "tapped", Toast.LENGTH_SHORT).show();
 //       new BackPressImplimentation(mainMenuFragment).onBackPressed();
-        if (!new BackPressImplimentation(mainMenuFragment).onBackPressed()) {
-            int count = this.getSupportFragmentManager().getBackStackEntryCount();
-            if (count == 0) {
-                if (mBackPressed + 2000 > System.currentTimeMillis()) {
-                    super.onBackPressed();
-                    return;
-                } else {
-                    Toast.makeText(getBaseContext(), "Tap Again To Exit12321321", Toast.LENGTH_SHORT).show();
-                    mBackPressed = System.currentTimeMillis();
+//        if (!new BackPressImplimentation(mainMenuFragment).onBackPressed()) {
+//            int count = this.getSupportFragmentManager().getBackStackEntryCount();
+//            if (count == 0) {
+//                if (mBackPressed + 2000 > System.currentTimeMillis()) {
+//                    super.onBackPressed();
+//                    return;
+//                } else {
+//                    Toast.makeText(getBaseContext(), "Tap Again To Exit12321321", Toast.LENGTH_SHORT).show();
+//                    mBackPressed = System.currentTimeMillis();
+//
+//                }
+//            } else {
+//                super.onBackPressed();
+//            }
+//        }
 
-                }
-            } else {
-                super.onBackPressed();
-            }
+
+
+
+        See_Full_Image_F see_image_f = new See_Full_Image_F();
+        FragmentTransaction transaction =getSupportFragmentManager().beginTransaction();
+        transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
+        if(see_image_f.getUserVisibleHint())
+        {
+
+           getSupportFragmentManager().popBackStack();
         }
-
     }
 
 

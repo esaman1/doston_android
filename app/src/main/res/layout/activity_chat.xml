@@ -33,7 +33,7 @@
                 android:padding="5dp"
                 android:scaleType="fitStart"
                 android:tint="@color/redcolor"
-                android:src="@drawable/ic_back"
+                android:src="@drawable/ic_back_icon"
                 android:layout_centerVertical="true"/>
 
             <de.hdodenhof.circleimageview.CircleImageView

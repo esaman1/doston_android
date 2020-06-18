@@ -30,7 +30,7 @@
             android:scaleType="fitCenter"
             android:background="@color/transparent"
             android:tint="@color/white"
-            android:src="@drawable/ic_back"/>
+            android:src="@drawable/ic_back_icon"/>
 
         <ProgressBar
             android:id="@+id/p_bar"

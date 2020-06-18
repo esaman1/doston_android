@@ -11,7 +11,7 @@
         android:layout_height="40dp"
         android:layout_margin="18dp"
         android:layout_centerInParent="true"
-        app:spinnerColor="@color/app_color"
+        app:spinnerColor="@color/black"
         app:clockwise="true"
         />
 

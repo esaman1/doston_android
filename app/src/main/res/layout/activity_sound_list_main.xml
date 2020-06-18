@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.dinosoftlabs.tictic.SoundLists.SoundList_Main_A">
 
@@ -19,7 +20,7 @@
             android:layout_weight="1"
             app:contentInsetLeft="0dp"
             app:contentInsetStart="0dp"
-            android:background="@color/white">
+            android:background="@color/black">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -29,7 +30,7 @@
                     android:layout_centerVertical="true"
                     android:src="@drawable/ic_white_cross"
                     android:id="@+id/Goback"
-                    android:tint="@color/black"
+                    android:tint="@color/white"
                     android:scaleType="fitStart"
                     android:layout_marginLeft="10dp"
                     android:background="@color/transparent"/>
@@ -39,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:text="Add Sound"
                     android:textStyle="bold"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
@@ -66,7 +67,6 @@
                 app:tabGravity="fill"
                 app:tabPaddingStart="0dp"
                 app:tabPaddingEnd="0dp"
-                android:background="@drawable/d_bottom_gray_line"
                 app:tabTextAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:layout_marginLeft="-1dp"
                 app:tabIndicatorColor="@color/black"/>

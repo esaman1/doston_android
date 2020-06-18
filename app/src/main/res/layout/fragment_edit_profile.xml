@@ -38,7 +38,7 @@
                     android:scaleType="fitStart"
                     android:id="@+id/Goback"
                     android:tint="@color/black"
-                    android:src="@drawable/ic_back"
+                    android:src="@drawable/ic_back_icon"
                     android:layout_centerVertical="true"/>
 
                 <TextView
@@ -92,7 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/profile_image"
-                android:src="@drawable/profile_image_placeholder"/>
+                 android:src="@drawable/ic_unknown"/>
 
                 <ImageButton
                     android:layout_width="40dp"

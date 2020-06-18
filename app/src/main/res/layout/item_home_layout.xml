@@ -18,20 +18,98 @@
             android:id="@+id/mainlayout">
 
 
-      <com.google.android.exoplayer2.ui.PlayerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/playerview"
-        android:layout_margin="0dp"
-        android:padding="0dp"
-        app:show_timeout="1000"
-        app:resize_mode="fixed_width"
-        android:background="@color/black"
-        app:shutter_background_color="@color/black"
-        app:controller_layout_id="@layout/item_player_controler"/>
+
+
+
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/playerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:padding="0dp"
+                app:controller_layout_id="@layout/item_player_controler"
+                app:resize_mode="fixed_width"
+                app:show_timeout="1000"
+                app:shutter_background_color="@color/black" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_marginTop="40dp"
+                android:weightSum="10"
+                android:layout_width="match_parent"
+                android:layout_height="55dp">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.5"
+                    android:visibility="visible"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:foreground="@drawable/follow"
+                        android:visibility="visible"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="3dp"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/user_pic"
+                        android:src="@drawable/ic_unknown"/>
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="7"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Username"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:id="@+id/username"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="3"
+                    android:textColor="@color/white"/>
+
+
+
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:visibility="visible"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/shared_layout"
+                    android:gravity="center"
+                    >
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_share"
+                        android:scaleType="fitCenter"/>
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="10dp"
+                android:layout_above="@+id/hashtag_Layout"
+                android:layout_width="45dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:id="@+id/side_menu"
@@ -40,19 +118,20 @@
                 android:layout_alignParentRight="true"
                 android:gravity="center_horizontal">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+<!--                <LinearLayout-->
+<!--                    android:visibility="gone"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:scaleType="centerCrop"
-                        android:id="@+id/user_pic"
-                        android:src="@drawable/profile_image_placeholder"/>
+<!--                    <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:scaleType="centerCrop"-->
+<!--                        android:id="@+id/user_pic"-->
+<!--                         android:src="@drawable/ic_unknown"/>-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -60,25 +139,27 @@
                     android:orientation="vertical"
                     android:id="@+id/like_layout"
                     android:gravity="center_horizontal"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginTop="10dp">
 
                     <ImageView
                         android:id="@+id/like_image"
-                        android:layout_width="32dp"
-                        android:layout_height="37dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/ic_like" />
+                        android:src="@drawable/ic_likes" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="likes"
+                        android:textAlignment="center"
+                        android:gravity="center"
                         android:id="@+id/like_txt"
                         android:shadowColor="@color/black"
                         android:shadowDx="1"
                         android:shadowDy="1"
                         android:shadowRadius="3"
-                        android:textSize="13dp"
+                        android:textSize="12sp"
                         android:textColor="@color/white"
                         android:textStyle="bold"/>
 
@@ -86,25 +167,28 @@
 
 
                 <LinearLayout
+                    android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:id="@+id/comment_layout"
                     android:gravity="center_horizontal"
-                    android:layout_marginTop="20dp">
+                   >
 
                     <ImageView
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:scaleType="fitCenter"
                         android:id="@+id/comment_image"
-                        android:src="@drawable/ic_comment"/>
+                        android:src="@drawable/ic_comments"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="comment"
-                        android:textSize="13dp"
+                        android:textSize="12sp"
+                        android:textAlignment="center"
+                        android:gravity="center"
                         android:id="@+id/comment_txt"
                         android:shadowColor="@color/black"
                         android:shadowDx="1"
@@ -116,55 +200,52 @@
 
 
 
+
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:id="@+id/shared_layout"
-                    android:gravity="center_horizontal"
-                    android:layout_marginTop="20dp">
+                    android:id="@+id/sound_image_layout"
+                    android:gravity="center">
 
                     <ImageView
+                        android:src="@drawable/ic_use_music"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:visibility="gone"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
-                        android:src="@drawable/ic_share"
-                        android:scaleType="fitCenter"/>
+                        android:id="@+id/sound_image"
+                        android:src="@drawable/ic_round_music"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Share"
-                        android:shadowColor="@color/black"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="3"
-                        android:textSize="13dp"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"/>
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/hashtag_Layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="70dp"
                 android:orientation="vertical"
-                android:layout_marginRight="80dp"
                 android:layout_marginBottom="70dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Username"
-                    android:textSize="13dp"
-                    android:textStyle="bold"
-                    android:id="@+id/username"
-                    android:shadowColor="@color/black"
-                    android:shadowDx="1"
-                    android:shadowDy="1"
-                    android:shadowRadius="3"
-                    android:textColor="@color/white"/>
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Username"-->
+<!--                    android:textSize="13dp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:id="@+id/username"-->
+<!--                    android:shadowColor="@color/black"-->
+<!--                    android:shadowDx="1"-->
+<!--                    android:shadowDy="1"-->
+<!--                    android:shadowRadius="3"-->
+<!--                    android:textColor="@color/white"/>-->
 
                 <TextView
                     android:layout_width="match_parent"
@@ -216,25 +297,7 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="5dp"
-                android:orientation="vertical"
-                android:id="@+id/sound_image_layout"
-                android:background="@drawable/ic_black_disk"
-                android:layout_marginBottom="70dp"
-                android:gravity="center">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:id="@+id/sound_image"
-                    android:src="@drawable/ic_round_music"/>
-
-            </LinearLayout>
 
 
         </RelativeLayout>

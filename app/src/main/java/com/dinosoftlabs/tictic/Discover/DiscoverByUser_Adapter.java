@@ -48,11 +48,13 @@ public class DiscoverByUser_Adapter extends RecyclerView.Adapter<DiscoverByUser_
         Glide.with(context).load(user_list.get(position).getProfile_pic()).apply(new RequestOptions().placeholder(R.mipmap.ic_launcher)).into(holder.profile_icon);
         holder.username.setText(user_list.get(position).getUsername());
         holder.fullname.setText(user_list.get(position).getFirst_name()+" "+user_list.get(position).getLast_name());
-        holder.followers_videos.setText(prettyCount(user_list.get(position).getFollowersCount())+" followers \u00b7 "+prettyCount(user_list.get(position).getVideoCount())+" videos");
-
+//        holder.followers_videos.setText(prettyCount(user_list.get(position).getFollowersCount())+" followers \u00b7 "+prettyCount(user_list.get(position).getVideoCount())+" videos");
+        holder.followers_count_tx.setText("Followers "+prettyCount(user_list.get(position).getFollowersCount()));
+        holder.videos_count_tx.setText("Videos "+prettyCount(user_list.get(position).getVideoCount()));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Discover_F.hideKeyboard((Activity)context);
                 Profile_F profile_f = new Profile_F(new Fragment_Callback() {
                     @Override
                     public void Responce(Bundle bundle) {
@@ -99,13 +101,15 @@ public class DiscoverByUser_Adapter extends RecyclerView.Adapter<DiscoverByUser_
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         CircleImageView profile_icon;
-        TextView username,fullname,followers_videos;
+        TextView username,fullname,followers_count_tx,videos_count_tx;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             profile_icon = itemView.findViewById(R.id.profile_icon);
             username = itemView.findViewById(R.id.username);
             fullname = itemView.findViewById(R.id.fullname);
-            followers_videos = itemView.findViewById(R.id.followers_videos);
+//            followers_videos = itemView.findViewById(R.id.followers_videos);
+            followers_count_tx= itemView.findViewById(R.id.followers_count_tx);
+            videos_count_tx= itemView.findViewById(R.id.videos_count_tx);
         }
     }
 }

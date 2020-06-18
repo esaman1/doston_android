@@ -51,7 +51,7 @@
                         android:layout_height="50dp"
                         android:scaleType="centerCrop"
                         android:id="@+id/user_pic"
-                        android:src="@drawable/profile_image_placeholder"/>
+                         android:src="@drawable/ic_unknown"/>
 
                 </LinearLayout>
 
@@ -65,10 +65,10 @@
 
                     <ImageView
                         android:id="@+id/like_image"
-                        android:layout_width="32dp"
-                        android:layout_height="37dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/ic_like" />
+                        android:src="@drawable/ic_likes" />
 
                     <TextView
                         android:layout_width="wrap_content"

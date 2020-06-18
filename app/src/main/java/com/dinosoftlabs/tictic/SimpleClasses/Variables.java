@@ -89,11 +89,11 @@ public class Variables {
     public static String privacy_policy="https://www.termsfeed.com/privacy-policy/4dec1a564a01ea0d15ed86c97c4e8253";
 
     
-//    public static String domain="https://mobileadsservice.com/PHPAPI/DostarAPI/index.php?p=";
-//    public static String base_url="https://mobileadsservice.com/PHPAPI/DostarAPI/";
+    public static String domain="https://mobileadsservice.com/PHPAPI/DostarAPI/index.php?p=";
+    public static String base_url="https://mobileadsservice.com/PHPAPI/DostarAPI/";
 
-    public static String domain="http://5dd27962dafd.ngrok.io/TicTic/API/tictic/index.php?p=";
-    public static String base_url="http://5dd27962dafd.ngrok.io/TicTic/API/tictic/";
+//    public static String domain="http://5dd27962dafd.ngrok.io/TicTic/API/tictic/index.php?p=";
+//    public static String base_url="http://5dd27962dafd.ngrok.io/TicTic/API/tictic/";
 
 
     public static String SignUp =domain+"signup";

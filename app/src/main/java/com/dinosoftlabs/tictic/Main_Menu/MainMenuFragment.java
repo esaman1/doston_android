@@ -116,18 +116,18 @@ public class MainMenuFragment extends RootFragment implements View.OnClickListen
         View view1 = LayoutInflater.from(context).inflate(R.layout.item_tablayout, null);
         ImageView imageView1= view1.findViewById(R.id.image);
         TextView  title1=view1.findViewById(R.id.text);
-        imageView1.setImageDrawable(getResources().getDrawable(R.drawable.ic_home_white));
-        title1.setText("Home");
+        imageView1.setImageDrawable(getResources().getDrawable(R.drawable.ic_home));
+        title1.setText("\u2022");
         title1.setTextColor(context.getResources().getColor(R.color.white));
         tabLayout.getTabAt(0).setCustomView(view1);
 
         View view2 = LayoutInflater.from(context).inflate(R.layout.item_tablayout, null);
         ImageView imageView2= view2.findViewById(R.id.image);
         TextView  title2=view2.findViewById(R.id.text);
-        imageView2.setImageDrawable(getResources().getDrawable(R.drawable.ic_discovery_gray));
+        imageView2.setImageDrawable(getResources().getDrawable(R.drawable.ic_search));
         imageView2.setColorFilter(ContextCompat.getColor(context, R.color.colorwhite_50), android.graphics.PorterDuff.Mode.SRC_IN);
-        title2.setText("Discover");
-        title2.setTextColor(context.getResources().getColor(R.color.colorwhite_50));
+        title2.setText("\u2022");
+        title2.setTextColor(context.getResources().getColor(R.color.transperent));
         tabLayout.getTabAt(1).setCustomView(view2);
 
 
@@ -137,19 +137,19 @@ public class MainMenuFragment extends RootFragment implements View.OnClickListen
         View view4 = LayoutInflater.from(context).inflate(R.layout.item_tablayout, null);
         ImageView imageView4= view4.findViewById(R.id.image);
         TextView  title4=view4.findViewById(R.id.text);
-        imageView4.setImageDrawable(getResources().getDrawable(R.drawable.ic_notification_gray));
+        imageView4.setImageDrawable(getResources().getDrawable(R.drawable.ic_message));
         imageView4.setColorFilter(ContextCompat.getColor(context, R.color.colorwhite_50), android.graphics.PorterDuff.Mode.SRC_IN);
-        title4.setText("Inbox");
-        title4.setTextColor(context.getResources().getColor(R.color.colorwhite_50));
+        title4.setText("\u2022");
+        title4.setTextColor(context.getResources().getColor(R.color.transperent));
         tabLayout.getTabAt(3).setCustomView(view4);
 
         View view5 = LayoutInflater.from(context).inflate(R.layout.item_tablayout, null);
         ImageView imageView5= view5.findViewById(R.id.image);
         TextView  title5=view5.findViewById(R.id.text);
-        imageView5.setImageDrawable(getResources().getDrawable(R.drawable.ic_profile_gray));
+        imageView5.setImageDrawable(getResources().getDrawable(R.drawable.ic_user_profile));
         imageView5.setColorFilter(ContextCompat.getColor(context, R.color.colorwhite_50), android.graphics.PorterDuff.Mode.SRC_IN);
-        title5.setText("Profile");
-        title5.setTextColor(context.getResources().getColor(R.color.colorwhite_50));
+        title5.setText("\u2022");
+        title5.setTextColor(context.getResources().getColor(R.color.transperent));
         tabLayout.getTabAt(4).setCustomView(view5);
 
 
@@ -165,29 +165,29 @@ public class MainMenuFragment extends RootFragment implements View.OnClickListen
                 switch (tab.getPosition()){
                     case 0:
                         OnHome_Click();
-                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_home_white));
+                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_home));
                         title.setTextColor(context.getResources().getColor(R.color.white));
                         break;
 
                     case 1:
                         Onother_Tab_Click();
-                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_discover_red));
-                        image.setColorFilter(ContextCompat.getColor(context, R.color.app_color), android.graphics.PorterDuff.Mode.SRC_IN);
-                        title.setTextColor(context.getResources().getColor(R.color.app_color));
+                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_search));
+                        image.setColorFilter(ContextCompat.getColor(context, R.color.white), android.graphics.PorterDuff.Mode.SRC_IN);
+                        title.setTextColor(context.getResources().getColor(R.color.white));
                         break;
 
 
                     case 3:
                         Onother_Tab_Click();
-                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_notification_red));
-                        image.setColorFilter(ContextCompat.getColor(context, R.color.app_color), android.graphics.PorterDuff.Mode.SRC_IN);
-                        title.setTextColor(context.getResources().getColor(R.color.app_color));
+                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_message));
+                        image.setColorFilter(ContextCompat.getColor(context, R.color.white), android.graphics.PorterDuff.Mode.SRC_IN);
+                        title.setTextColor(context.getResources().getColor(R.color.white));
                         break;
                     case 4:
                         Onother_Tab_Click();
-                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_profile_red));
-                        image.setColorFilter(ContextCompat.getColor(context, R.color.app_color), android.graphics.PorterDuff.Mode.SRC_IN);
-                        title.setTextColor(context.getResources().getColor(R.color.app_color));
+                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_user_profile));
+                        image.setColorFilter(ContextCompat.getColor(context, R.color.white), android.graphics.PorterDuff.Mode.SRC_IN);
+                        title.setTextColor(context.getResources().getColor(R.color.white));
                         break;
                 }
                 tab.setCustomView(v);
@@ -201,20 +201,20 @@ public class MainMenuFragment extends RootFragment implements View.OnClickListen
 
                 switch (tab.getPosition()){
                     case 0:
-                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_home_gray));
+                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_home));
                         title.setTextColor(context.getResources().getColor(R.color.darkgray));
                         break;
                     case 1:
-                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_discovery_gray));
+                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_search));
                         title.setTextColor(context.getResources().getColor(R.color.darkgray));
                         break;
 
                     case 3:
-                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_notification_gray));
+                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_message));
                         title.setTextColor(context.getResources().getColor(R.color.darkgray));
                         break;
                     case 4:
-                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_profile_gray));
+                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_user_profile));
                         title.setTextColor(context.getResources().getColor(R.color.darkgray));
                         break;
                 }
@@ -416,18 +416,27 @@ public class MainMenuFragment extends RootFragment implements View.OnClickListen
 
     public void OnHome_Click (){
 
+
+        TabLayout.Tab tab0=tabLayout.getTabAt(0);
+        View view0=tab0.getCustomView();
+        ImageView imageView0= view0.findViewById(R.id.image);
+        imageView0.setColorFilter(ContextCompat.getColor(context, R.color.white), android.graphics.PorterDuff.Mode.SRC_IN);
+        TextView tex0=view0.findViewById(R.id.text);
+        tex0.setTextColor(context.getResources().getColor(R.color.white));
+        tab0.setCustomView(view0);
+
         TabLayout.Tab tab1=tabLayout.getTabAt(1);
         View view1=tab1.getCustomView();
         ImageView imageView1= view1.findViewById(R.id.image);
         imageView1.setColorFilter(ContextCompat.getColor(context, R.color.colorwhite_50), android.graphics.PorterDuff.Mode.SRC_IN);
         TextView tex1=view1.findViewById(R.id.text);
-        tex1.setTextColor(context.getResources().getColor(R.color.colorwhite_50));
+        tex1.setTextColor(context.getResources().getColor(R.color.transperent));
         tab1.setCustomView(view1);
 
         TabLayout.Tab tab2=tabLayout.getTabAt(2);
         View view2=tab2.getCustomView();
         ImageView image= view2.findViewById(R.id.image);
-        image.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_add_white));
+        image.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_add));
         tab2.setCustomView(view2);
 
         TabLayout.Tab tab3=tabLayout.getTabAt(3);
@@ -435,7 +444,7 @@ public class MainMenuFragment extends RootFragment implements View.OnClickListen
         ImageView imageView3= view3.findViewById(R.id.image);
         imageView3.setColorFilter(ContextCompat.getColor(context, R.color.colorwhite_50), android.graphics.PorterDuff.Mode.SRC_IN);
         TextView tex3=view3.findViewById(R.id.text);
-        tex3.setTextColor(context.getResources().getColor(R.color.colorwhite_50));
+        tex3.setTextColor(context.getResources().getColor(R.color.transperent));
         tab3.setCustomView(view3);
 
 
@@ -444,7 +453,7 @@ public class MainMenuFragment extends RootFragment implements View.OnClickListen
         ImageView imageView4= view4.findViewById(R.id.image);
         imageView4.setColorFilter(ContextCompat.getColor(context, R.color.colorwhite_50), android.graphics.PorterDuff.Mode.SRC_IN);
         TextView tex4=view4.findViewById(R.id.text);
-        tex4.setTextColor(context.getResources().getColor(R.color.colorwhite_50));
+        tex4.setTextColor(context.getResources().getColor(R.color.transperent));
         tab4.setCustomView(view4);
 
 
@@ -457,35 +466,47 @@ public class MainMenuFragment extends RootFragment implements View.OnClickListen
 
 
 
+
+        TabLayout.Tab tab0=tabLayout.getTabAt(0);
+        View view0=tab0.getCustomView();
+        TextView tex0=view0.findViewById(R.id.text);
+        ImageView imageView0= view0.findViewById(R.id.image);
+        imageView0.setColorFilter(ContextCompat.getColor(context, R.color.white), android.graphics.PorterDuff.Mode.SRC_IN);
+        tex0.setTextColor(context.getResources().getColor(R.color.transperent));
+        tab0.setCustomView(view0);
+
+
+
+
         TabLayout.Tab tab1=tabLayout.getTabAt(1);
         View view1=tab1.getCustomView();
         TextView tex1=view1.findViewById(R.id.text);
         ImageView imageView1= view1.findViewById(R.id.image);
-        imageView1.setColorFilter(ContextCompat.getColor(context, R.color.darkgray), android.graphics.PorterDuff.Mode.SRC_IN);
-        tex1.setTextColor(context.getResources().getColor(R.color.darkgray));
+        imageView1.setColorFilter(ContextCompat.getColor(context, R.color.white), android.graphics.PorterDuff.Mode.SRC_IN);
+        tex1.setTextColor(context.getResources().getColor(R.color.transperent));
         tab1.setCustomView(view1);
 
         TabLayout.Tab tab2=tabLayout.getTabAt(2);
         View view2=tab2.getCustomView();
         ImageView image= view2.findViewById(R.id.image);
-        image.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_add_black));
+        image.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_add));
         tab2.setCustomView(view2);
 
         TabLayout.Tab tab3=tabLayout.getTabAt(3);
         View view3=tab3.getCustomView();
         ImageView imageView3= view3.findViewById(R.id.image);
-        imageView3.setColorFilter(ContextCompat.getColor(context, R.color.darkgray), android.graphics.PorterDuff.Mode.SRC_IN);
+        imageView3.setColorFilter(ContextCompat.getColor(context, R.color.white), android.graphics.PorterDuff.Mode.SRC_IN);
         TextView tex3=view3.findViewById(R.id.text);
-        tex3.setTextColor(context.getResources().getColor(R.color.darkgray));
+        tex3.setTextColor(context.getResources().getColor(R.color.transperent));
         tab3.setCustomView(view3);
 
 
         TabLayout.Tab tab4=tabLayout.getTabAt(4);
         View view4=tab4.getCustomView();
         ImageView imageView4= view4.findViewById(R.id.image);
-        imageView4.setColorFilter(ContextCompat.getColor(context, R.color.darkgray), android.graphics.PorterDuff.Mode.SRC_IN);
+        imageView4.setColorFilter(ContextCompat.getColor(context, R.color.white), android.graphics.PorterDuff.Mode.SRC_IN);
         TextView tex4=view4.findViewById(R.id.text);
-        tex4.setTextColor(context.getResources().getColor(R.color.darkgray));
+        tex4.setTextColor(context.getResources().getColor(R.color.transperent));
         tab4.setCustomView(view4);
 
 
@@ -495,7 +516,7 @@ public class MainMenuFragment extends RootFragment implements View.OnClickListen
         RelativeLayout.LayoutParams params= new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
         params.addRule(RelativeLayout.ABOVE, R.id.tabs);
         pager.setLayoutParams(params);
-        tabLayout.setBackgroundColor(getResources().getColor(R.color.white));
+        tabLayout.setBackgroundColor(getResources().getColor(R.color.black));
 
     }
 

@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="24dp"
-        android:background="@color/white">
+        android:background="@color/black">
 
          <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -21,22 +21,21 @@
         android:layout_weight="1"
         app:contentInsetLeft="0dp"
         app:contentInsetStart="0dp"
-        android:background="@color/white">
+        android:background="@color/black">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/d_bottom_gray_line">
+            android:background="@color/black">
 
             <ImageButton
                 android:layout_width="50dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_back"
+                android:src="@drawable/ic_back_icon"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:scaleType="fitStart"
                 android:id="@+id/back_btn"
-                android:tint="@color/black"
                 android:background="@color/transparent"/>
 
 
@@ -51,12 +50,13 @@
                 android:layout_centerInParent="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/white"/>
 
 
             <ImageButton
                 android:layout_width="24dp"
                 android:layout_height="24dp"
+                android:tint="@color/white"
                 android:src="@drawable/ic_send_black"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
@@ -92,7 +92,7 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="25dp"
                 android:id="@+id/user_image"
-                android:src="@drawable/profile_image_placeholder"/>
+                 android:src="@drawable/ic_unknown"/>
 
 
 
@@ -142,7 +142,7 @@
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
                         android:textSize="18dp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textStyle="bold"/>
 
                 <TextView
@@ -177,7 +177,7 @@
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
                         android:textSize="18dp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textStyle="bold"/>
 
                     <TextView
@@ -212,7 +212,7 @@
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
                         android:textSize="18dp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textStyle="bold"/>
 
                     <TextView

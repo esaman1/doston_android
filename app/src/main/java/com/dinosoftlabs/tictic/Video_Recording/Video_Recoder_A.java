@@ -1,11 +1,16 @@
 package com.dinosoftlabs.tictic.Video_Recording;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Path;
 import android.media.MediaMetadataRetriever;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -13,12 +18,17 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.animation.PathInterpolatorCompat;
+
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.Interpolator;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -76,7 +86,7 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
     ImageButton rotate_camera;
 
     public static int Sounds_list_Request_code=1;
-    TextView add_sound_txt;
+    LinearLayout add_sound_txt;
 
 
     int sec_passed=0;
@@ -142,7 +152,6 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
 
         Intent intent=getIntent();
         if(intent.hasExtra("sound_name")){
-            add_sound_txt.setText(intent.getStringExtra("sound_name"));
             Variables.Selected_sound_id=intent.getStringExtra("sound_id");
             PreparedAudio();
         }
@@ -202,7 +211,7 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
         video_progress.setDividerColor(Color.WHITE);
         video_progress.setDividerEnabled(true);
         video_progress.setDividerWidth(4);
-        video_progress.setShader(new int[]{Color.CYAN, Color.CYAN, Color.CYAN});
+        video_progress.setShader(new int[]{Color.WHITE, Color.WHITE, Color.WHITE});
 
         video_progress.SetListener(new ProgressBarListener() {
             @Override
@@ -240,13 +249,14 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
             video_progress.resume();
 
 
-            done_btn.setBackgroundResource(R.drawable.ic_not_done);
+            done_btn.setBackgroundResource(R.drawable.ic_done_unpress);
             done_btn.setEnabled(false);
 
-            record_image.setImageDrawable(getResources().getDrawable(R.drawable.ic_recoding_yes));
-
+            record_image.setImageDrawable(getResources().getDrawable(R.drawable.ic_capture));
+            animFab(record_image,1.15f,1f);
             camera_options.setVisibility(View.GONE);
             add_sound_txt.setClickable(false);
+            add_sound_txt.setBackgroundColor(R.drawable.ic_user_music_press);
             rotate_camera.setVisibility(View.GONE);
 
         }
@@ -269,7 +279,12 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
                 done_btn.setEnabled(true);
             }
 
-            record_image.setImageDrawable(getResources().getDrawable(R.drawable.ic_recoding_no));
+            record_image.setImageDrawable(getResources().getDrawable(R.drawable.ic_capture_unpress));
+            set.cancel();
+            set2.cancel();
+            scaleX.cancel();
+            scaleY.cancel();
+            record_image.clearAnimation();
             camera_options.setVisibility(View.VISIBLE);
 
         }
@@ -281,6 +296,70 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
 
 
     }
+    AnimatorSet set;
+    AnimatorSet set2;
+    ObjectAnimator scaleX;
+    ObjectAnimator scaleY;
+    public void animFab(View fab,float to,float from) {
+
+        scaleX = ObjectAnimator.ofFloat(fab, View.SCALE_X, from, to);
+        scaleY = ObjectAnimator.ofFloat(fab, View.SCALE_Y, from, to);
+        AnimatorSet set1 = new AnimatorSet();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ObjectAnimator translationZ = ObjectAnimator.ofFloat(fab, View.TRANSLATION_Z, from, to);
+            set1.playTogether(scaleX, scaleY, translationZ);
+
+        } else {
+            set1.playTogether(scaleX, scaleY);
+        }
+        set1.setDuration(500);
+        set1.setInterpolator(new AccelerateInterpolator());
+        set1.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+
+            }
+        });
+
+        Path path = new Path();
+        path.moveTo(0.0f, 0.0f);
+        path.lineTo(0.5f, 1.3f);
+        path.lineTo(0.75f, 0.8f);
+        path.lineTo(1.0f, 1.0f);
+        Interpolator pathInterpolator = PathInterpolatorCompat.create(path);
+
+        set2 = new AnimatorSet();
+        ObjectAnimator scaleXBack = ObjectAnimator.ofFloat(fab, View.SCALE_X, to, from);
+        ObjectAnimator scaleYBack = ObjectAnimator.ofFloat(fab, View.SCALE_Y, to, from);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ObjectAnimator translationZBack = ObjectAnimator.ofFloat(fab, View.TRANSLATION_Z, to, from);
+            set2.playTogether(scaleXBack, scaleYBack, translationZBack);
+        } else {
+            set2.playTogether(scaleXBack, scaleYBack);
+        }
+        set2.setDuration(500);
+        set2.setInterpolator(pathInterpolator);
+
+        set = new AnimatorSet();
+        set.playSequentially(set1, set2);
+
+        set.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                if(is_recording)
+                {
+                    set.start();
+                }
+
+            }
+        });
+        set.start();
+    }
+
+
 
 
 
@@ -458,6 +537,7 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.add_sound_txt:
+                Toast.makeText(this, "SOUND_CLICK", Toast.LENGTH_SHORT).show();
                 Intent intent =new Intent(this,SoundList_Main_A.class);
                 startActivityForResult(intent,Sounds_list_Request_code);
                 overridePendingTransition(R.anim.in_from_bottom, R.anim.out_to_top);
@@ -476,7 +556,6 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
             if(data!=null){
 
              if(data.getStringExtra("isSelected").equals("yes")){
-                add_sound_txt.setText(data.getStringExtra("sound_name"));
                  Variables.Selected_sound_id=data.getStringExtra("sound_id");
                  PreparedAudio();
              }
