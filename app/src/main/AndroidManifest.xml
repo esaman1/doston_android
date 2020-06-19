@@ -22,6 +22,7 @@
         android:required="false" />
 
     <application
+        android:resizeableActivity="false"
         android:name=".SimpleClasses.TicTic"
         android:allowBackup="false"
         android:hardwareAccelerated="true"

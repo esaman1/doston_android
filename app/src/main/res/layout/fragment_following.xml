@@ -11,7 +11,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white">
+        android:background="@color/black">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -25,7 +25,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/d_bottom_gray_line">
+                android:background="@color/black">
 
 
                 <ImageButton
@@ -37,7 +37,7 @@
                     android:layout_marginLeft="10dp"
                     android:scaleType="fitStart"
                     android:id="@+id/back_btn"
-                    android:tint="@color/black"
+                    android:tint="@color/white"
                     android:background="@color/transparent"/>
 
 
@@ -51,7 +51,7 @@
                     android:layout_centerInParent="true"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/white"/>
 
 
             </RelativeLayout>

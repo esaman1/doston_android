@@ -63,13 +63,13 @@
                 android:layout_height="40dp"
                 app:tabMode="fixed"
                 app:tabTextColor="@color/dark_gray"
-                app:tabSelectedTextColor="@color/black"
+                app:tabSelectedTextColor="@color/white"
                 app:tabGravity="fill"
                 app:tabPaddingStart="0dp"
                 app:tabPaddingEnd="0dp"
                 app:tabTextAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:layout_marginLeft="-1dp"
-                app:tabIndicatorColor="@color/black"/>
+                app:tabIndicatorColor="@color/white"/>
 
             <com.dinosoftlabs.tictic.Main_Menu.Custom_ViewPager
                 android:layout_width="match_parent"

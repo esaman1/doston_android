@@ -464,9 +464,6 @@ public class MainMenuFragment extends RootFragment implements View.OnClickListen
 
     public void Onother_Tab_Click(){
 
-
-
-
         TabLayout.Tab tab0=tabLayout.getTabAt(0);
         View view0=tab0.getCustomView();
         TextView tex0=view0.findViewById(R.id.text);
@@ -474,9 +471,6 @@ public class MainMenuFragment extends RootFragment implements View.OnClickListen
         imageView0.setColorFilter(ContextCompat.getColor(context, R.color.white), android.graphics.PorterDuff.Mode.SRC_IN);
         tex0.setTextColor(context.getResources().getColor(R.color.transperent));
         tab0.setCustomView(view0);
-
-
-
 
         TabLayout.Tab tab1=tabLayout.getTabAt(1);
         View view1=tab1.getCustomView();
@@ -508,10 +502,6 @@ public class MainMenuFragment extends RootFragment implements View.OnClickListen
         TextView tex4=view4.findViewById(R.id.text);
         tex4.setTextColor(context.getResources().getColor(R.color.transperent));
         tab4.setCustomView(view4);
-
-
-
-
 
         RelativeLayout.LayoutParams params= new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
         params.addRule(RelativeLayout.ABOVE, R.id.tabs);

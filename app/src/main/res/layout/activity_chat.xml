@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/black"
     android:clickable="true"
     android:id="@+id/Chat_F"
     android:fitsSystemWindows="true"
@@ -20,21 +20,22 @@
         app:contentInsetStart="0dp"
         android:background="@color/white">
         <RelativeLayout
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/d_bottom_gray_line">
+            android:background="@color/black">
             <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:layout_alignParentLeft="true"
                 android:background="@android:color/transparent"
                 android:id="@+id/Goback"
                 android:layout_marginLeft="5dp"
                 android:padding="5dp"
                 android:scaleType="fitStart"
-                android:tint="@color/redcolor"
+                android:tint="@color/white"
                 android:src="@drawable/ic_back_icon"
-                android:layout_centerVertical="true"/>
+                android:layout_centerInParent="true"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="28dp"
@@ -53,7 +54,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/profileimage"
-                android:textColor="@color/black"/>
+                android:textColor="@color/white"/>
 
 
             <ImageButton
@@ -124,7 +125,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:id="@+id/writechatlayout"
-        android:background="@drawable/editfield_releative_border"
+        android:background="@color/black"
         android:layout_alignParentBottom="true">
 
         <ImageButton
@@ -198,6 +199,7 @@
             android:padding="5dp"
             android:scaleType="fitXY"
             android:layout_centerVertical="true"
+            android:tint="@color/white"
             android:src="@drawable/ic_send"
             android:background="@android:color/transparent"/>
 

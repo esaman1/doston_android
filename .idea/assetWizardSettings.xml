@@ -166,8 +166,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_unknown" />
-                            <entry key="sourceFile" value="D:\Office_Work\Designs\Doston\Slicing\05a_Following\Unknown.svg" />
+                            <entry key="outputName" value="ic_follow" />
+                            <entry key="sourceFile" value="D:\Office_Work\Designs\Doston\Slicing\05a_Following\Follow.svg" />
                           </map>
                         </option>
                       </PersistentState>

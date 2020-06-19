@@ -132,8 +132,8 @@ public class Following_Adapter extends RecyclerView.Adapter<Following_Adapter.Cu
 
                 if (item.follow.equals("0")) {
                     holder.action_txt.setText("Follow");
-                    holder.action_txt.setBackgroundColor(ContextCompat.getColor(context, R.color.redcolor));
-                    holder.action_txt.setTextColor(ContextCompat.getColor(context, R.color.white));
+                    holder.action_txt.setBackgroundColor(R.drawable.white_corner_bg);
+                    holder.action_txt.setTextColor(ContextCompat.getColor(context, R.color.black));
                 } else {
                     holder.action_txt.setText("Friends");
                     holder.action_txt.setBackground(ContextCompat.getDrawable(context, R.drawable.d_gray_border));
