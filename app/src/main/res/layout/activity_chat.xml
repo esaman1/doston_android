@@ -123,35 +123,23 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:id="@+id/writechatlayout"
         android:background="@color/black"
         android:layout_alignParentBottom="true">
 
         <ImageButton
             android:layout_width="32dp"
-            android:layout_height="match_parent"
+            android:layout_height="32dp"
             android:id="@+id/uploadimagebtn"
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:scaleType="fitCenter"
             android:padding="4dp"
-            android:src="@drawable/ic_image_icon"
+            android:src="@drawable/ic_attach"
             android:background="@color/transparent"/>
 
-        <ImageButton
-            android:layout_width="35dp"
-            android:layout_height="match_parent"
-            android:id="@+id/mic_btn"
-            android:scaleType="fitCenter"
-            android:background="@color/transparent"
-            android:src="@drawable/ic_mic_fill"
-            android:paddingTop="3dp"
-            android:paddingLeft="3dp"
-            android:paddingBottom="3dp"
-            android:layout_toRightOf="@+id/uploadimagebtn"
-            android:paddingRight="5dp"
-            android:layout_centerVertical="true"/>
+
 
 
         <RelativeLayout
@@ -160,34 +148,53 @@
            android:layout_marginLeft="5dp"
            android:layout_marginRight="5dp"
            android:layout_centerVertical="true"
-           android:layout_toRightOf="@+id/mic_btn"
+           android:layout_toRightOf="@+id/uploadimagebtn"
            android:background="@drawable/top_bottom_border_line"
+            android:backgroundTint="#1a1a1a"
            android:layout_toLeftOf="@+id/sendbtn">
 
           <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/msgedittext"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:paddingLeft="10dp"
             android:paddingTop="5dp"
+            android:background="@android:color/transparent"
             android:paddingBottom="5dp"
             android:textColorHint="@color/gray"
-            android:textColor="@color/black"
-            android:layout_toLeftOf="@+id/upload_gif_btn"
-            android:backgroundTint="@android:color/transparent"
+            android:textColor="@color/white"
+            android:layout_toLeftOf="@+id/mic_btn"
             android:hint="Send Message Here..."/>
+
+
             <ImageButton
-                android:layout_width="28dp"
-                android:layout_height="28dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/mic_btn"
+                android:scaleType="fitCenter"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_mic"
+                android:paddingTop="3dp"
+                android:paddingLeft="3dp"
+                android:paddingBottom="3dp"
+                android:layout_toLeftOf="@+id/upload_gif_btn"
+                android:paddingRight="5dp"
+                android:layout_centerVertical="true"/>
+
+
+            <ImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:id="@+id/upload_gif_btn"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="5dp"
                 android:scaleType="fitXY"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
-                android:src="@drawable/ic_gif_image_gray"
-                android:background="@color/transparent"/>
+                android:src="@drawable/ic_gif"
+                android:background="#1a1a1a"/>
+
        </RelativeLayout>
 
         <ImageView

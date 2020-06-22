@@ -23,7 +23,7 @@
        <com.google.android.material.tabs.TabLayout
            android:id="@+id/tabs"
            android:layout_weight="1"
-           android:layout_height="48dp"
+           android:layout_height="55dp"
            android:layout_width="match_parent"
            app:tabMode="fixed"
            app:tabSelectedTextColor="@color/black"
@@ -41,7 +41,7 @@
 
        <ImageView
            android:layout_width="match_parent"
-           android:layout_height="48dp"
+           android:layout_height="55dp"
            android:scaleType="fitXY"
            android:src="@drawable/black_gradient"
            android:layout_alignParentBottom="true"/>
