@@ -58,8 +58,8 @@
 
             <ImageView
                 android:padding="5dp"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/ic_more"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
@@ -143,7 +143,7 @@
 
         <RelativeLayout
            android:layout_width="match_parent"
-           android:layout_height="wrap_content"
+           android:layout_height="40dp"
            android:layout_marginLeft="5dp"
            android:layout_marginRight="5dp"
            android:layout_centerVertical="true"
@@ -153,6 +153,7 @@
            android:layout_toLeftOf="@+id/sendbtn">
 
           <EditText
+              android:layout_centerVertical="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/msgedittext"
@@ -168,8 +169,8 @@
 
 
             <ImageButton
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
                 android:id="@+id/mic_btn"
                 android:scaleType="fitCenter"
                 android:background="@color/transparent"
@@ -183,8 +184,8 @@
 
 
             <ImageButton
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
                 android:id="@+id/upload_gif_btn"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="5dp"

@@ -22,10 +22,11 @@
         android:orientation="vertical">
 
         <TextView
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="150dp"
-            android:fontFamily="@font/roboto_medium"
+            android:fontFamily="@font/bahamans"
             android:text="Doston"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -35,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:fontFamily="@font/roboto_medium"
+            android:fontFamily="@font/bahamans"
             android:text="Indian Short Video Platform"
             android:textColor="@color/black"
             android:textSize="18sp" />
