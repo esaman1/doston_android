@@ -56,17 +56,16 @@
                 android:layout_toRightOf="@+id/profileimage"
                 android:textColor="@color/white"/>
 
-
-            <ImageButton
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_not_send_message"
+            <ImageView
+                android:padding="5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_more"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="15dp"
-                android:scaleType="fitXY"
-                android:id="@+id/alert_btn"
-                android:background="@color/transparent"/>
+                android:id="@+id/alert_btn"/>
+
 
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>

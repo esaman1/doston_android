@@ -24,8 +24,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="230dp"
+        android:backgroundTint="#010204"
         android:background="@drawable/d_top_left_right_radius"
         android:id="@+id/login_details_RL1_id">
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/slider_top_dragger"
+            android:id="@+id/slider_dragger"
+            android:layout_width="50dp"
+            android:layout_height="20dp"/>
 
         <ImageView
             android:layout_width="32dp"
@@ -33,20 +42,23 @@
             android:id="@+id/Goback"
             android:layout_alignParentRight="true"
             android:src="@drawable/ic_white_cross"
-            android:tint="@color/black"
+            android:tint="@color/white"
             android:padding="5dp"
             android:layout_margin="5dp"
             />
 
 
         <TextView
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:text="You need a Doston:Indian short video platform account to continue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/login_title_txt"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:layout_centerHorizontal="true"
             android:textSize="17dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:gravity="center"
             />
 
@@ -70,20 +82,40 @@
                     android:layout_height="match_parent">
 
                     <ImageView
+                        android:visibility="gone"
                         android:id="@+id/facebook_btn"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:padding="2dp"
                         android:src="@drawable/ic_facebook" />
 
-                    <ImageView
+
+                    <LinearLayout
                         android:id="@+id/google_btn"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_marginLeft="10dp"
+                        android:backgroundTint="#DE4831"
+                        android:background="@drawable/edittext_cornder_bg"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="170dp"
+                        android:layout_height="50dp">
+
+                    <ImageView
+
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:layout_toRightOf="@+id/facebook_btn"
                         android:padding="2dp"
-                        android:src="@drawable/ic_goggle" />
+                        android:src="@drawable/ic_google" />
+
+                        <TextView
+                            android:textColor="@color/white"
+                            android:layout_margin="10dp"
+                            android:textSize="18sp"
+                            android:text="Google"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
 
 
 

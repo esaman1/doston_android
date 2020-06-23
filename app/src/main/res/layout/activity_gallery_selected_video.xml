@@ -8,6 +8,7 @@
     tools:context=".Video_Recording.GallerySelectedVideo.GallerySelectedVideo_A">
 
     <RelativeLayout
+        android:layout_above="@+id/bottom_addsound"
         android:background="@color/black"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -41,12 +42,77 @@
             android:layout_marginTop="40dp"
             android:gravity="center_vertical"
             android:layout_centerHorizontal="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Sound"
+                android:textSize="13dp"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Next"-->
+<!--            android:textSize="15dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            android:paddingTop="10dp"-->
+<!--            android:paddingBottom="10dp"-->
+<!--            android:paddingRight="20dp"-->
+<!--            android:paddingLeft="20dp"-->
+<!--            android:layout_marginBottom="15dp"-->
+<!--            android:layout_marginRight="10dp"-->
+<!--            android:id="@+id/next_btn"-->
+<!--            android:layout_above="@+id/recylerview"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:background="@color/redcolor"-->
+<!--            android:layout_alignParentRight="true"/>-->
+
+        <ImageButton
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:id="@+id/next_btn"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_done"/>
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottom_addsound"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <LinearLayout
+            android:id="@+id/add_sound_txt"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/edittext_cornder_bg"
+            android:layout_gravity="center"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:gravity="center">
 
             <ImageView
                 android:layout_width="18dp"
                 android:layout_height="18dp"
                 android:src="@drawable/ic_music"
-                android:tint="@color/white"
+                android:tint="@color/black"
                 android:scaleType="fitCenter"/>
 
             <TextView
@@ -56,29 +122,9 @@
                 android:textSize="13dp"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:id="@+id/add_sound_txt"
-                android:textColor="@color/white"/>
+                android:textColor="@color/black"/>
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Next"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:layout_marginTop="40dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingRight="20dp"
-            android:paddingLeft="20dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginRight="10dp"
-            android:id="@+id/next_btn"
-            android:layout_above="@+id/recylerview"
-            android:textColor="@color/white"
-            android:background="@color/redcolor"
-            android:layout_alignParentRight="true"/>
+    </LinearLayout>
 
-
-    </RelativeLayout>
 </RelativeLayout>

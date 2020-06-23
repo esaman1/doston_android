@@ -142,7 +142,7 @@ public class Chat_Activity extends Fragment {
     LinearLayout gif_layout;
     ImageButton upload_gif_btn;
     ImageView sendbtn;
-    ImageButton alert_btn;
+    ImageView alert_btn;
 
 
     public static String uploading_Audio_id="none";

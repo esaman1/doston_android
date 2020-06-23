@@ -47,7 +47,10 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/toolbar">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
+                android:id="@+id/music_ll"
+                android:gravity="center"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp">
@@ -55,13 +58,11 @@
 
                 <ImageView
                     android:id="@+id/sound_image"
-                    android:layout_width="120dp"
-                    android:layout_height="150dp"
-                    android:scaleType="centerCrop"
-                    android:layout_marginStart="10dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="15dp"
-                    android:src="@color/white"
+                    android:src="@drawable/music_white_visulizer"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -72,7 +73,7 @@
                     android:layout_height="32dp"
                     android:layout_centerInParent="true"
                     android:background="@color/transparent"
-                    android:tint="@color/black"
+                    android:tint="@color/white"
                     android:scaleType="fitCenter"
                     android:src="@drawable/ic_play_icon"
                     app:layout_constraintBottom_toBottomOf="@+id/sound_image"
@@ -153,11 +154,17 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
+            </LinearLayout>
+            <ImageView
+                android:src="@drawable/music_bg_visulizetr_create"
+                android:layout_below="@+id/music_ll"
+                android:layout_above="@+id/btn_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
 
             <LinearLayout
+                android:id="@+id/btn_ll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="50dp"
@@ -169,24 +176,25 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:id="@+id/save_btn"
-                    android:background="@drawable/d_round_gray25"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/save_button_bg"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
+                        android:padding="3dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:background="@color/transparent"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/ic_my_favourite" />
+                        android:src="@drawable/ic_save" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Save"
                         android:layout_marginStart="10dp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="20dp"
                         android:textStyle="bold"/>
                 </LinearLayout>
@@ -197,9 +205,9 @@
                     android:layout_height="50dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:background="@drawable/d_round_red25"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/create_bg"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:id="@+id/create_btn"
                     android:orientation="horizontal">
 
@@ -208,6 +216,7 @@
                         android:layout_height="32dp"
                         android:background="@color/transparent"
                         android:scaleType="fitCenter"
+                        android:tint="@color/black"
                         android:src="@drawable/ic_video" />
 
                     <TextView
@@ -215,7 +224,7 @@
                         android:layout_height="wrap_content"
                         android:text="Create"
                         android:layout_marginStart="10dp"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="20dp"
                         android:textStyle="bold"/>
 

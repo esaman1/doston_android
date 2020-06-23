@@ -97,23 +97,23 @@ public class MainMenuActivity extends AppCompatActivity {
     public void onBackPressed() {
 
 
-        Toast.makeText(getBaseContext(), "tapped", Toast.LENGTH_SHORT).show();
-//       new BackPressImplimentation(mainMenuFragment).onBackPressed();
-//        if (!new BackPressImplimentation(mainMenuFragment).onBackPressed()) {
-//            int count = this.getSupportFragmentManager().getBackStackEntryCount();
-//            if (count == 0) {
-//                if (mBackPressed + 2000 > System.currentTimeMillis()) {
-//                    super.onBackPressed();
-//                    return;
-//                } else {
-//                    Toast.makeText(getBaseContext(), "Tap Again To Exit12321321", Toast.LENGTH_SHORT).show();
-//                    mBackPressed = System.currentTimeMillis();
-//
-//                }
-//            } else {
-//                super.onBackPressed();
-//            }
-//        }
+//        Toast.makeText(getBaseContext(), "tapped", Toast.LENGTH_SHORT).show();
+       new BackPressImplimentation(mainMenuFragment).onBackPressed();
+        if (!new BackPressImplimentation(mainMenuFragment).onBackPressed()) {
+            int count = this.getSupportFragmentManager().getBackStackEntryCount();
+            if (count == 0) {
+                if (mBackPressed + 2000 > System.currentTimeMillis()) {
+                    super.onBackPressed();
+                    return;
+                } else {
+                    Toast.makeText(getBaseContext(), "Tap Again To Exit", Toast.LENGTH_SHORT).show();
+                    mBackPressed = System.currentTimeMillis();
+
+                }
+            } else {
+                super.onBackPressed();
+            }
+        }
 
 
 
