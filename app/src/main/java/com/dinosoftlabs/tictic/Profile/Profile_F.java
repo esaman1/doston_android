@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.dinosoftlabs.tictic.SimpleClasses.ApiRequest;
@@ -260,13 +261,17 @@ public class Profile_F extends RootFragment implements View.OnClickListener {
     private void setupTabIcons() {
 
         View view1 = LayoutInflater.from(context).inflate(R.layout.item_tabs_profile_menu, null);
-        ImageView imageView1= view1.findViewById(R.id.image);
-        imageView1.setImageDrawable(getResources().getDrawable(R.drawable.ic_my_video_color));
+        TextView imageView1= view1.findViewById(R.id.image);
+        imageView1.setText("Videos");
+        imageView1.setTextColor(Color.parseColor("#FFFFFF"));
+//        imageView1.setImageDrawable(getResources().getDrawable(R.drawable.ic_my_video_color));
          tabLayout.getTabAt(0).setCustomView(view1);
 
         View view2 = LayoutInflater.from(context).inflate(R.layout.item_tabs_profile_menu, null);
-        ImageView imageView2= view2.findViewById(R.id.image);
-        imageView2.setImageDrawable(getResources().getDrawable(R.drawable.ic_liked_video_gray));
+        TextView imageView2= view2.findViewById(R.id.image);
+        imageView2.setText("Likes");
+        imageView2.setTextColor(Color.parseColor("#848484"));
+//        imageView2.setImageDrawable(getResources().getDrawable(R.drawable.ic_liked_video_gray));
         tabLayout.getTabAt(1).setCustomView(view2);
 
 
@@ -277,16 +282,16 @@ public class Profile_F extends RootFragment implements View.OnClickListener {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 View v=tab.getCustomView();
-                ImageView image=v.findViewById(R.id.image);
+                TextView image=v.findViewById(R.id.image);
 
                 switch (tab.getPosition()){
                     case 0:
 
-                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_my_video_color));
+                        image.setTextColor(Color.parseColor("#FFFFFF"));
                          break;
 
                     case 1:
-                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_liked_video_color));
+                        image.setTextColor(Color.parseColor("#FFFFFF"));
                         break;
                 }
                 tab.setCustomView(v);
@@ -295,14 +300,14 @@ public class Profile_F extends RootFragment implements View.OnClickListener {
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
                 View v=tab.getCustomView();
-                ImageView image=v.findViewById(R.id.image);
+                TextView image=v.findViewById(R.id.image);
 
                 switch (tab.getPosition()){
                     case 0:
-                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_my_video_gray));
+                        image.setTextColor(Color.parseColor("#848484"));
                         break;
                     case 1:
-                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_liked_video_gray));
+                        image.setTextColor(Color.parseColor("#848484"));
                         break;
                 }
 
