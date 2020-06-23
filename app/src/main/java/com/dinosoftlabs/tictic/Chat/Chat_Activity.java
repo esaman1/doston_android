@@ -46,11 +46,14 @@ import android.widget.Toast;
 
 import com.dinosoftlabs.tictic.Chat.Audio.Play_Audio_F;
 import com.dinosoftlabs.tictic.Chat.Audio.SendAudio;
+import com.dinosoftlabs.tictic.Gif.Gif_fragment_BottomSheet;
 import com.dinosoftlabs.tictic.R;
 import com.dinosoftlabs.tictic.See_Full_Image_F;
 import com.dinosoftlabs.tictic.SimpleClasses.ApiRequest;
+import com.dinosoftlabs.tictic.SimpleClasses.Fragment_Callback;
 import com.dinosoftlabs.tictic.SimpleClasses.Functions;
 import com.dinosoftlabs.tictic.SimpleClasses.Variables;
+import com.dinosoftlabs.tictic.VideoAction.VideoAction_F;
 import com.downloader.Error;
 import com.downloader.OnCancelListener;
 import com.downloader.OnDownloadListener;
@@ -355,12 +358,22 @@ public class Chat_Activity extends Fragment {
         upload_gif_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(gif_layout.getVisibility()== View.VISIBLE){
-                    slideDown();
-                }else{
-                slideUp();
-                GetGipy();
-                }
+//                if(gif_layout.getVisibility()== View.VISIBLE){
+//                    slideDown();
+//                }else{
+//                slideUp();
+//                GetGipy();
+//                }
+                Gif_fragment_BottomSheet gif_fragment_bottomSheet =  new Gif_fragment_BottomSheet(new Fragment_Callback() {
+                    @Override
+                    public void Responce(Bundle bundle) {
+                        if(bundle.getString("action").equals("sendGif")){
+                            SendGif(bundle.getString("gif_item"));
+                        }
+                    }
+                });
+
+                gif_fragment_bottomSheet.show(getFragmentManager(),"");
             }
         });
 

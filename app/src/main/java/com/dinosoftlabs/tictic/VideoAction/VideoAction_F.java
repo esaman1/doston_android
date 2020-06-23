@@ -10,6 +10,8 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -30,6 +32,7 @@ import com.dinosoftlabs.tictic.SimpleClasses.Fragment_Callback;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 
 /**
@@ -40,12 +43,12 @@ public class VideoAction_F extends BottomSheetDialogFragment implements View.OnC
     View view;
     Context context;
     RecyclerView recyclerView;
+    ProgressBar progressBar;
 
     Fragment_Callback fragment_callback;
 
     String video_id;
 
-    ProgressBar progressBar;
 
     public VideoAction_F() {
     }
@@ -60,21 +63,27 @@ public class VideoAction_F extends BottomSheetDialogFragment implements View.OnC
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+//        Objects.requireNonNull(this.getDialog().getWindow()).setBackgroundDrawableResource(R.drawable.transperent_view);
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_video_action, container, false);
         context=getContext();
 
         progressBar=view.findViewById(R.id.progress_bar);
         view.findViewById(R.id.save_video_layout).setOnClickListener(this);
+        view.findViewById(R.id.close_bottom_sheet).setOnClickListener(this);
         view.findViewById(R.id.copy_layout).setOnClickListener(this);
+//        setStyle(STYLE_NORMAL, R.style. AppBottomSheetDialogTheme);
+//        this.getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
 
                 Get_Shared_app();
+
             }
         },1000);
+
 
         return view;
     }
@@ -178,11 +187,16 @@ public class VideoAction_F extends BottomSheetDialogFragment implements View.OnC
 
                 break;
 
+            case R.id.close_bottom_sheet:
+
+               this.getDialog().dismiss();
+
+                break;
+
             case R.id.copy_layout:
                 ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clip = ClipData.newPlainText("Copied Text", "http://bringthings.com/API/tictic/view.php?id="+video_id);
+                ClipData clip = ClipData.newPlainText("Copied Text", Variables.base_url+"view.php?id="+video_id);
                 clipboard.setPrimaryClip(clip);
-
                 Toast.makeText(context, "Link Copy in clipboard", Toast.LENGTH_SHORT).show();
                 break;
         }

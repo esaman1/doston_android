@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="#252420"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+    android:background="@drawable/bottom_sheet_bg"
+    android:clickable="true"
+    tools:context=".VideoAction.VideoAction_F">
+
+    <RelativeLayout
+        android:background="@color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/slider_top_dragger"
+            android:id="@+id/slider_dragger"
+            android:layout_width="50dp"
+            android:layout_height="20dp"/>
+
+        <LinearLayout
+
+            android:layout_below="@+id/slider_dragger"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+
+                android:layout_margin="10dp"
+                android:background="@drawable/edittext_cornder_bg"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:weightSum="10"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageButton
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/search"
+                    android:padding="4dp"
+                    android:scaleType="fitCenter"
+                    android:layout_centerVertical="true"
+                    android:background="@color/transparent"
+                    android:tint="@color/white"
+                    android:src="@drawable/ic_discovery_gray"/>
+
+                <EditText
+
+                    android:layout_weight="9"
+                    android:maxLines="1"
+                    android:imeOptions="actionSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Search GIPHY"
+                    android:padding="10dp"
+                    android:textSize="14dp"
+                    android:inputType="text"
+                    android:id="@+id/search_edit"
+                    android:textColorHint="#9e9e9e"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/transparent"
+                    />
+
+
+
+
+            </LinearLayout>
+
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recylerview_gif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp" />
+
+
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/progress_bar_gif"
+            android:theme="@style/Progressbar_style_white"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

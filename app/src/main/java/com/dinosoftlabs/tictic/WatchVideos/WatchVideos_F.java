@@ -21,6 +21,7 @@ import com.dinosoftlabs.tictic.SoundLists.VideoSound_A;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.app.AppCompatActivity;
@@ -437,6 +438,7 @@ public class WatchVideos_F extends AppCompatActivity implements Player.EventList
                             }
                         });
                         fragment.show(getSupportFragmentManager(), "");
+//                        fragment.setStyle(DialogFragment.STYLE_NO_TITLE,R.style.transparent_status);
                         break;
 
 
@@ -697,10 +699,10 @@ public class WatchVideos_F extends AppCompatActivity implements Player.EventList
         iv.setLayoutParams(lp);
         if(item.liked.equals("1"))
             iv.setImageDrawable(getResources().getDrawable(
-                    R.drawable.ic_like));
+                    R.drawable.ic_likes));
         else
             iv.setImageDrawable(getResources().getDrawable(
-                    R.drawable.ic_like_fill));
+                    R.drawable.ic_red_like_2));
 
         mainlayout.addView(iv);
         Animation fadeoutani = AnimationUtils.loadAnimation(context,R.anim.fade_out);

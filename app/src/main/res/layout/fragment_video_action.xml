@@ -2,44 +2,63 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_bg"
     android:clickable="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+
     tools:context=".VideoAction.VideoAction_F">
 
     <RelativeLayout
+        android:background="@color/transparent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/slider_top_dragger"
+            android:id="@+id/slider_dragger"
+            android:layout_width="50dp"
+            android:layout_height="20dp"/>
+
     <LinearLayout
+
+        android:layout_below="@+id/slider_dragger"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <RelativeLayout
+            android:layout_margin="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/d_bottom_gray_line">
+            android:background="@color/transparent">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Share"
+                android:text="Share..."
                 android:padding="10dp"
                 android:textSize="15dp"
                 android:textStyle="bold"
-                android:layout_centerInParent="true"
-                android:textColor="@color/redcolor"/>
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"/>
+
+            <ImageView
+                android:background="?attr/selectableItemBackground"
+                android:id="@+id/close_bottom_sheet"
+                android:layout_margin="5dp"
+                android:tint="@color/white"
+                android:src="@drawable/ic_cross_white"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="25dp"
+                android:layout_height="25dp"/>
+
             </RelativeLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recylerview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="150dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,13 +76,16 @@
                 android:id="@+id/save_video_layout">
 
                 <ImageView
+                    android:background="@drawable/bg_round"
+                    android:padding="12dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ic_save_round"/>
+                    android:src="@drawable/ic_save"/>
 
 
                 <TextView
+                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -82,13 +104,16 @@
                 android:id="@+id/copy_layout">
 
                 <ImageView
+                    android:padding="12dp"
+                    android:background="@drawable/bg_round"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ic_copy_clipboard"/>
+                    android:src="@drawable/ic_copy"/>
 
 
                 <TextView
+                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -99,6 +124,27 @@
 
         </LinearLayout>
 
+        <View
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="#5b5b5d"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginBottom="20sp"
+            android:id="@+id/recylerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp" />
+
+
+
     </LinearLayout>
 
         <ProgressBar
@@ -106,7 +152,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:id="@+id/progress_bar"
-            android:theme="@style/Progressbar_style"/>
+            android:theme="@style/Progressbar_style_white"/>
 
     </RelativeLayout>
 

@@ -619,10 +619,10 @@ public class Home_F extends RootFragment implements Player.EventListener, Fragme
         iv.setLayoutParams(lp);
         if(item.liked.equals("1"))
         iv.setImageDrawable(getResources().getDrawable(
-                R.drawable.ic_like));
+                R.drawable.ic_likes));
         else
             iv.setImageDrawable(getResources().getDrawable(
-                    R.drawable.ic_like_fill));
+                    R.drawable.ic_red_like_2));
 
         mainlayout.addView(iv);
         Animation fadeoutani = AnimationUtils.loadAnimation(context,R.anim.fade_out);
