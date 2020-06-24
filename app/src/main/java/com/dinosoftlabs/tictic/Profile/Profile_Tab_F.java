@@ -59,7 +59,7 @@ public class Profile_Tab_F extends RootFragment implements View.OnClickListener 
     Context context;
 
 
-    public  TextView username,video_count_txt;
+    public  TextView username,fullname,video_count_txt;
     public  ImageView imageView;
     public  TextView follow_count_txt,fans_count_txt,heart_count_txt;
 
@@ -160,6 +160,7 @@ public class Profile_Tab_F extends RootFragment implements View.OnClickListener 
     public View init(){
 
         username=view.findViewById(R.id.username);
+        fullname=view.findViewById(R.id.fullname);
         imageView=view.findViewById(R.id.user_image);
         imageView.setOnClickListener(this);
 
@@ -419,6 +420,8 @@ public class Profile_Tab_F extends RootFragment implements View.OnClickListener 
         try {
             parameters.put("my_fb_id",Variables.sharedPreferences.getString(Variables.u_id,""));
             parameters.put("fb_id", Variables.sharedPreferences.getString(Variables.u_id,""));
+//            Log.d("LOG_my_fb_id",""+parameters);
+//            Log.d("LOG_fb_id",""+Variables.sharedPreferences.getString(Variables.u_id,""));
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -446,7 +449,8 @@ public class Profile_Tab_F extends RootFragment implements View.OnClickListener 
 
                 JSONObject data=msgArray.getJSONObject(0);
                 JSONObject user_info=data.optJSONObject("user_info");
-                username.setText(user_info.optString("first_name")+" "+user_info.optString("last_name"));
+                fullname.setText(user_info.optString("first_name")+" "+user_info.optString("last_name"));
+                username.setText(user_info.optString("username"));
 
                 Profile_F.pic_url=user_info.optString("profile_pic");
                 Picasso.with(context)

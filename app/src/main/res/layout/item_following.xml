@@ -64,18 +64,18 @@
             </LinearLayout>
 
             <TextView
+                android:gravity="center"
+                android:textAlignment="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/action_txt"
                 android:textSize="10sp"
                 android:text="Following"
                 android:textStyle="bold"
-                android:background="@drawable/d_gray_border"
+                android:background="@drawable/edittext_cornder_bg"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="10dp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="20dp"

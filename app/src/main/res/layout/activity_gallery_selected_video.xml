@@ -84,12 +84,6 @@
             android:src="@drawable/ic_done"/>
 
 
-
-
-
-
-
-
     </RelativeLayout>
 
     <LinearLayout

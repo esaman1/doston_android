@@ -29,10 +29,11 @@
 
 
                 <TextView
+                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="UserName"
-
+                    android:id="@+id/username_title"
                     android:textSize="15dp"
                     android:textStyle="bold"
                     android:layout_centerInParent="true"
@@ -277,6 +278,7 @@
                                 android:layout_height="match_parent">
 
                                 <ImageView
+                                    android:scaleType="centerCrop"
                                     android:background="@color/white"
                                     android:id="@+id/user_image"
                                     android:layout_width="match_parent"
@@ -309,6 +311,7 @@
                                 android:layout_height="0dp"/>
 
                             <TextView
+                                android:fontFamily="@font/roboto_medium"
                                 android:textSize="16sp"
                                 android:gravity="center_vertical"
                                 android:textColor="#8a8a8a"
@@ -319,6 +322,7 @@
                                 android:layout_height="0dp"/>
 
                             <TextView
+                                android:fontFamily="@font/roboto_medium"
                                 android:textSize="16sp"
                                 android:gravity="center_vertical"
                                 android:textColor="#8a8a8a"
@@ -329,6 +333,8 @@
                                 android:layout_height="0dp"/>
 
                             <Button
+                                android:visibility="gone"
+                                android:id="@+id/follow_unfollow_btn"
                                  android:layout_gravity="center_vertical"
                                 android:textColor="#a4a4a4"
                                 android:text="follow"
@@ -450,6 +456,12 @@
 
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_above="@+id/tabs_main_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/gainsboro"/>
 
                 <RelativeLayout
                     android:background="@color/black"

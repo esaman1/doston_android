@@ -22,6 +22,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -57,7 +58,7 @@ public class Profile_F extends RootFragment implements View.OnClickListener {
     Context context;
 
 
-   public  TextView follow_unfollow_btn;
+   public Button follow_unfollow_btn;
    public  TextView username,video_count_txt;
    public  ImageView imageView;
    public  TextView follow_count_txt,fans_count_txt,heart_count_txt;
@@ -520,12 +521,18 @@ public class Profile_F extends RootFragment implements View.OnClickListener {
                     public void OnSuccess(String responce) {
 
                         if(send_status.equals("1")){
-                            follow_unfollow_btn.setText("UnFollow");
+                            follow_unfollow_btn.setText("Unfollow");
+                            follow_unfollow_btn.setBackgroundResource(R.drawable.unfollow_button_bg);
+                            follow_unfollow_btn.setTextColor(Color.parseColor("#a4a4a4"));
+                            //a4a4a4
                             follow_status="1";
 
                         }
                         else if(send_status.equals("0")){
                             follow_unfollow_btn.setText("Follow");
+                            follow_unfollow_btn.setBackgroundResource(R.drawable.follow_button_bg);
+                            follow_unfollow_btn.setTextColor(Color.parseColor("#000000"));
+                            //000000
                             follow_status="0";
                         }
 

@@ -1,5 +1,6 @@
 package com.dinosoftlabs.tictic.Profile;
 
+import android.app.Activity;
 import android.content.Context;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -48,7 +50,15 @@ public class MyVideos_Adapter extends RecyclerView.Adapter<MyVideos_Adapter.Cust
     @Override
     public MyVideos_Adapter.CustomViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewtype) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_myvideo_layout,null);
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        ((Activity)context).getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+//        view.setLayoutParams(new RecyclerView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 //        view.setLayoutParams(new RecyclerView.LayoutParams(dpToPx(120), dpToPx(160)));
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams((width/3)-dpToPx(10), ViewGroup.LayoutParams.WRAP_CONTENT);
+        layoutParams.setMargins(dpToPx(5),dpToPx(5),dpToPx(5),dpToPx(5));
+        view.setLayoutParams(layoutParams);
         MyVideos_Adapter.CustomViewHolder viewHolder = new MyVideos_Adapter.CustomViewHolder(view);
         return viewHolder;
     }

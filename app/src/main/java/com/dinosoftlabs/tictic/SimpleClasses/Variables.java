@@ -89,7 +89,7 @@ public class Variables {
     public static String privacy_policy="https://www.termsfeed.com/privacy-policy/4dec1a564a01ea0d15ed86c97c4e8253";
 
     
-    public static String domain="https://mobileadsservice.com/PHPAPI/DostarAPI/index.php?p=";
+        public static String domain="https://mobileadsservice.com/PHPAPI/DostarAPI/index.php?p=";
     public static String base_url="https://mobileadsservice.com/PHPAPI/DostarAPI/";
 
 //    public static String domain="http://5dd27962dafd.ngrok.io/TicTic/API/tictic/index.php?p=";
@@ -99,6 +99,7 @@ public class Variables {
     public static String SignUp =domain+"signup";
     public static String uploadVideo =domain+"uploadVideo";
     public static String searchByUsername =domain+"searchByUsername";
+    public static String searchPopulerUser =domain+"searchPopulerUser";
 
     public static String showAllVideos =domain+"showAllVideos";
     public static String showMyAllVideos=domain+"showMyAllVideos";

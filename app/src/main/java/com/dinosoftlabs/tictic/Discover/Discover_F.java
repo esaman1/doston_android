@@ -160,13 +160,18 @@ public class Discover_F extends RootFragment {
             @Override
             public void onRefresh() {
 
-                Call_Api_For_get_Allvideos();
+                if(search_edit.getText().toString().equals(""))
+                {
+                    Call_Api_For_serachPopulerUser();
+                }
+                else
+                {
+                    Call_Api_For_SerachUser(search_edit.getText().toString().toLowerCase());
+                }
             }
         });
-
-
-        Call_Api_For_get_Allvideos();
-
+//        Call_Api_For_get_Allvideos();
+        Call_Api_For_serachPopulerUser();
         return view;
     }
 
@@ -190,6 +195,31 @@ public class Discover_F extends RootFragment {
         Log.d("resp",parameters.toString());
 
         ApiRequest.Call_Api(context, Variables.searchByUsername, parameters, new Callback() {
+            @Override
+            public void Responce(String resp) {
+                Log.d("Response_byUser",""+resp);
+                Parse_data_user(resp);
+                swiperefresh.setRefreshing(false);
+            }
+        });
+
+
+    }
+    private void Call_Api_For_serachPopulerUser(){
+//        dataUserList = new ArrayList<>();
+
+        dataUserList.clear();
+//        JSONObject parameters = new JSONObject();
+//        try {
+//            parameters.put("username", stringToFind);
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+
+//        Log.d("resp",parameters.toString());
+
+        ApiRequest.Call_Api(context, Variables.searchPopulerUser, null, new Callback() {
             @Override
             public void Responce(String resp) {
                 Log.d("Response_byUser",""+resp);

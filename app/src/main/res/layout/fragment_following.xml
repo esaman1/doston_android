@@ -85,14 +85,14 @@
                 android:layout_height="match_parent"
                 android:id="@+id/no_data_layout"
                 android:visibility="gone"
-                android:background="@color/white">
+                android:background="@color/black">
 
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:id="@+id/img_no_job"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/ic_whoops"
+                    android:src="@drawable/no_data"
                     />
 
                 <TextView

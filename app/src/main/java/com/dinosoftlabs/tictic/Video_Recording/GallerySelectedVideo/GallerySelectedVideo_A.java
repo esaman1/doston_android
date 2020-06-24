@@ -16,6 +16,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -58,7 +59,7 @@ import static com.dinosoftlabs.tictic.Video_Recording.Video_Recoder_A.Sounds_lis
 public class GallerySelectedVideo_A extends AppCompatActivity implements View.OnClickListener,Player.EventListener{
 
     String path;
-    TextView add_sound_txt;
+    LinearLayout add_sound_txt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -156,7 +157,7 @@ public class GallerySelectedVideo_A extends AppCompatActivity implements View.On
             if(data!=null){
 
                 if(data.getStringExtra("isSelected").equals("yes")){
-                    add_sound_txt.setText(data.getStringExtra("sound_name"));
+//                    add_sound_txt.setText(data.getStringExtra("sound_name"));
                     Variables.Selected_sound_id=data.getStringExtra("sound_id");
                     PreparedAudio();
                 }

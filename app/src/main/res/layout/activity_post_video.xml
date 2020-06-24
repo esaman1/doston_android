@@ -79,11 +79,11 @@
                 android:background="@drawable/edit_bg"
                 android:layout_weight="1"
                 android:gravity="start"
-                android:text="kvjbfdkilvnld"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:hint="Description"
-                android:textColor="#8E8D8D"
+                android:hint="Description..."
+                android:textColor="#FFFFFF"
+                android:textColorHint="#8E8D8D"
                 android:id="@+id/description_edit"
                 android:layout_margin="15dp"/>
 
