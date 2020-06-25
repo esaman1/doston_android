@@ -9,17 +9,18 @@
 
 
     <com.dinosoftlabs.tictic.Video_Recording.MovieWrapperView
+        android:layout_centerInParent="true"
         android:id="@+id/layout_movie_wrapper"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
 
-    <ImageButton
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_marginTop="35dp"
         android:layout_marginLeft="10dp"
         android:scaleType="fitCenter"
-        android:padding="3dp"
+        android:padding="5dp"
         android:id="@+id/Goback"
         android:src="@drawable/ic_back_icon"
         android:background="@color/transparent"/>

@@ -132,7 +132,19 @@ public class MainMenuFragment extends RootFragment implements View.OnClickListen
 
 
         View view3 = LayoutInflater.from(context).inflate(R.layout.item_add_tab_layout, null);
+        RelativeLayout.LayoutParams params= new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
+                view3.setLayoutParams(params);
         tabLayout.getTabAt(2).setCustomView(view3);
+
+
+//        View view4 = LayoutInflater.from(context).inflate(R.layout.item_tablayout, null);
+//        ImageView imageView4= view4.findViewById(R.id.image);
+//        TextView  title4=view4.findViewById(R.id.text);
+//        imageView4.setImageDrawable(getResources().getDrawable(R.drawable.ic_message));
+//        title4.setText("\u2022");
+//        title4.setTextColor(context.getResources().getColor(R.color.transperent));
+//        tabLayout.getTabAt(3).setCustomView(view4);
+
 
         View view4 = LayoutInflater.from(context).inflate(R.layout.item_tablayout, null);
         ImageView imageView4= view4.findViewById(R.id.image);
@@ -229,10 +241,10 @@ public class MainMenuFragment extends RootFragment implements View.OnClickListen
         });
 
 
-        final LinearLayout tabStrip = ((LinearLayout)tabLayout.getChildAt(0));
-        tabStrip.setEnabled(false);
+//        final LinearLayout tabStrip = ((LinearLayout)tabLayout.getChildAt(3));
+//        tabStrip.setEnabled(false);
 
-        tabStrip.getChildAt(2).setClickable(false);
+//        tabStrip.getChildAt(2).setClickable(false);
         view3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -253,7 +265,7 @@ public class MainMenuFragment extends RootFragment implements View.OnClickListen
         });
 
 
-        tabStrip.getChildAt(3).setClickable(false);
+//        tabStrip.getChildAt(3).setClickable(false);
         view4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -273,7 +285,7 @@ public class MainMenuFragment extends RootFragment implements View.OnClickListen
             }
         });
 
-        tabStrip.getChildAt(4).setClickable(false);
+//        tabStrip.getChildAt(4).setClickable(false);
         view5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -457,7 +469,7 @@ public class MainMenuFragment extends RootFragment implements View.OnClickListen
         tab4.setCustomView(view4);
 
 
-        RelativeLayout.LayoutParams params= new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        RelativeLayout.LayoutParams params= new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
         pager.setLayoutParams(params);
         tabLayout.setBackground(getResources().getDrawable(R.drawable.d_top_white_line));
     }

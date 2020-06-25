@@ -21,6 +21,8 @@
 
 
        <com.google.android.material.tabs.TabLayout
+           app:tabRippleColor="@android:color/transparent"
+           app:tabIndicatorColor="@android:color/transparent"
            android:id="@+id/tabs"
            android:layout_weight="1"
            android:layout_height="55dp"
@@ -36,7 +38,6 @@
            app:tabTextAppearance="@style/Base.TextAppearance.AppCompat.Small"
            android:layout_marginLeft="-1dp"
            android:background="@drawable/d_top_white_line"
-           app:tabIndicatorColor="@color/transparent"
            android:layout_alignParentBottom="true"/>
 
        <ImageView

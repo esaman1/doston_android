@@ -22,15 +22,18 @@
 
 
         <ImageButton
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginLeft="15dp"
             android:layout_marginTop="50dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:background="?attr/selectableItemBackground"
             android:id="@+id/Goback"
-            android:scaleType="fitCenter"
-            android:background="@color/transparent"
+            android:layout_marginLeft="5dp"
+            android:padding="5dp"
+            android:scaleType="fitStart"
             android:tint="@color/white"
-            android:src="@drawable/ic_back_icon"/>
+            android:src="@drawable/ic_back_icon"
+            />
 
         <ProgressBar
             android:id="@+id/p_bar"

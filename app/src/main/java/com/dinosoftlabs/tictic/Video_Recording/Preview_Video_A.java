@@ -131,10 +131,10 @@ public class Preview_Video_A extends AppCompatActivity  implements Player.EventL
 
 
         gpuPlayerView = new GPUPlayerView(this);
-        gpuPlayerView.setPlayerScaleType(PlayerScaleType.RESIZE_NONE);
+//        gpuPlayerView.setPlayerScaleType(PlayerScaleType.RESIZE_NONE);
 
         gpuPlayerView.setSimpleExoPlayer(player);
-        gpuPlayerView.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        gpuPlayerView.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
         ((MovieWrapperView) findViewById(R.id.layout_movie_wrapper)).addView(gpuPlayerView);
 

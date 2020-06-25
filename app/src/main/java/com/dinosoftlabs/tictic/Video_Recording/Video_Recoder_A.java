@@ -87,6 +87,7 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
 
     public static int Sounds_list_Request_code=1;
     LinearLayout add_sound_txt;
+    ImageView add_sound_img;
 
 
     int sec_passed=0;
@@ -147,6 +148,7 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
         findViewById(R.id.Goback).setOnClickListener(this);
 
         add_sound_txt=findViewById(R.id.add_sound_txt);
+        add_sound_img=findViewById(R.id.add_sound_img);
         add_sound_txt.setOnClickListener(this);
 
 
@@ -249,14 +251,14 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
             video_progress.resume();
 
 
-            done_btn.setBackgroundResource(R.drawable.ic_done_unpress);
+            done_btn.setImageResource(R.drawable.ic_done_unpress);
             done_btn.setEnabled(false);
 
             record_image.setImageDrawable(getResources().getDrawable(R.drawable.ic_capture));
             animFab(record_image,1.15f,1f);
             camera_options.setVisibility(View.GONE);
             add_sound_txt.setClickable(false);
-            add_sound_txt.setBackgroundResource(R.drawable.ic_user_music_press);
+            add_sound_img.setImageResource(R.drawable.ic_user_music_press);
             rotate_camera.setVisibility(View.GONE);
 
         }
@@ -275,7 +277,7 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
 
 
             if(sec_passed>((Variables.recording_duration/1000)/3)) {
-                done_btn.setBackgroundResource(R.drawable.ic_done);
+                done_btn.setImageResource(R.drawable.ic_done);
                 done_btn.setEnabled(true);
             }
 
