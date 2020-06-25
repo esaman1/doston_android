@@ -30,11 +30,11 @@ import com.downloader.OnStartOrResumeListener;
 import com.downloader.PRDownloader;
 import com.downloader.Progress;
 import com.downloader.request.DownloadRequest;
-import com.github.hiteshsondhi88.libffmpeg.FFmpeg;
-import com.github.hiteshsondhi88.libffmpeg.FFmpegExecuteResponseHandler;
-import com.github.hiteshsondhi88.libffmpeg.LoadBinaryResponseHandler;
-import com.github.hiteshsondhi88.libffmpeg.exceptions.FFmpegCommandAlreadyRunningException;
-import com.github.hiteshsondhi88.libffmpeg.exceptions.FFmpegNotSupportedException;
+//import com.github.hiteshsondhi88.libffmpeg.FFmpeg;
+//import com.github.hiteshsondhi88.libffmpeg.FFmpegExecuteResponseHandler;
+//import com.github.hiteshsondhi88.libffmpeg.LoadBinaryResponseHandler;
+//import com.github.hiteshsondhi88.libffmpeg.exceptions.FFmpegCommandAlreadyRunningException;
+//import com.github.hiteshsondhi88.libffmpeg.exceptions.FFmpegNotSupportedException;
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.source.ExtractorMediaSource;
@@ -54,6 +54,9 @@ import cafe.adriel.androidaudioconverter.AndroidAudioConverter;
 import cafe.adriel.androidaudioconverter.callback.IConvertCallback;
 import cafe.adriel.androidaudioconverter.callback.ILoadCallback;
 import cafe.adriel.androidaudioconverter.model.AudioFormat;
+import nl.bravobit.ffmpeg.ExecuteBinaryResponseHandler;
+import nl.bravobit.ffmpeg.FFcommandExecuteResponseHandler;
+import nl.bravobit.ffmpeg.FFmpeg;
 
 
 public class VideoSound_A extends AppCompatActivity implements View.OnClickListener {
@@ -264,33 +267,40 @@ public class VideoSound_A extends AppCompatActivity implements View.OnClickListe
         show_audio_loading();
 
         ffmpeg = FFmpeg.getInstance(this);
-        try {
-            ffmpeg.loadBinary(new LoadBinaryResponseHandler() {
-
-                @Override
-                public void onStart() {
-                }
-
-                @Override
-                public void onFailure() {
-                    hide_audio_loading();
-                }
-
-                @Override
-                public void onSuccess() {
-
-                }
-
-                @Override
-                public void onFinish() {
-                    Extract_sound();
-
-                }
-            });
-        } catch (FFmpegNotSupportedException e) {
-            show_audio_loading();
-            Toast.makeText(this, ""+e.toString(), Toast.LENGTH_SHORT).show();
+        if(ffmpeg.isSupported())
+        {
+            Extract_sound();
         }
+        else {
+            Toast.makeText(this, "Your device not supported", Toast.LENGTH_SHORT).show();
+        }
+//        try {
+//            ffmpeg.loadBinary(new LoadBinaryResponseHandler() {
+//
+//                @Override
+//                public void onStart() {
+//                }
+//
+//                @Override
+//                public void onFailure() {
+//                    hide_audio_loading();
+//                }
+//
+//                @Override
+//                public void onSuccess() {
+//
+//                }
+//
+//                @Override
+//                public void onFinish() {
+//                    Extract_sound();
+//
+//                }
+//            });
+//        } catch (FFmpegNotSupportedException e) {
+//            show_audio_loading();
+//            Toast.makeText(this, ""+e.toString(), Toast.LENGTH_SHORT).show();
+//        }
 
 
     }
@@ -299,41 +309,68 @@ public class VideoSound_A extends AppCompatActivity implements View.OnClickListe
 
         String[] complexCommand = {"-y", "-i", Variables.app_folder+item.video_id+".mp4", "-vn", "-ar", "44100", "-ac", "2", "-b:a", "256k", "-f", "mp3",
                 Variables.app_folder+Variables.SelectedAudio_MP3};
-        try {
-            ffmpeg.execute(complexCommand, new FFmpegExecuteResponseHandler() {
 
-                @Override
-                public void onStart() {
-                     }
+        ffmpeg.execute(complexCommand, new FFcommandExecuteResponseHandler() {
+            @Override
+            public void onSuccess(String message) {
 
-                @Override
-                public void onProgress(String message) {
+            }
 
-                    Log.d(Variables.tag,message);
+            @Override
+            public void onProgress(String message) {
 
-                }
+            }
 
-                @Override
-                public void onFailure(String message) {
-                    show_audio_loading();
-                    Log.d(Variables.tag,"onFailure "+message);
-                   }
+            @Override
+            public void onFailure(String message) {
+                show_audio_loading();
+                Log.d(Variables.tag,"onFailure "+message);
+            }
 
-                @Override
-                public void onSuccess(String message) {
-                       }
+            @Override
+            public void onStart() {
 
-                @Override
-                public void onFinish() {
-                    hide_audio_loading();
-                    audio_file=new File(Variables.app_folder+Variables.SelectedAudio_MP3);
-                    if(audio_file.exists())
-                        playaudio();
-                }
-            });
-        } catch (FFmpegCommandAlreadyRunningException e) {
-            hide_audio_loading();
-        }
+            }
+
+            @Override
+            public void onFinish() {
+                hide_audio_loading();
+                audio_file=new File(Variables.app_folder+Variables.SelectedAudio_MP3);
+                if(audio_file.exists())
+                    playaudio();
+            }
+        });
+//        try {
+//            ffmpeg.execute(complexCommand, new FFmpegExecuteResponseHandler() {
+//
+//                @Override
+//                public void onStart() {
+//                     }
+//
+//                @Override
+//                public void onProgress(String message) {
+//
+//                    Log.d(Variables.tag,message);
+//
+//                }
+//
+//                @Override
+//                public void onFailure(String message) {
+//
+//                   }
+//
+//                @Override
+//                public void onSuccess(String message) {
+//                       }
+//
+//                @Override
+//                public void onFinish() {
+//
+//                }
+//            });
+//        } catch (FFmpegCommandAlreadyRunningException e) {
+//            hide_audio_loading();
+//        }
     }
 
 
