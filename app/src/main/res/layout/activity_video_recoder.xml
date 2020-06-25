@@ -105,20 +105,21 @@
                 android:scaleType="fitCenter"
                 android:id="@+id/flash_camera"
                 android:background="@color/transparent"
-                android:src="@drawable/ic_flash"/>
+                android:src="@drawable/ic_flash_on"/>
 
 
         </LinearLayout>
 
-        <ImageButton
+        <ImageView
+            android:src="@drawable/ic_done"
             android:layout_marginTop="40dp"
             android:layout_marginRight="15dp"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:id="@+id/done"
-            android:padding="3dp"
-            android:background="@color/transparent"
+            android:padding="10dp"
+            android:background="@drawable/bg_round_semi_transperent"
             android:scaleType="fitCenter"
             />
 

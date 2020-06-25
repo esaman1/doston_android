@@ -59,7 +59,7 @@ public class Profile_F extends RootFragment implements View.OnClickListener {
 
 
    public Button follow_unfollow_btn;
-   public  TextView username,video_count_txt;
+   public  TextView username,fullname,video_count_txt;
    public  ImageView imageView;
    public  TextView follow_count_txt,fans_count_txt,heart_count_txt;
 
@@ -164,7 +164,7 @@ public class Profile_F extends RootFragment implements View.OnClickListener {
         username=view.findViewById(R.id.username);
         imageView=view.findViewById(R.id.user_image);
         imageView.setOnClickListener(this);
-
+        fullname=view.findViewById(R.id.fullname);
         video_count_txt=view.findViewById(R.id.video_count_txt);
 
         follow_count_txt=view.findViewById(R.id.follow_count_txt);
@@ -441,7 +441,8 @@ public class Profile_F extends RootFragment implements View.OnClickListener {
 
                 JSONObject data=msgArray.getJSONObject(0);
                 JSONObject user_info=data.optJSONObject("user_info");
-                username.setText(user_info.optString("first_name")+" "+user_info.optString("last_name"));
+                fullname.setText(user_info.optString("first_name")+" "+user_info.optString("last_name"));
+                username.setText(user_info.optString("username"));
 
                 Profile_F.pic_url=user_info.optString("profile_pic");
                 Picasso.with(context)

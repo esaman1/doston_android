@@ -31,7 +31,7 @@
                 android:id="@+id/Goback"
                 android:layout_alignParentRight="true"
                 android:src="@drawable/ic_white_cross"
-                android:tint="@color/black"
+                android:tint="@color/white"
                 android:padding="5dp"
                 android:layout_margin="5dp"
                 />
@@ -57,14 +57,33 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:id="@+id/write_layout"
-                android:background="@drawable/d_top_gray_line"
+                android:background="@color/black"
                 android:layout_alignParentBottom="true">
 
-                <EditText
+                <LinearLayout
+                    android:weightSum="10"
                     android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_user_profile"
+                    android:padding="5dp"
+                    android:id="@+id/profile_cmnt_pic"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:layout_centerInParent="true"
+                    android:layout_weight="8"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:hint="Leave a comment..."
                     android:textSize="14dp"
@@ -75,20 +94,24 @@
                     android:backgroundTint="@color/transparent"/>
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:id="@+id/send_btn_layout"
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true">
                 
                 <ImageButton
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:id="@+id/send_btn"
                     android:padding="4dp"
                     android:rotation="-45"
                     android:scaleType="fitCenter"
                     android:background="@color/transparent"
+                    android:tint="@color/white"
                     android:src="@drawable/ic_send"/>
 
                     <ProgressBar
@@ -99,6 +122,8 @@
                         android:id="@+id/send_progress"/>
 
                 </RelativeLayout>
+                </LinearLayout>
+
             </RelativeLayout>
 
         </RelativeLayout>

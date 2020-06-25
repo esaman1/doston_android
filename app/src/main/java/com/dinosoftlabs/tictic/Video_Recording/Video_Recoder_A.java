@@ -73,7 +73,7 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
     ArrayList<String> videopaths=new ArrayList<>();
 
     ImageButton record_image;
-    ImageButton done_btn;
+    ImageView done_btn;
     boolean is_recording=false;
     boolean is_flash_on=false;
 
@@ -256,7 +256,7 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
             animFab(record_image,1.15f,1f);
             camera_options.setVisibility(View.GONE);
             add_sound_txt.setClickable(false);
-            add_sound_txt.setBackgroundColor(R.drawable.ic_user_music_press);
+            add_sound_txt.setBackgroundResource(R.drawable.ic_user_music_press);
             rotate_camera.setVisibility(View.GONE);
 
         }
