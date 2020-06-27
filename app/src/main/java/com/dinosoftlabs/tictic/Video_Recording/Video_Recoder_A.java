@@ -30,6 +30,7 @@ import android.view.animation.Interpolator;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -88,6 +89,7 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
     public static int Sounds_list_Request_code=1;
     LinearLayout add_sound_txt;
     ImageView add_sound_img;
+    ProgressBar recorder_progress;
 
 
     int sec_passed=0;
@@ -108,6 +110,7 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
 
         cameraView = findViewById(R.id.camera);
         camera_options=findViewById(R.id.camera_options);
+        recorder_progress=findViewById(R.id.recorder_progress);
 
         cameraView.addCameraKitListener(new CameraKitEventListener() {
             @Override
@@ -506,9 +509,11 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.upload_layout:
+                recorder_progress.setVisibility(View.VISIBLE);
                 Intent upload_intent=new Intent(this, GalleryVideos_A.class);
                 startActivity(upload_intent);
                 overridePendingTransition(R.anim.in_from_bottom,R.anim.out_to_top);
+
                 break;
 
             case R.id.done:
@@ -601,6 +606,11 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onResume() {
         super.onResume();
+        if(recorder_progress!=null)
+        {
+            recorder_progress.setVisibility(View.GONE);
+        }
+
         cameraView.start();
     }
 

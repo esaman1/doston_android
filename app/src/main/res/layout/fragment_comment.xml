@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true"
     android:id="@+id/comment_screen"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.dinosoftlabs.tictic.Comments.Comment_F">
+    tools:context="com.dinosoftlabs.tictic.PostComments_Classes.Comment_F">
 
     <androidx.percentlayout.widget.PercentRelativeLayout
          android:layout_width="match_parent"
@@ -20,12 +20,22 @@
             android:layout_alignParentBottom="true"
             android:layout_height="0dp">
 
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/slider_top_dragger"
+                android:id="@+id/slider_dragger"
+                android:layout_width="50dp"
+                android:layout_height="20dp"/>
+
             <RelativeLayout
+                android:layout_below="@+id/slider_dragger"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/top_layout">
 
             <ImageView
+                android:background="?attr/selectableItemBackground"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:id="@+id/Goback"
@@ -36,13 +46,33 @@
                 android:layout_margin="5dp"
                 />
 
+
                 <TextView
+                    android:gravity="center"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:textSize="15sp"
+                    android:id="@+id/comment_count"
+                    android:textColor="@color/white"
+                    android:layout_centerVertical="true"/>
+
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/comment_count"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text=" Comments"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:id="@+id/comment_count"
-                    android:textColor="@color/black"
-                    android:layout_centerInParent="true"/>
+                    android:textSize="15sp"
+                    android:id="@+id/comment_text"
+                    android:textColor="@color/white"
+                    android:layout_centerVertical="true"/>
+
+
 
             </RelativeLayout>
 
@@ -52,6 +82,27 @@
                 android:id="@+id/recylerview"
                 android:layout_below="@+id/top_layout"
                 android:layout_above="@+id/write_layout"/>
+
+            <TextView
+                android:textSize="16sp"
+                android:visibility="gone"
+                android:id="@+id/no_comments_yet_white"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/white"
+                android:text="Be the first to comment!"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.gmail.samehadar.iosdialog.CamomileSpinner
+                android:id="@+id/loader"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="18dp"
+                android:layout_centerInParent="true"
+                app:spinnerColor="@color/white"
+                app:clockwise="true"
+                />
 
 
             <RelativeLayout
@@ -81,17 +132,20 @@
                     android:layout_height="wrap_content"/>
 
                 <EditText
+                    android:layout_margin="3dp"
+                    android:padding="10dp"
+                    android:background="@drawable/refresh_bg"
                     android:layout_centerInParent="true"
                     android:layout_weight="8"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:hint="Leave a comment..."
+                    android:hint="Type your comment here..."
                     android:textSize="14dp"
                     android:id="@+id/message_edit"
                     android:textColorHint="@color/darkgray"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:layout_toLeftOf="@+id/send_btn_layout"
-                    android:backgroundTint="@color/transparent"/>
+                    android:backgroundTint="#1a1a1a"/>
 
                 <RelativeLayout
                     android:gravity="center"
@@ -110,7 +164,7 @@
                     android:padding="4dp"
                     android:rotation="-45"
                     android:scaleType="fitCenter"
-                    android:background="@color/transparent"
+                    android:background="?attr/selectableItemBackground"
                     android:tint="@color/white"
                     android:src="@drawable/ic_send"/>
 

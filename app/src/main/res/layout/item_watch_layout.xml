@@ -139,7 +139,7 @@
 
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="15dp"
                         android:visibility="visible"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
@@ -234,14 +234,16 @@
             </LinearLayout>
 
             <LinearLayout
+                android:gravity="bottom"
+                android:background="@drawable/black_gradient"
                 android:id="@+id/hashtag_Layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="135dp"
                 android:layout_alignParentBottom="true"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="70dp"
+                android:paddingLeft="15dp"
                 android:orientation="vertical"
-                android:layout_marginBottom="70dp">
+                android:paddingBottom="60dp"
+                >
                 <!--                <TextView-->
                 <!--                    android:layout_width="wrap_content"-->
                 <!--                    android:layout_height="wrap_content"-->

@@ -149,6 +149,8 @@ public class Edit_Profile_F extends RootFragment implements View.OnClickListener
                 if(Check_Validation()){
 
                     Call_Api_For_Edit_profile();
+                    Save_Image();
+
                 }
                 break;
 
@@ -334,7 +336,7 @@ public class Edit_Profile_F extends RootFragment implements View.OnClickListener
 
                 image_byte_array = baos.toByteArray();
 
-                Save_Image();
+//                Save_Image();
 
             }
 
@@ -381,7 +383,7 @@ public class Edit_Profile_F extends RootFragment implements View.OnClickListener
 
                 image_byte_array = baos.toByteArray();
 
-                Save_Image();
+//                Save_Image();
 
             }
 

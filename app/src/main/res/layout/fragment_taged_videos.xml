@@ -27,12 +27,14 @@
             android:background="@color/black">
 
             <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="24dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:padding="5dp"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
                 android:src="@drawable/ic_back_icon"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
                 android:scaleType="fitStart"
                 android:id="@+id/back_btn"
                 android:tint="@color/white"

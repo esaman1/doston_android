@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="0dp"
-    tools:context="com.dinosoftlabs.tictic.Accounts.Login_A">
+    tools:context="com.dinosoftlabs.tictic.Login_Classes.Login_A">
 
 
 

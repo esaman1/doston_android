@@ -16,7 +16,7 @@
         android:id="@+id/datetxt"/>
 
 
-       <com.dinosoftlabs.tictic.Chat.RoundCornersImageView
+       <com.dinosoftlabs.tictic.MessageChat_Classes.RoundCornersImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:id="@+id/chatimage"

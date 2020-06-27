@@ -16,10 +16,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.dinosoftlabs.tictic.Chat.Gif_Adapter;
+import com.dinosoftlabs.tictic.MessageChat_Classes.Gif_Adapter;
 import com.dinosoftlabs.tictic.R;
 import com.dinosoftlabs.tictic.SimpleClasses.Fragment_Callback;
 import com.dinosoftlabs.tictic.SimpleClasses.Variables;

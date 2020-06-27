@@ -23,13 +23,13 @@
 
         <ImageButton
             android:layout_marginTop="50dp"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_marginLeft="15dp"
+            android:padding="5dp"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
             android:layout_alignParentLeft="true"
             android:background="?attr/selectableItemBackground"
             android:id="@+id/Goback"
-            android:layout_marginLeft="5dp"
-            android:padding="5dp"
             android:scaleType="fitStart"
             android:tint="@color/white"
             android:src="@drawable/ic_back_icon"
@@ -70,7 +70,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="Leave a comment..."
+                android:hint="Type your comment here..."
                 android:textSize="14dp"
                 android:layout_marginLeft="10dp"
                 android:id="@+id/message_edit"
@@ -96,7 +96,7 @@
                     android:rotation="-45"
                     android:scaleType="fitCenter"
                     android:tint="@color/white"
-                    android:background="@color/transparent"
+                    android:background="?attr/selectableItemBackground"
                     android:src="@drawable/ic_send"/>
 
                 <ProgressBar

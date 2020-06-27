@@ -2,6 +2,8 @@ package com.dinosoftlabs.tictic.Home;
 
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,10 +11,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.Transformation;
 import com.dinosoftlabs.tictic.R;
+import com.dinosoftlabs.tictic.SimpleClasses.Blur;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import jp.wasabeef.glide.transformations.BlurTransformation;
+
+import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
 
 /**
  * Created by AQEEL on 3/20/2018.
@@ -110,11 +119,11 @@ public class Home_Adapter extends RecyclerView.Adapter<Home_Adapter.CustomViewHo
             holder.like_image.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_likes));
         }
 
+            Glide.with(context).load(item.video_url).apply(bitmapTransform(new BlurTransformation(25, 3))).into(holder.video_thumb);
+//            Picasso.with(context).load(item.video_url).transform(new Blur(context, 20)).into(holder.video_thumb);
 
         holder.like_txt.setText(item.like_count);
         holder.comment_txt.setText(item.video_comment_count);
-
-
 
         }catch (Exception e){
 
@@ -130,7 +139,7 @@ public class Home_Adapter extends RecyclerView.Adapter<Home_Adapter.CustomViewHo
         ImageView user_pic,sound_image;
 
         LinearLayout like_layout,comment_layout,shared_layout,sound_image_layout;
-        ImageView like_image,comment_image;
+        ImageView like_image,comment_image,video_thumb;
         TextView like_txt,comment_txt;
 
 
@@ -150,6 +159,7 @@ public class Home_Adapter extends RecyclerView.Adapter<Home_Adapter.CustomViewHo
 
 
             desc_txt=view.findViewById(R.id.desc_txt);
+            video_thumb=view.findViewById(R.id.video_thumb);
 
             comment_layout=view.findViewById(R.id.comment_layout);
             comment_image=view.findViewById(R.id.comment_image);

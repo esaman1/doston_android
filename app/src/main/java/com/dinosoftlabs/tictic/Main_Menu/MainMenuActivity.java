@@ -1,27 +1,19 @@
 package com.dinosoftlabs.tictic.Main_Menu;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import androidx.fragment.app.FragmentManager;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.util.DisplayMetrics;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
-import com.dinosoftlabs.tictic.Chat.Chat_Activity;
 import com.dinosoftlabs.tictic.Main_Menu.RelateToFragment_OnBack.BackPressImplimentation;
 import com.dinosoftlabs.tictic.R;
 import com.dinosoftlabs.tictic.See_Full_Image_F;
 import com.dinosoftlabs.tictic.SimpleClasses.Variables;
-import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 

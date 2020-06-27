@@ -17,8 +17,6 @@ import androidx.annotation.Nullable;
 import com.dinosoftlabs.tictic.SimpleClasses.ApiRequest;
 import com.dinosoftlabs.tictic.SimpleClasses.Callback;
 import com.dinosoftlabs.tictic.SoundLists.VideoSound_A;
-import com.google.android.exoplayer2.C;
-import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.core.app.ActivityCompat;
@@ -45,16 +43,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 import com.daasuu.gpuv.composer.GPUMp4Composer;
 import com.daasuu.gpuv.egl.filter.GlWatermarkFilter;
-import com.dinosoftlabs.tictic.Comments.Comment_F;
+import com.dinosoftlabs.tictic.PostComments_Classes.Comment_F;
 import com.dinosoftlabs.tictic.Main_Menu.MainMenuActivity;
 import com.dinosoftlabs.tictic.Main_Menu.MainMenuFragment;
 import com.dinosoftlabs.tictic.Main_Menu.RelateToFragment_OnBack.RootFragment;

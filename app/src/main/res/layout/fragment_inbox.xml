@@ -57,6 +57,7 @@
 
 
         <RelativeLayout
+            android:layout_below="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/no_data_layout"
@@ -95,14 +96,15 @@
 
         </RelativeLayout>
 
+
+
+    </RelativeLayout>
+
         <ProgressBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:id="@+id/pbar"/>
-
-    </RelativeLayout>
-
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/bannerad"

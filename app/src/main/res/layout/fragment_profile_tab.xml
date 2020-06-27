@@ -11,7 +11,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="20dp"
+        android:paddingTop="25dp"
         android:background="@color/black">
 
         <androidx.appcompat.widget.Toolbar
@@ -370,7 +370,7 @@
                                 android:layout_marginBottom="3dp"
                                 android:gravity="bottom|center"
                                 android:textSize="18sp"
-                                android:text="50K"
+                                android:text="0"
                                 android:textColor="@color/white"
                                 android:layout_weight="1"
                                 android:layout_width="100dp"
@@ -404,7 +404,7 @@
                                 android:gravity="bottom|center"
                                 android:textSize="18sp"
 
-                                android:text="200K"
+                                android:text="0"
                                 android:textColor="@color/white"
                                 android:layout_weight="1"
                                 android:layout_width="100dp"
@@ -433,7 +433,7 @@
                                 android:layout_marginBottom="3dp"
                                 android:gravity="bottom|center"
                                 android:textSize="18sp"
-                                android:text="500"
+                                android:text="0"
                                 android:textColor="@color/white"
                                 android:layout_weight="1"
                                 android:layout_width="100dp"

@@ -3,8 +3,6 @@ package com.dinosoftlabs.tictic.Profile;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -29,7 +27,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dinosoftlabs.tictic.Chat.Chat_Activity;
+import com.dinosoftlabs.tictic.MessageChat_Classes.Chat_Activity;
 import com.dinosoftlabs.tictic.Following.Following_F;
 import com.dinosoftlabs.tictic.Main_Menu.RelateToFragment_OnBack.RootFragment;
 import com.dinosoftlabs.tictic.Profile.Liked_Videos.Liked_Video_F;

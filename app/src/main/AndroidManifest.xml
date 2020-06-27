@@ -52,7 +52,7 @@
             tools:ignore="LockedOrientationActivity" />
 
         <activity
-            android:name=".Accounts.Login_A"
+            android:name=".Login_Classes.Login_A"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent"
             tools:ignore="LockedOrientationActivity" />
@@ -160,7 +160,7 @@
             </intent-filter>
         </service>
 
-        <service android:name=".Firebase_Notification.Notification_Receive">
+        <service android:name=".Notification_Receive_Classes.Notification_Receive">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

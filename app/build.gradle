@@ -113,5 +113,6 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.github.Deishelon:RoundedBottomSheet:1.0.1'
     implementation project(path: ':audio_lib')
+    implementation 'jp.wasabeef:glide-transformations:4.0.0'
 }
 apply plugin: 'com.google.gms.google-services'

@@ -1,7 +1,9 @@
 package com.dinosoftlabs.tictic.Profile;
 
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -551,7 +553,25 @@ public class Profile_Tab_F extends RootFragment implements View.OnClickListener 
                         break;
 
                     case R.id.logout_id:
-                        Logout();
+                        new AlertDialog.Builder(context)
+                                .setTitle("Alert")
+                                .setMessage("Are you Sure want to logout?")
+                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                })
+                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                        dialog.dismiss();
+                                        Logout();
+
+                                    }
+                                }).show();
+
                         break;
 
                 }

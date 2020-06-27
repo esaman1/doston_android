@@ -12,15 +12,23 @@
         android:padding="0dp"
         app:cardBackgroundColor="@color/black">
 
-        <RelativeLayout
+        <ImageView
+            android:scaleType="centerCrop"
+            android:id="@+id/video_thumb"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="match_parent"/>
+
+        <RelativeLayout
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/mainlayout">
 
             <com.google.android.exoplayer2.ui.PlayerView
+                android:layout_centerInParent="true"
                 android:id="@+id/playerview"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@color/black"
                 android:padding="0dp"
                 app:controller_layout_id="@layout/item_player_controler"
@@ -110,7 +118,6 @@
                 android:orientation="vertical"
                 android:id="@+id/side_menu"
                 android:layout_marginRight="10dp"
-                android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:gravity="center_horizontal">
 
@@ -207,8 +214,8 @@
 
                     <ImageView
                         android:src="@drawable/ic_use_music"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"/>
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:visibility="gone"
@@ -222,26 +229,28 @@
             </LinearLayout>
 
             <LinearLayout
+                android:gravity="bottom"
+                android:background="@drawable/black_gradient"
                 android:id="@+id/hashtag_Layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="135dp"
                 android:layout_alignParentBottom="true"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="70dp"
+                android:paddingLeft="15dp"
                 android:orientation="vertical"
-                android:layout_marginBottom="70dp">
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Username"-->
-<!--                    android:textSize="13dp"-->
-<!--                    android:textStyle="bold"-->
-<!--                    android:id="@+id/username"-->
-<!--                    android:shadowColor="@color/black"-->
-<!--                    android:shadowDx="1"-->
-<!--                    android:shadowDy="1"-->
-<!--                    android:shadowRadius="3"-->
-<!--                    android:textColor="@color/white"/>-->
+                android:paddingBottom="60dp"
+                >
+                <!--                <TextView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:text="Username"-->
+                <!--                    android:textSize="13dp"-->
+                <!--                    android:textStyle="bold"-->
+                <!--                    android:id="@+id/username"-->
+                <!--                    android:shadowColor="@color/black"-->
+                <!--                    android:shadowDx="1"-->
+                <!--                    android:shadowDy="1"-->
+                <!--                    android:shadowRadius="3"-->
+                <!--                    android:textColor="@color/white"/>-->
 
                 <TextView
                     android:layout_width="match_parent"
@@ -271,28 +280,27 @@
                         android:tint="@color/white"
                         android:scaleType="fitCenter"/>
 
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="Indian sound or Song Name"
-                    android:textSize="13dp"
-                    android:textStyle="bold"
-                    android:id="@+id/sound_name"
-                    android:ellipsize="marquee"
-                    android:scrollHorizontally="true"
-                    android:marqueeRepeatLimit="marquee_forever"
-                    android:singleLine="true"
-                    android:shadowColor="@color/black"
-                    android:shadowDx="1"
-                    android:shadowDy="1"
-                    android:shadowRadius="3"
-                    android:layout_marginLeft="7dp"
-                    android:textColor="@color/white"/>
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Indian sound or Song Name"
+                        android:textSize="13dp"
+                        android:textStyle="bold"
+                        android:id="@+id/sound_name"
+                        android:ellipsize="marquee"
+                        android:scrollHorizontally="true"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:singleLine="true"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="3"
+                        android:layout_marginLeft="7dp"
+                        android:textColor="@color/white"/>
 
                 </LinearLayout>
 
             </LinearLayout>
-
 
 
 

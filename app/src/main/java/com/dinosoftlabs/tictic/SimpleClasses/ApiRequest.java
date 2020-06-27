@@ -44,8 +44,8 @@ public class ApiRequest {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.d(Variables.tag+urlsplit[urlsplit.length-1],error.toString());
-                Log.d("LogTestJSON",error.toString());
+//                Log.d(Variables.tag+urlsplit[urlsplit.length-1],error.toString());
+//                Log.d("LogTestJSON",error.toString());
 //                Toast.makeText(context, "Api run timeout", Toast.LENGTH_SHORT).show();
                 if(callback!=null)
                   callback .Responce(error.toString());

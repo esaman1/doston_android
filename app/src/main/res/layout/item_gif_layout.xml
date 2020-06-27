@@ -4,7 +4,7 @@
     android:layout_height="120dp"
     android:gravity="center">
 
-    <com.dinosoftlabs.tictic.Chat.RoundCornersImageView
+    <com.dinosoftlabs.tictic.MessageChat_Classes.RoundCornersImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/gif_image"

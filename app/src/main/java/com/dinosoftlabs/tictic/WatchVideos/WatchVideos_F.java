@@ -2,7 +2,6 @@ package com.dinosoftlabs.tictic.WatchVideos;
 
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -21,7 +20,6 @@ import com.dinosoftlabs.tictic.SoundLists.VideoSound_A;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.app.AppCompatActivity;
@@ -45,16 +43,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 import com.daasuu.gpuv.composer.GPUMp4Composer;
 import com.daasuu.gpuv.egl.filter.GlWatermarkFilter;
-import com.dinosoftlabs.tictic.Comments.Comment_F;
+import com.dinosoftlabs.tictic.PostComments_Classes.Comment_F;
 import com.dinosoftlabs.tictic.Home.Home_Get_Set;
 import com.dinosoftlabs.tictic.KeyBoard.KeyboardHeightObserver;
 import com.dinosoftlabs.tictic.KeyBoard.KeyboardHeightProvider;

@@ -16,8 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
-import com.dinosoftlabs.tictic.Chat.Chat_Activity;
-import com.dinosoftlabs.tictic.Chat.Chat_GetSet;
+import com.dinosoftlabs.tictic.MessageChat_Classes.Chat_Activity;
 import com.dinosoftlabs.tictic.Main_Menu.RelateToFragment_OnBack.RootFragment;
 import com.dinosoftlabs.tictic.R;
 import com.dinosoftlabs.tictic.SimpleClasses.Functions;
