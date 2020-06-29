@@ -118,7 +118,7 @@ public class WatchVideos_F extends AppCompatActivity implements Player.EventList
     private KeyboardHeightProvider keyboardHeightProvider;
 
     RelativeLayout write_layout;
-
+    ImageView video_thumb;
 
     EditText message_edit;
     ImageButton send_btn;
@@ -976,7 +976,7 @@ public class WatchVideos_F extends AppCompatActivity implements Player.EventList
 
         Functions.Show_determinent_loader(context,false,false);
         PRDownloader.initialize(getApplicationContext());
-        DownloadRequest prDownloader= PRDownloader.download(item.video_url, Environment.getExternalStorageDirectory() +"/Tittic/", item.video_id+"no_watermark"+".mp4")
+        DownloadRequest prDownloader= PRDownloader.download(item.video_url, Environment.getExternalStorageDirectory() +"/Doston/", item.video_id+"no_watermark"+".mp4")
                 .build()
                 .setOnStartOrResumeListener(new OnStartOrResumeListener() {
                     @Override
@@ -1033,8 +1033,8 @@ public class WatchVideos_F extends AppCompatActivity implements Player.EventList
         Bitmap myLogo = ((BitmapDrawable)getResources().getDrawable(R.drawable.ic_watermark_image)).getBitmap();
         Bitmap bitmap_resize=Bitmap.createScaledBitmap(myLogo, 50, 50, false);
         GlWatermarkFilter filter=new GlWatermarkFilter(bitmap_resize, GlWatermarkFilter.Position.LEFT_TOP);
-        new GPUMp4Composer(Environment.getExternalStorageDirectory() +"/Tittic/"+item.video_id+"no_watermark"+".mp4",
-                Environment.getExternalStorageDirectory() +"/Tittic/"+item.video_id+".mp4")
+        new GPUMp4Composer(Environment.getExternalStorageDirectory() +"/Doston/"+item.video_id+"no_watermark"+".mp4",
+                Environment.getExternalStorageDirectory() +"/Doston/"+item.video_id+".mp4")
                 .filter(filter)
 
                 .listener(new GPUMp4Composer.Listener() {
@@ -1095,7 +1095,7 @@ public class WatchVideos_F extends AppCompatActivity implements Player.EventList
 
 
     public void Delete_file_no_watermark(Home_Get_Set item){
-        File file=new File(Environment.getExternalStorageDirectory() +"/Tittic/"+item.video_id+"no_watermark"+".mp4");
+        File file=new File(Environment.getExternalStorageDirectory() +"/Doston/"+item.video_id+"no_watermark"+".mp4");
         if(file.exists()){
             file.delete();
         }
@@ -1103,7 +1103,7 @@ public class WatchVideos_F extends AppCompatActivity implements Player.EventList
 
     public void Scan_file(Home_Get_Set item){
         MediaScannerConnection.scanFile(WatchVideos_F.this,
-                new String[] { Environment.getExternalStorageDirectory() +"/Tittic/"+item.video_id+".mp4" },
+                new String[] { Environment.getExternalStorageDirectory() +"/Doston/"+item.video_id+".mp4" },
                 null,
                 new MediaScannerConnection.OnScanCompletedListener() {
 

@@ -227,6 +227,7 @@ public class Discover_F extends RootFragment {
             @Override
             public void Responce(String resp) {
                 Log.d("Response_byUser",""+resp);
+                dataUserList.clear();
                 Parse_data_user(resp);
                 swiperefresh.setRefreshing(false);
             }
@@ -253,6 +254,7 @@ public class Discover_F extends RootFragment {
             @Override
             public void Responce(String resp) {
                 Log.d("Response_byUser",""+resp);
+
                 Parse_data_user(resp);
                 swiperefresh.setRefreshing(false);
             }

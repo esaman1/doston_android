@@ -34,7 +34,7 @@ public class Variables {
     public static String gallery_trimed_video=root + "/gallery_trimed_video.mp4";
     public static String gallery_resize_video=root + "/gallery_resize_video.mp4";
 
-    public static String app_folder=root+"/Tittic/";
+    public static String app_folder=root+"/Doston/";
 
     public static SharedPreferences sharedPreferences;
     public static String pref_name="pref_name";

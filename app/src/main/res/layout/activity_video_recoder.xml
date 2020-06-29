@@ -152,7 +152,6 @@
                 android:layout_centerVertical="true">
 
                 <ImageView
-                    android:background="?attr/selectableItemBackground"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/ic_gallery_btn"/>
@@ -175,7 +174,6 @@
 
                 <ImageView
                     android:id="@+id/add_sound_img"
-                    android:background="?attr/selectableItemBackground"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/ic_user_music_btn"/>
