@@ -76,6 +76,7 @@
 
 
             <EditText
+                android:textCursorDrawable="@drawable/color_cursor"
                 android:padding="15dp"
                 android:background="@drawable/edit_bg"
                 android:layout_weight="1"

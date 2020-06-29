@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
@@ -891,12 +892,26 @@ public class Home_F extends RootFragment implements Player.EventListener, Fragme
 
 
     }
+    public Bitmap getResizedBitmap(Bitmap bm, int newHeight, int newWidth)
+    {
+        int width = bm.getWidth();
+        int height = bm.getHeight();
+        float scaleWidth = ((float) newWidth) / width;
+        float scaleHeight = ((float) newHeight) / height;
+        // create a matrix for the manipulation
+        Matrix matrix = new Matrix();
+        // resize the bit map
+        matrix.postScale(scaleWidth, scaleHeight);
+        // recreate the new Bitmap
+        Bitmap resizedBitmap = Bitmap.createBitmap(bm, 0, 0, width, height, matrix, false);
+        return resizedBitmap;
+    }
 
     public void Applywatermark(final Home_Get_Set item){
 
          Bitmap myLogo = ((BitmapDrawable)getResources().getDrawable(R.drawable.ic_watermark_image)).getBitmap();
-         Bitmap bitmap_resize=Bitmap.createScaledBitmap(myLogo, 50, 50, false);
-         GlWatermarkFilter filter=new GlWatermarkFilter(bitmap_resize, GlWatermarkFilter.Position.LEFT_TOP);
+//         Bitmap bitmap_resize=Bitmap.createScaledBitmap(myLogo, 20, 20, false);
+         GlWatermarkFilter filter=new GlWatermarkFilter(getResizedBitmap(myLogo,20,20), GlWatermarkFilter.Position.LEFT_TOP);
          new GPUMp4Composer(Environment.getExternalStorageDirectory() +"/Doston/"+item.video_id+"no_watermark"+".mp4",
                 Environment.getExternalStorageDirectory() +"/Doston/"+item.video_id+".mp4")
                 .filter(filter)

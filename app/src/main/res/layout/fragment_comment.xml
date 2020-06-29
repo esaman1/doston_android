@@ -35,7 +35,7 @@
                 android:id="@+id/top_layout">
 
             <ImageView
-                android:background="?attr/selectableItemBackground"
+                android:background="@drawable/bg_round_white_black_btn"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:id="@+id/Goback"
@@ -132,6 +132,7 @@
                     android:layout_height="wrap_content"/>
 
                 <EditText
+                    android:textCursorDrawable="@drawable/color_cursor"
                     android:maxLines="3"
                     android:layout_margin="3dp"
                     android:padding="10dp"

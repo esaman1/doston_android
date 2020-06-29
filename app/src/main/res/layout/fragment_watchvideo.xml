@@ -68,6 +68,7 @@
 
 
             <EditText
+                android:textCursorDrawable="@drawable/color_cursor"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="Type your comment here..."

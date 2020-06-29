@@ -56,7 +56,7 @@
                     android:src="@drawable/ic_discovery_gray"/>
 
                 <EditText
-
+                    android:textCursorDrawable="@drawable/color_cursor"
                     android:layout_weight="9"
                     android:maxLines="1"
                     android:imeOptions="actionSearch"

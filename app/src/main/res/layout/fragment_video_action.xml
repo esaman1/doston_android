@@ -47,7 +47,7 @@
                 android:textColor="@color/white"/>
 
             <ImageView
-                android:background="?attr/selectableItemBackground"
+                android:background="@drawable/bg_round_white_black_btn"
                 android:id="@+id/close_bottom_sheet"
                 android:layout_margin="5dp"
                 android:tint="@color/white"
@@ -76,10 +76,10 @@
                 android:id="@+id/save_video_layout">
 
                 <ImageView
-                    android:background="@drawable/bg_round"
+                    android:background="@drawable/bg_round_btn"
                     android:padding="12dp"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/ic_save"/>
 
@@ -105,9 +105,9 @@
 
                 <ImageView
                     android:padding="12dp"
-                    android:background="@drawable/bg_round"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:background="@drawable/bg_round_btn"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/ic_copy"/>
 
