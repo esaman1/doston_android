@@ -11,7 +11,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="24dp"
+        android:paddingTop="30dp"
         android:background="@color/black">
 
          <androidx.appcompat.widget.Toolbar
@@ -35,7 +35,7 @@
                 android:layout_width="34dp"
                 android:layout_height="34dp"
                 android:layout_alignParentLeft="true"
-                android:background="@android:color/transparent"
+                android:background="?attr/selectableItemBackground"
                 android:id="@+id/back_btn"
                 android:scaleType="fitStart"
                 android:tint="@color/white"
@@ -71,7 +71,7 @@
                 android:layout_marginRight="15dp"
                 android:scaleType="fitCenter"
                 android:id="@+id/setting_btn"
-                android:background="@color/transparent"/>
+                android:background="?attr/selectableItemBackground"/>
 
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>

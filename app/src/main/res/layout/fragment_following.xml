@@ -17,7 +17,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="30dp"
             android:layout_weight="1"
             app:contentInsetLeft="0dp"
             app:contentInsetStart="0dp"
@@ -57,7 +57,13 @@
 
             </RelativeLayout>
         </androidx.appcompat.widget.Toolbar>
-
+        <LinearLayout
+           android:layout_below="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/line"
+            android:orientation="vertical"
+            android:background="@color/lightgraycolor"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

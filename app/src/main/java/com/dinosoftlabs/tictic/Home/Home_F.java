@@ -6,8 +6,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
@@ -892,26 +895,65 @@ public class Home_F extends RootFragment implements Player.EventListener, Fragme
 
 
     }
-    public Bitmap getResizedBitmap(Bitmap bm, int newHeight, int newWidth)
-    {
-        int width = bm.getWidth();
-        int height = bm.getHeight();
-        float scaleWidth = ((float) newWidth) / width;
-        float scaleHeight = ((float) newHeight) / height;
-        // create a matrix for the manipulation
-        Matrix matrix = new Matrix();
-        // resize the bit map
-        matrix.postScale(scaleWidth, scaleHeight);
-        // recreate the new Bitmap
-        Bitmap resizedBitmap = Bitmap.createBitmap(bm, 0, 0, width, height, matrix, false);
+//    public Bitmap getResizedBitmap(Bitmap bm, int newHeight, int newWidth)
+//    {
+//        int width = bm.getWidth();
+//        int height = bm.getHeight();
+//        float scaleWidth = ((float) newWidth) / width;
+//        float scaleHeight = ((float) newHeight) / height;
+//        // create a matrix for the manipulation
+//        Matrix matrix = new Matrix();
+//        // resize the bit map
+//        matrix.postScale(scaleWidth, scaleHeight);
+//        // recreate the new Bitmap
+//        Bitmap resizedBitmap = Bitmap.createBitmap(bm, 0, 0, width, height, matrix, false);
+//        return resizedBitmap;
+//    }
+
+    public Bitmap getResizedBitmap(Bitmap bitmap, int newWidth, int newHeight) {
+        Bitmap resizedBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
+
+        float scaleX = newWidth / (float) bitmap.getWidth();
+        float scaleY = newHeight / (float) bitmap.getHeight();
+        float pivotX = 0;
+        float pivotY = 0;
+
+        Matrix scaleMatrix = new Matrix();
+        scaleMatrix.setScale(scaleX, scaleY, pivotX, pivotY);
+
+        Canvas canvas = new Canvas(resizedBitmap);
+        canvas.setMatrix(scaleMatrix);
+        canvas.drawBitmap(bitmap, 10, 10, new Paint(Paint.FILTER_BITMAP_FLAG));
+
         return resizedBitmap;
+    }
+    private static Bitmap createScaledBitmap(Bitmap bitmap,int newWidth,int newHeight) {
+        Bitmap scaledBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), bitmap.getConfig());
+
+        float scaleX = newWidth / (float) bitmap.getWidth();
+        float scaleY = newHeight / (float) bitmap.getHeight();
+
+        Matrix scaleMatrix = new Matrix();
+        scaleMatrix.setScale(scaleX, scaleY, 0, 0);
+
+        Canvas canvas = new Canvas(scaledBitmap);
+        canvas.setMatrix(scaleMatrix);
+        Paint paint = new Paint(Paint.FILTER_BITMAP_FLAG);
+        paint.setAntiAlias(true);
+        paint.setDither(true);
+        paint.setFilterBitmap(true);
+        canvas.drawBitmap(bitmap, 0, 0, paint);
+
+        return scaledBitmap;
+
     }
 
     public void Applywatermark(final Home_Get_Set item){
 
-         Bitmap myLogo = ((BitmapDrawable)getResources().getDrawable(R.drawable.ic_watermark_image)).getBitmap();
-//         Bitmap bitmap_resize=Bitmap.createScaledBitmap(myLogo, 20, 20, false);
-         GlWatermarkFilter filter=new GlWatermarkFilter(getResizedBitmap(myLogo,20,20), GlWatermarkFilter.Position.LEFT_TOP);
+         Bitmap myLogo = ((BitmapDrawable)getResources().getDrawable(R.drawable.watermark)).getBitmap();
+//         Bitmap bitmap_resize=Bitmap.createScaledBitmap(myLogo, 64, 26, true);
+         Bitmap bitmap_resize=getResizedBitmap(myLogo,51,20);
+         GlWatermarkFilter filter=new GlWatermarkFilter(bitmap_resize, GlWatermarkFilter.Position.LEFT_TOP);
          new GPUMp4Composer(Environment.getExternalStorageDirectory() +"/Doston/"+item.video_id+"no_watermark"+".mp4",
                 Environment.getExternalStorageDirectory() +"/Doston/"+item.video_id+".mp4")
                 .filter(filter)
