@@ -74,8 +74,8 @@
                 android:textSize="13dp"
                 android:textStyle="bold"
                 android:padding="5dp"
-
                 android:textColor="@color/white"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -155,7 +155,7 @@
                     android:background="?attr/selectableItemBackground"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_gallery_unpress"/>
+                    android:src="@drawable/ic_gallery_btn"/>
 
 
             </LinearLayout>
@@ -178,7 +178,7 @@
                     android:background="?attr/selectableItemBackground"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_use_music_unpress"/>
+                    android:src="@drawable/ic_user_music_btn"/>
 
             </LinearLayout>
 
