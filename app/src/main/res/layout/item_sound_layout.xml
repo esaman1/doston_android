@@ -14,7 +14,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="15dp"
-        android:src="@color/white"
+        android:src="@drawable/music_icon_sound"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -113,7 +113,7 @@
         android:background="@color/transparent"
         android:scaleType="fitCenter"
         android:tint="@color/white"
-        android:src="@drawable/ic_my_favourite"
+        android:src="@drawable/ic_add_to_favorite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

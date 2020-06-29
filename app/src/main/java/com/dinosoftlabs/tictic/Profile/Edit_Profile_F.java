@@ -94,7 +94,7 @@ public class Edit_Profile_F extends RootFragment implements View.OnClickListener
     EditText firstname_edit,lastname_edit,user_bio_edit;
 
     RadioButton male_btn,female_btn;
-
+    boolean profile_pic_changed = false;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -149,7 +149,11 @@ public class Edit_Profile_F extends RootFragment implements View.OnClickListener
                 if(Check_Validation()){
 
                     Call_Api_For_Edit_profile();
-                    Save_Image();
+                    if(profile_pic_changed)
+                    {
+                        Save_Image();
+                    }
+
 
                 }
                 break;
@@ -335,7 +339,7 @@ public class Edit_Profile_F extends RootFragment implements View.OnClickListener
                 resized.compress(Bitmap.CompressFormat.JPEG, 20, baos);
 
                 image_byte_array = baos.toByteArray();
-
+                profile_pic_changed = true;
 //                Save_Image();
 
             }
@@ -382,7 +386,7 @@ public class Edit_Profile_F extends RootFragment implements View.OnClickListener
                 resized.compress(Bitmap.CompressFormat.JPEG, 20, baos);
 
                 image_byte_array = baos.toByteArray();
-
+                profile_pic_changed = true;
 //                Save_Image();
 
             }
