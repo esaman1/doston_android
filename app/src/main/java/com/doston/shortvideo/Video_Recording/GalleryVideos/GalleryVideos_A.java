@@ -157,16 +157,16 @@ public class GalleryVideos_A extends AppCompatActivity {
 
     public  void  getAllVideoPath() {
         Uri uri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
-        String[] projection = { MediaStore.Video.VideoColumns.DATA };
+        String[] projection = {MediaStore.Video.Media.DATA,MediaStore.Video.Media.DURATION };
         Cursor cursor = this.getContentResolver().query(uri, projection, null, null, null);
 
         if (cursor != null) {
              while (cursor.moveToNext()) {
                 GalleryVideo_Get_Set item=new GalleryVideo_Get_Set();
                 item.video_path=cursor.getString(0);
-                 item.video_duration_ms=getfileduration(Uri.parse(cursor.getString(0)));
+                 item.video_duration_ms=Integer.parseInt(cursor.getString(cursor.getColumnIndex(MediaStore.Video.VideoColumns.DURATION)));
 
-                 Log.d("resp----","Name "+item.video_path+"  Duration "+item.video_duration_ms);
+//                 Log.d("resp----","Name "+item.video_path+"  Duration "+item.video_duration_ms);
 //                 Log.d("resp",""+item.video_duration_ms);
 
                  if(item.video_duration_ms>5000){
@@ -198,6 +198,7 @@ public class GalleryVideos_A extends AppCompatActivity {
             }
         catch (Exception e){
             Log.e("resp+++",""+e);
+//            return 0;
         }
         return 0;
     }

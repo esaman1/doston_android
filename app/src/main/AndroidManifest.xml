@@ -53,7 +53,6 @@
 
         <activity
             android:name="com.doston.shortvideo.Login_Classes.Doston_Login_User"
-            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent"
             tools:ignore="LockedOrientationActivity" />
         <activity
@@ -86,8 +85,8 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="bringthings.com"
-                    android:pathPrefix="/API/"
+                    android:host="mobileadsservice.com"
+                    android:pathPrefix="/PHPAPI/DostarAPI/"
                     android:scheme="http" />
             </intent-filter>
 
@@ -135,10 +134,10 @@
             android:value="@string/facebook_app_id" />
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/ic_tic" />
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/redcolor" />
+            android:resource="@drawable/notification_icon" />
+<!--        <meta-data-->
+<!--            android:name="com.google.firebase.messaging.default_notification_color"-->
+<!--            android:resource="@color/redcolor" />-->
      
 
         <provider

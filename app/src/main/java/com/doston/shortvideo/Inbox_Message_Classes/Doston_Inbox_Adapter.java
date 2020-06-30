@@ -72,6 +72,7 @@ public class Doston_Inbox_Adapter extends RecyclerView.Adapter<Doston_Inbox_Adap
     class CustomViewHolder extends RecyclerView.ViewHolder {
         TextView username,last_message,date_created;
         ImageView user_image;
+        View bubble_message;
 
         public CustomViewHolder(View view) {
             super(view);
@@ -79,6 +80,7 @@ public class Doston_Inbox_Adapter extends RecyclerView.Adapter<Doston_Inbox_Adap
             username=itemView.findViewById(R.id.username);
             last_message=itemView.findViewById(R.id.message);
             date_created=itemView.findViewById(R.id.datetxt);
+            bubble_message=itemView.findViewById(R.id.bubble_message);
         }
 
         public void bind(final Doston_Inbox_Get_Set item, final Doston_Inbox_Adapter.OnItemClickListener listener, final  Doston_Inbox_Adapter.OnLongItemClickListener longItemClickListener) {
@@ -117,10 +119,12 @@ public class Doston_Inbox_Adapter extends RecyclerView.Adapter<Doston_Inbox_Adap
         String status = "" + item.getStatus();
         if (status.equals("0")) {
             holder.last_message.setTypeface(null, Typeface.BOLD);
-            holder.last_message.setTextColor(context.getResources().getColor(R.color.black));
+            holder.last_message.setTextColor(context.getResources().getColor(R.color.white));
+            holder.bubble_message.setVisibility(View.VISIBLE);
         } else {
             holder.last_message.setTypeface(null, Typeface.NORMAL);
             holder.last_message.setTextColor(context.getResources().getColor(R.color.dark_gray));
+            holder.bubble_message.setVisibility(View.GONE);
         }
 
 

@@ -16,6 +16,7 @@
             android:fontFamily="@font/roboto_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
             android:text="Title"
             android:id="@+id/title"
             android:textColor="@color/white"
@@ -23,7 +24,12 @@
 
 
     </LinearLayout>
-
+<LinearLayout
+    android:visibility="gone"
+    android:layout_margin="3dp"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"/>
 
        <androidx.recyclerview.widget.RecyclerView
          android:layout_width="match_parent"
@@ -31,5 +37,10 @@
          android:minHeight="100dp"
          android:id="@+id/horizontal_recylerview"/>
 
+    <LinearLayout
+        android:layout_margin="3dp"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
 
 </LinearLayout>

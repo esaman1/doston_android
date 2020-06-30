@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.FragmentTransaction;
@@ -57,7 +59,7 @@ public class Doston_Notification_Receive extends FirebaseMessagingService {
     Snackbar snackbar;
 
 
-    @SuppressLint("WrongThread")
+
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
 
@@ -70,9 +72,7 @@ public class Doston_Notification_Receive extends FirebaseMessagingService {
             senderid=remoteMessage.getData().get("senderid");
             receiverid=remoteMessage.getData().get("receiverid");
             action_type=remoteMessage.getData().get("action_type");
-
             if(!Doston_Chat_Activity.senderid_for_check_notification.equals(senderid)){
-
                 sendNotification sendNotification=new sendNotification(this);
                 sendNotification.execute(pic);
 
@@ -173,9 +173,11 @@ public class Doston_Notification_Receive extends FirebaseMessagingService {
                 ImageView imageView=layout.findViewById(R.id.user_image);
                 titletxt.setText(title);
                 messagetxt.setText(message);
+//                layout.setBackgroundColor(Color.parseColor("#00000000"));
 
-                if(result!=null)
-                imageView.setImageBitmap(result);
+                if(result!=null) {
+                    imageView.setImageBitmap(result);
+                }
 
 
                 snackbar = Snackbar.make(Doston_MainMenuActivity.dostonMainMenuActivity.findViewById(R.id.container), "", Snackbar.LENGTH_LONG);
@@ -194,7 +196,7 @@ public class Doston_Notification_Receive extends FirebaseMessagingService {
                 snackbarLayout.setPadding(0,0,0,0);
                 snackbarLayout.addView(layout, 0);
 
-
+                snackbarLayout.setBackgroundColor(getResources().getColor(R.color.transparent));
                 snackbar.getView().setVisibility(View.INVISIBLE);
 
                 snackbar.setCallback(new Snackbar.Callback(){

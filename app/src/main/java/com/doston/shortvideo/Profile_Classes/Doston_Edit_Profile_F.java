@@ -332,6 +332,7 @@ public class Doston_Edit_Profile_F extends Doston_RootFragment implements View.O
 
                 image_byte_array = baos.toByteArray();
                 profile_pic_changed = true;
+                profile_image.setImageBitmap(resized);
 //                Save_Image();
 
             }
@@ -379,6 +380,7 @@ public class Doston_Edit_Profile_F extends Doston_RootFragment implements View.O
 
                 image_byte_array = baos.toByteArray();
                 profile_pic_changed = true;
+                profile_image.setImageBitmap(resized);
 //                Save_Image();
 
             }

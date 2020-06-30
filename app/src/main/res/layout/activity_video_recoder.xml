@@ -169,7 +169,6 @@
                 android:orientation="vertical"
                 android:gravity="center"
                 android:id="@+id/add_sound_txt"
-                android:background="?attr/selectableItemBackground"
                 android:layout_centerVertical="true">
 
                 <ImageView

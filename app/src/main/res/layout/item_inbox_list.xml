@@ -28,6 +28,15 @@
             android:layout_centerVertical="true"
              android:src="@drawable/ic_unknown"
             android:id="@+id/user_image"/>
+
+        <View
+            android:id="@+id/bubble_message"
+            android:backgroundTint="@color/white"
+            android:layout_alignRight="@id/user_image"
+            android:background="@drawable/bg_round"
+            android:layout_width="15dp"
+            android:layout_height="15dp"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -137,6 +137,7 @@ public class Doston_VideoSound_A extends AppCompatActivity implements View.OnCli
                 break;
 
             case R.id.create_btn:
+                StopPlaying();
                 Convert_Mp3_to_acc();
                 break;
 

@@ -248,10 +248,7 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
             if(audio!=null)
             audio.start();
 
-
-
             video_progress.resume();
-
 
             done_btn.setImageResource(R.drawable.ic_done_unpress);
             done_btn.setEnabled(false);

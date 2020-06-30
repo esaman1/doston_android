@@ -25,7 +25,7 @@ public class Variables {
 
 
     public static int max_recording_duration=18000;
-    public static int recording_duration=18000;
+    public static int recording_duration=20000;
 
     public static String outputfile=root + "/output.mp4";
     public static String outputfile2=root + "/output2.mp4";
@@ -90,7 +90,7 @@ public class Variables {
 
     
         public static String domain="https://mobileadsservice.com/PHPAPI/DostarAPI/index.php?p=";
-    public static String base_url="https://mobileadsservice.com/PHPAPI/DostarAPI/";
+        public static String base_url="https://mobileadsservice.com/PHPAPI/DostarAPI/";
 
 //    public static String domain="http://5dd27962dafd.ngrok.io/TicTic/API/tictic/index.php?p=";
 //    public static String base_url="http://5dd27962dafd.ngrok.io/TicTic/API/tictic/";

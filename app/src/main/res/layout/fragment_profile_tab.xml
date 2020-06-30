@@ -305,7 +305,7 @@
                                 android:textSize="18sp"
                                 android:gravity="center_vertical"
                                 android:id="@+id/username"
-                                android:text="doll_mega_1"
+                                android:text="username"
                                 android:layout_weight="1"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"/>
@@ -316,7 +316,7 @@
                                 android:gravity="center_vertical"
                                 android:textColor="#8a8a8a"
                                 android:id="@+id/fullname"
-                                android:text="Megan Clyton"
+                                android:text="name"
                                 android:layout_weight="1"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"/>
