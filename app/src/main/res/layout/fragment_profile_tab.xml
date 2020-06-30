@@ -6,7 +6,7 @@
     android:id="@+id/Profile_F"
     android:background="@color/black"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Profile.Profile_Tab_F">
+    tools:context=".Profile_Classes.Doston_Profile_Tab_F">
 
     <RelativeLayout
         android:layout_width="match_parent"

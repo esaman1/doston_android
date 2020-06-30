@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/black"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
-    tools:context="com.dinosoftlabs.tictic.Inbox.Inbox_F">
+    tools:context="com.doston.shortvideo.Inbox_Message_Classes.Doston_Inbox_F">
 
     <RelativeLayout
         android:layout_width="match_parent"

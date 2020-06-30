@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context="com.dinosoftlabs.tictic.Home.Home_F">
+    tools:context="com.doston.shortvideo.Home_Fragement_Classes.Doston_Home_F">
 
   <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
       android:layout_width="match_parent"
@@ -22,6 +22,63 @@
       android:layout_height="match_parent"
       android:id="@+id/recylerview"
       android:background="@color/black"/>
+
+    <LinearLayout
+        android:id="@+id/no_internet_ll"
+        android:visibility="gone"
+        android:gravity="center"
+        android:weightSum="15"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <ImageView
+          android:src="@drawable/no_network_icon"
+          android:layout_weight="2"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"/>
+
+      <TextView
+          android:textSize="18sp"
+          android:textStyle="bold"
+          android:gravity="center"
+          android:layout_gravity="center"
+          android:textColor="#FFFFFF"
+          android:text="No network connection"
+          android:layout_weight="1"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"/>
+
+      <TextView
+          android:textSize="16sp"
+          android:gravity="center"
+          android:layout_gravity="center"
+          android:textColor="#FFFFFF"
+          android:text="connect to the  internet \n and try again."
+          android:layout_weight="1"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"/>
+
+      <LinearLayout
+          android:gravity="center"
+          android:layout_gravity="center"
+          android:layout_weight="2"
+          android:layout_width="match_parent"
+          android:layout_height="0dp">
+        <TextView
+            android:id="@+id/refresh_btn_no_internet"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="Refresh"
+            android:background="@drawable/refresh_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+      </LinearLayout>
+
+
+    </LinearLayout>
 
   <ProgressBar
       android:id="@+id/p_bar"

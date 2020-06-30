@@ -5,7 +5,7 @@
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:id="@+id/Profile_F"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.dinosoftlabs.tictic.Profile.Profile_F">
+    tools:context="com.doston.shortvideo.Profile_Classes.Doston_Profile_F">
 
 
     <RelativeLayout

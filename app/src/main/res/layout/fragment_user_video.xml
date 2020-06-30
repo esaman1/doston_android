@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context="com.dinosoftlabs.tictic.Profile.UserVideos.UserVideo_F">
+    tools:context="com.doston.shortvideo.Profile_Classes.UserVideos.Doston_UserVideo_F">
 
   <RelativeLayout
       android:layout_width="match_parent"
@@ -45,7 +45,7 @@
           android:textColor="@color/dimgray"
           android:layout_marginLeft="55dp"
           android:layout_marginRight="55dp"
-          android:text="There is no liked videos so far."
+          android:text="There is no videos so far."
           android:textSize="14sp"/>
 
     </RelativeLayout>

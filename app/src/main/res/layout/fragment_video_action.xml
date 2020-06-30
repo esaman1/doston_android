@@ -8,7 +8,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
 
-    tools:context=".VideoAction.VideoAction_F">
+    tools:context=".VideoAction.Doston_VideoAction_F">
 
     <RelativeLayout
         android:background="@color/transparent"

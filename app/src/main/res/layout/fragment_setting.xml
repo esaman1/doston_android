@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.dinosoftlabs.tictic.Settings.Setting_F">
+    tools:context="com.doston.shortvideo.Settings_Class.Doston_Setting_F">
 
 
 

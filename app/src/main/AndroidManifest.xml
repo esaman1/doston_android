@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.dinosoftlabs.tictic">
+    package="com.doston.shortvideo">
 
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -23,7 +23,7 @@
 
     <application
         android:resizeableActivity="false"
-        android:name=".SimpleClasses.TicTic"
+        android:name="com.doston.shortvideo.SimpleClasses.Doston"
         android:allowBackup="false"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -38,26 +38,26 @@
 
         <activity
             android:screenOrientation="portrait"
-            android:name=".SoundLists.VideoSound_A"/>
+            android:name="com.doston.shortvideo.SoundLists.Doston_VideoSound_A"/>
 
         <activity
-            android:name=".Video_Recording.GalleryVideos.GalleryVideos_A"
+            android:name="com.doston.shortvideo.Video_Recording.GalleryVideos.GalleryVideos_A"
             android:screenOrientation="portrait"
             android:theme="@style/white_status"
             tools:ignore="LockedOrientationActivity" />
 
         <activity
-            android:name=".Video_Recording.GallerySelectedVideo.GallerySelectedVideo_A"
+            android:name="com.doston.shortvideo.Video_Recording.GallerySelectedVideo.GallerySelectedVideo_A"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
 
         <activity
-            android:name=".Login_Classes.Login_A"
+            android:name="com.doston.shortvideo.Login_Classes.Doston_Login_User"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".Splash_A"
+            android:name="com.doston.shortvideo.Doston_Splash_A"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
@@ -67,14 +67,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Main_Menu.MainMenuActivity"
+            android:name="com.doston.shortvideo.Main_Menu_Classes.Doston_MainMenuActivity"
             android:screenOrientation="portrait"
             android:theme="@style/transparent_status"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".WatchVideos.WatchVideos_F"
-            android:parentActivityName=".Main_Menu.MainMenuActivity"
+            android:name="com.doston.shortvideo.Doston_WatchVideos.Doston_WatchVideos_F"
+            android:parentActivityName="com.doston.shortvideo.Main_Menu_Classes.Doston_MainMenuActivity"
             android:screenOrientation="portrait"
             android:theme="@style/transparent_status"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
@@ -93,7 +93,7 @@
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.dinosoftlabs.tictic.Main_Menu.MainMenuActivity" />
+                android:value="com.doston.shortvideo.Main_Menu_Classes.Doston_MainMenuActivity" />
         </activity>
         <activity
             android:name="com.facebook.FacebookActivity"
@@ -113,21 +113,21 @@
         </activity>
 
         <activity
-            android:name=".Video_Recording.Video_Recoder_A"
+            android:name="com.doston.shortvideo.Video_Recording.Video_Recoder_A"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".Video_Recording.Preview_Video_A"
+            android:name="com.doston.shortvideo.Video_Recording.Preview_Video_A"
             android:screenOrientation="portrait"
             android:theme="@style/black_status"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".Video_Recording.Post_Video_A"
+            android:name="com.doston.shortvideo.Video_Recording.Post_Video_A"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
 
         <activity
-            android:name=".SoundLists.SoundList_Main_A"
+            android:name="com.doston.shortvideo.SoundLists.Doston_SoundList_Main_A"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <meta-data
@@ -152,7 +152,7 @@
         </provider>
 
         <service
-            android:name=".Services.Upload_Service"
+            android:name="com.doston.shortvideo.Services_Classes.Doston_Upload_Service"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -160,7 +160,7 @@
             </intent-filter>
         </service>
 
-        <service android:name=".Notification_Receive_Classes.Notification_Receive">
+        <service android:name="com.doston.shortvideo.Notification_Receive_Classes.Doston_Notification_Receive">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

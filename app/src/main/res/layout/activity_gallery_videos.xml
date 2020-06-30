@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/black"
     tools:context=".Video_Recording.GalleryVideos.GalleryVideos_A">
 
@@ -44,6 +45,20 @@
             android:layout_height="match_parent"
             android:id="@+id/recylerview"/>
 
+
+
     </LinearLayout>
+
+
+    <com.gmail.samehadar.iosdialog.CamomileSpinner
+
+        android:id="@+id/loader"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_margin="18dp"
+        android:layout_gravity="center"
+        app:spinnerColor="@color/white"
+        app:clockwise="true"
+        />
 
 </FrameLayout>

@@ -8,6 +8,43 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:934906150552:android:667773c5f39ac1d2519aed",
+        "android_client_info": {
+          "package_name": "com.doston.shortvideo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "934906150552-3sienr4pkuuqhrvio7sjimfm34bk3kej.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.doston.shortvideo",
+            "certificate_hash": "1acf54163545a42d2882b840b9245b77df2b00ed"
+          }
+        },
+        {
+          "client_id": "934906150552-d8nbdse30kmis9j4qjch4nbaqc0fu2kg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqdIr_v_yEf3FhXkZX8vAuGwZA2zLFjEg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "934906150552-d8nbdse30kmis9j4qjch4nbaqc0fu2kg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:934906150552:android:07c06dc56bda4c67519aed",
         "android_client_info": {
           "package_name": "com.vineshdemo.tictic"
@@ -15,7 +52,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "934906150552-m6ta85k1of7rva5rcgm8v1q5isr70f9g.apps.googleusercontent.com",
+          "client_id": "934906150552-11lvaceq2p9ncc0s33cke1sjv5pa5q9f.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.vineshdemo.tictic",

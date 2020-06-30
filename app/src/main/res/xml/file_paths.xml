@@ -3,7 +3,7 @@
 
     <!--change only the package name if you have change the package name of app-->
 
-    <external-path name="my_images" path="Android/data/com.dinosoftlabs.tictic/files/Pictures" />
+    <external-path name="my_images" path="Android/data/com.doston.shortvideo/files/Pictures" />
 
     <external-path name="external_files" path="."/>
 

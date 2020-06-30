@@ -6,7 +6,7 @@
     android:keepScreenOn="true"
     android:background="@color/black"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SoundLists.VideoSound_A">
+    tools:context=".SoundLists.Doston_VideoSound_A">
 
     <RelativeLayout
         android:layout_width="match_parent"

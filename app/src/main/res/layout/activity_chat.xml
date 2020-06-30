@@ -9,7 +9,7 @@
     android:id="@+id/Chat_F"
     android:fitsSystemWindows="true"
     android:paddingTop="24dp"
-    tools:context="com.dinosoftlabs.tictic.MessageChat_Classes.Chat_Activity">
+    tools:context="com.doston.shortvideo.MessageChat_Classes.Doston_Chat_Activity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

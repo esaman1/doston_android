@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:keepScreenOn="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.dinosoftlabs.tictic.Video_Recording.Post_Video_A">
+    tools:context="com.doston.shortvideo.Video_Recording.Post_Video_A">
 
 
 
@@ -110,8 +110,8 @@
             <TextView
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text="Post Video"
                 android:padding="15dp"
                 android:textSize="14dp"

@@ -8,7 +8,7 @@
     app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
     android:background="@drawable/bottom_sheet_bg"
     android:clickable="true"
-    tools:context=".VideoAction.VideoAction_F">
+    tools:context=".VideoAction.Doston_VideoAction_F">
 
     <RelativeLayout
         android:background="@color/transparent"
