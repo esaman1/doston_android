@@ -6,7 +6,7 @@
     android:background="@color/black"
     android:id="@+id/WatchVideo_F"
     android:clickable="true"
-    tools:context="com.doston.shortvideo.Home_Fragement_Classes.Doston_Home_F">
+    tools:context="com.desibitz.shortvideo.Home_Fragement_Classes.Doston_Home_F">
 
     <RelativeLayout
         android:layout_width="match_parent"

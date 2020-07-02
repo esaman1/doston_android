@@ -5,7 +5,7 @@
     android:id="@+id/MainMenuFragment"
     android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.doston.shortvideo.Main_Menu_Classes.Doston_MainMenuActivity">
+    tools:context="com.desibitz.shortvideo.Main_Menu_Classes.Doston_MainMenuActivity">
 
 
      <RelativeLayout
@@ -13,7 +13,7 @@
          android:layout_height="match_parent">
 
 
-        <com.doston.shortvideo.Main_Menu_Classes.Doston_Custom_ViewPager
+        <com.desibitz.shortvideo.Main_Menu_Classes.Doston_Custom_ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

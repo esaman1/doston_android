@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/black"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.doston.shortvideo.SoundLists.Doston_SoundList_Main_A">
+    tools:context="com.desibitz.shortvideo.SoundLists.Doston_SoundList_Main_A">
 
 
     <RelativeLayout
@@ -71,13 +71,13 @@
                 android:layout_marginLeft="-1dp"
                 app:tabIndicatorColor="@color/white"/>
 
-            <com.doston.shortvideo.Main_Menu_Classes.Doston_Custom_ViewPager
+            <com.desibitz.shortvideo.Main_Menu_Classes.Doston_Custom_ViewPager
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/viewpager"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 android:layout_below="@+id/groups_tab">
-            </com.doston.shortvideo.Main_Menu_Classes.Doston_Custom_ViewPager>
+            </com.desibitz.shortvideo.Main_Menu_Classes.Doston_Custom_ViewPager>
 
 
         </RelativeLayout>

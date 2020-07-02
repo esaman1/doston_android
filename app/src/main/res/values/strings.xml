@@ -1,10 +1,9 @@
 <resources>
-    <string name="app_name">Doston:Indian short video platform</string>
-   
+    <string name="app_name">DesiBitz:Indian short video platform</string>
+
 
     <string name="facebook_app_id">fb_id</string>
     <string name="fb_login_protocol_scheme">fb(fb_id)</string>
-
 
 
     <string name="ad_app_id">ca-app-pub-3940256099942544~3347511713</string>
@@ -13,5 +12,102 @@
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tou"><font size="20"><b>Privacy Policy </b></font> \n\n  This policy explains our practices concerning the personal and non-personal data we ("DesiBitz") collect from you. We are committed to protecting and respecting your privacy.  If you do not agree with this policy, you should not use the "DesiBitz" app.
+\n\n
+        <b>User Personal Information:</b>
+        \n
+You give us information when you register on the "DesiBitz" with google like first name, last name, gender and profile pic. This will be used as your profile information on "DesiBitz".
+\n\n
+        <b>User Content Information:</b>
+        \n
+We use above information collected from you to infer your interests and provide you with more relevant advertising.  We collect this information by the use of Cookies and similar technologies on our App and from similar information received from third parties who advertise on our "DesiBitz" and whose sites you visit.
+\n\n
+        <b>Non-Personal Information:</b>
+    \n
+We collect certain technical information from you when you use the "DesiBitz" including when you are using the App without an account creation. Non personal information collected such as IP address, browsing history, mobile carrier, time zone settings, model of your device, device system, network type, device ID, screen resolution and OS.
+\n\n
+        <b>
+How we use your personal data:</b>
+    \n
+We will use the information we collect about you in the following ways:\n
+	\t→ Inform you about changes in "DesiBitz".\n
+	\t→ Provide User Support.\n
+	\t→ Enable you to Create, Share Content and interact with other users.\n
+	\t→ To detect  harmful, fraud, spam and illegal activities  by reviewing user content and messages on the "DesiBitz", to make proper management of our guidelines of "DesiBitz" use and handle inappropriate content to enforce our terms, conditions and policies.\n
+	\t→ Carry out data analysis and test the "DesiBitz" to ensure its stability and security.\n
+\n
+        <b>
+How &amp; where we share your data:\n
+        </b>
+    \n <b>
+Share Non-Personal Information:</b> \n We share non-personal information with advertisers show appropriate ads.\n\n
+<b>Share Personal Information:</b>\n If your profile is public((set by you), your content will be visible to anyone on the "DesiBitz" as making profile public you are allowed your information shared to public. "DesiBitz" will not share your personal information if you set your profile to private.
+\n\n
+        <b>
+Storage of your personal data: \n</b>
+Personal data we collect from you will be stored on a server located in Bangalore, India.\n
+\n<b>
+How long we keep your personal data:\n</b>
+If you terminate your account and use of our "DesiBitz", we delete all of your personal and non-personal information immediately.
+\n\n<b>
+Security of your personal data:\n</b>
+We maintain technical and organizational security measures to secure and protect your data.
+\n\n<b>
+Children policy:\n</b>
+You are not allowed to use "DesiBitz" if you are under age 13.
+\n\n<b>
+Complaints:\n</b>
+If you have any complaint privacy policy , you can send us at privacy@desibitz.in. We will revert back asap.
+\n\n<b>
+Changes to this privacy policy:\n</b>
+This privacy policy might be change as per new features added/removed to app, we will notify privacy policy changes to uses.
+\n\n<b>
+Contact Us:\n</b>
+You can contact us at contact@desibitz.in\n\n
+        <b>---------------------------------------\n</b>
+        <font size="20"><b>Terms of use</b></font>\n\n
+        <b>Copyright Infringement</b>\n
+<p>We("DesiBitez") do not allow any content to publish that infringes copyright. Publish copyrighted content of others without authorization is a clear violation. If you have permission to use copyrighted content of others, you may be required to provide evidence to prove.
+User content that infringes other person’s copyright may be removed. Your account may be suspended or terminated for multiple copyright violations. Any violation of use may liable you to civil and criminal penalties if copyright holder of content takes action.</p>
+\n\n<b>
+
+Copyright Infringement Notification \n</b>
+Copyright holder can submit copyright infringement notification to us if they believe any copyrighted and protected work is posted without your permission by "Desibitz" app user or by "DesiBitz" itself. We will forward all submitted details to uploader user to takedown content. If we found submitted data is correct with evidence we takedown copyrighted material.
+Submit your copyright infringement notification at "I want to Submit copyright infringement notification" or You can mail us copyright infringement notification at copyright@desibitz.in
+        \n\n<b>The E-mail notification must include the following details:</b>\n
+\t\t• E-mail address, phone number so that we and the uploader of your work can contact you.\n
+\t\t• Clear and complete description of your work that you believe has been infringed.\n
+\t\t• The URL or other identifying evidence(screenshot, videos) of the allegedly infringing work.\n
+\t\t• Your statement, that the above information is accurate, and that you are the copyright owner or are authorized to act on behalf of the copyright owner.\n
+\t\t• The physical or electronic signature of the copyright owner or an authorized representative of the copyright owner. To satisfy this requirement, you may type your full legal name (not that of a company) at the bottom of your notification.\n
+\n
+        <b>Copyright Infringement Counter-Notification</b>\n
+If "DesiBitz" user receive a copyright infringement notification that one believe to be in error, provide us with a counter-notification at copyright@desibitz.in
+The counter-notification must include the following:\n
+\t\t• Your contact information, including your full legal name (not that of a company), an email address, a physical address, and a phone number. If you are an authorized representative of the uploader, such as an attorney, please be sure to specify your relationship to the uploader.\n
+\t\t• Identify the location, including any URL, of the work that has been removed or disabled.\n
+\t\t• And the following statement: "I swear, under penalty of perjury, that I have a good faith belief that the material was removed or disabled as a result of a mistake or misidentification of the material to be removed or disabled."\n
+\t\t• Your physical or electronic signature. To satisfy this requirement, you may type your full legal name (not that of a company) at the bottom of your electronic counter-notification.\n
+Copyright Infringement Notification and Copyright Infringement Counter Notification may take 10 days to review and sometime may take beyond this time period.\n
+\n
+<b>Trademark</b>\n
+We("DesiBitez") do not allow any content to publish that infringes others trademark. Use trademark of others in a way that may mislead/confuse is a clear violation.
+Using others trademark for the purpose of accurately referencing the trademark owner’s products or services, or to compare them to other products or services, is generally not considered a violation of our trademark policy.
+User content that infringes other person’s Trademark may be removed. Your account may be suspended or terminated for multiple violations. Any violation of use may liable you to civil and criminal penalties if copyright holder of trademark takes action.
+Trademark Infringement Notification
+Trademark holder can submit Trademark infringement notification to us if they believe any Trademark and protected work is posted without your permission by "Desibitz" app user or by "DesiBitz" itself. We will forward all submitted details to uploader user to takedown content. If we found submitted data is correct with evidence we takedown uploader material.
+Submit your Trademark infringement notification at trademark@desibitz.in\n\n
+        <b>The E-mail notification must include the following details:</b>\n
+\t\t• Clear and complete description of your trademark that you believe has been infringed, including the jurisdiction of registration, registration number, trademarked goods and services class.\n
+\t\t• Scan of trademark registration certificate or a direct link (URL) to your trademark record.\n
+\t\t• Your E-mail address, phone number so that we can contact you.\n
+\t\t• Clear and complete description of your work that you believe has been infringed.\n
+\t\t• The URL or other identifying evidence(screenshot, videos) of the allegedly infringing work.\n
+\t\t• Your statement, that the above information is accurate, and that you are the trademark owner or are authorized to act on behalf of the trademark owner.\n
+\t\t• The physical or electronic signature of the trademark owner or an authorized representative of the trademark owner. To satisfy this requirement, you may type your full legal name (not that of a company) at the bottom of your notification.\n
+If we remove content in response to a report of trademark infringement, we may notify the person you reported to inform them the content was removed. We may also provide them with your contact information, including your email address and the name of the trademark owner, and/or details of your report.
+    </string>
+    <string name="terms_of_use_privacy_policy"><![CDATA[Terms of use & Privacy Policy]]></string>
+
 
 </resources>

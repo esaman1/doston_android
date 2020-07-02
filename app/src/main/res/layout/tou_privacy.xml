@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_margin="10dp"
+    android:weightSum="10"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:gravity="center_vertical"
+        android:layout_weight="0.5"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/terms_of_use_privacy_policy"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <ScrollView
+        android:layout_margin="5dp"
+        android:layout_weight="8.7"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:text="@string/tou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:gravity="center_vertical|end"
+        android:layout_weight="0.8"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:id="@+id/disagree"
+            android:background="?attr/selectableItemBackground"
+            android:textAllCaps="true"
+            android:layout_marginRight="10dp"
+            android:padding="8dp"
+           android:textSize="16sp"
+            android:text="Disagree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/agree"
+            android:background="?attr/selectableItemBackground"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:layout_marginRight="10dp"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:text="Agree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

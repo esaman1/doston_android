@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context="com.doston.shortvideo.Home_Fragement_Classes.Doston_Home_F">
+    tools:context="com.desibitz.shortvideo.Home_Fragement_Classes.Doston_Home_F">
 
   <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
       android:layout_width="match_parent"

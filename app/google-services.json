@@ -8,6 +8,43 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:934906150552:android:78e835553dc014ea519aed",
+        "android_client_info": {
+          "package_name": "com.desibitz.shortvideo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "934906150552-3aomv49lclj9l4aepc36drtul3lifirn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.desibitz.shortvideo",
+            "certificate_hash": "1acf54163545a42d2882b840b9245b77df2b00ed"
+          }
+        },
+        {
+          "client_id": "934906150552-d8nbdse30kmis9j4qjch4nbaqc0fu2kg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqdIr_v_yEf3FhXkZX8vAuGwZA2zLFjEg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "934906150552-d8nbdse30kmis9j4qjch4nbaqc0fu2kg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:934906150552:android:667773c5f39ac1d2519aed",
         "android_client_info": {
           "package_name": "com.doston.shortvideo"

@@ -5,7 +5,7 @@
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:id="@+id/Profile_F"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.doston.shortvideo.Profile_Classes.Doston_Profile_F">
+    tools:context="com.desibitz.shortvideo.Profile_Classes.Doston_Profile_F">
 
 
     <RelativeLayout
@@ -42,7 +42,30 @@
                 android:src="@drawable/ic_back_icon"
                 android:layout_centerInParent="true"/>
 
+            <TextView
+                android:layout_toRightOf="@+id/back_btn"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:id="@+id/username"
+                android:text="username"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
 
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/username"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="16sp"
+                android:gravity="center_vertical"
+                android:textColor="#8a8a8a"
+                android:id="@+id/video_count_txt"
+                android:text="(0 Video)"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
 
 
 
@@ -318,55 +341,81 @@
                         android:padding="5dp"
                         android:weightSum="4.3"
                         android:orientation="vertical"
-                        android:layout_weight="2"
+                        android:layout_weight="1.5"
                         android:layout_width="0dp"
                         android:layout_height="match_parent">
 
                         <TextView
+                            android:visibility="gone"
                             android:fontFamily="@font/roboto_medium"
                             android:textColor="@color/white"
                             android:textSize="18sp"
                             android:gravity="center_vertical"
-                            android:id="@+id/username"
-                            android:text="doll_mega_1"
+                            android:text="username"
                             android:layout_weight="1"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"/>
 
                         <TextView
+                            android:fontFamily="@font/roboto_medium"
                             android:textSize="16sp"
                             android:gravity="center_vertical"
-                            android:textColor="#8a8a8a"
+                            android:textColor="#FFFFFF"
                             android:id="@+id/fullname"
-                            android:text="Megan Clyton"
+                            android:text="name"
                             android:layout_weight="1"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"/>
 
                         <TextView
+                            android:fontFamily="@font/roboto_medium"
                             android:textSize="16sp"
-                            android:gravity="center_vertical"
-                            android:textColor="#8a8a8a"
-                            android:id="@+id/video_count_txt"
-                            android:text="0 Video"
-                            android:layout_weight="1"
+                            android:gravity="start"
+                            android:textColor="#FFFFFF"
+                            android:id="@+id/user_bios"
+                            android:text="bio"
+                            android:layout_weight="3.3"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"/>
 
-                        <LinearLayout
-                            android:layout_weight="1.3"
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp">
                         <Button
+                            android:visibility="gone"
                             android:id="@+id/follow_unfollow_btn"
                             android:layout_gravity="center_vertical"
-                            android:textColor="#000000"
-                            android:textSize="14sp"
+                            android:textColor="#a4a4a4"
                             android:text="follow"
                             android:background="@drawable/follow_button_bg"
-                            android:layout_width="85dp"
-                            android:layout_height="35dp"/>
-                        </LinearLayout>
+                            android:layout_weight="1.3"
+                            android:layout_width="130dp"
+                            android:layout_height="0dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/follow_unfollow_ll"
+                        android:background="?attr/selectableItemBackground"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/follow_unfollow_img"
+                            android:src="@drawable/ic_follow"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"/>
+
+                        <TextView
+                            android:id="@+id/follow_unfollow_txt"
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="#FFFFFF"
+                            android:text="Follow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+
 
                     </LinearLayout>
 

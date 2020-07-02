@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.doston.shortvideo.Doston_Splash_A">
+    tools:context="com.desibitz.shortvideo.Doston_Splash_A">
 
     <ImageView
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="150dp"
-            android:text="Doston"
+            android:text="DesiBitz"
             android:textColor="@color/black"
             android:textSize="34sp"
             android:textStyle="bold" />

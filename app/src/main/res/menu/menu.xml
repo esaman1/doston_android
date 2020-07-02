@@ -7,6 +7,14 @@
             android:title="Edit Profile"/>
 
         <item
+            android:id="@+id/terms_of_use_id"
+            android:title="Term of use"/>
+
+        <item
+            android:id="@+id/privacy_id"
+            android:title="Privacy Policy"/>
+
+        <item
             android:id="@+id/logout_id"
             android:title="Logout"/>
 

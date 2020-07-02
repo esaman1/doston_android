@@ -6,7 +6,7 @@
     android:background="@color/black"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.doston.shortvideo.Notifications_Classes.Doston_Notification_F">
+    tools:context="com.desibitz.shortvideo.Notifications_Classes.Doston_Notification_F">
 
         <RelativeLayout
         android:layout_width="match_parent"
@@ -119,18 +119,18 @@
 
             </RelativeLayout>
 
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/bannerad"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                ads:adSize="BANNER"
-                android:layout_above="@+id/write_layout"
-                ads:adUnitId="@string/banner_ad"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true">
-            </com.google.android.gms.ads.AdView>
+<!--            <com.google.android.gms.ads.AdView-->
+<!--                android:id="@+id/bannerad"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                ads:adSize="BANNER"-->
+<!--                android:layout_above="@+id/write_layout"-->
+<!--                ads:adUnitId="@string/banner_ad"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginBottom="5dp"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:layout_centerHorizontal="true">-->
+<!--            </com.google.android.gms.ads.AdView>-->
 
 
         </RelativeLayout>

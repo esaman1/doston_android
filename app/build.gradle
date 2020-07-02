@@ -19,7 +19,7 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-        applicationId "com.doston.shortvideo"
+        applicationId "com.desibitz.shortvideo"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -61,7 +61,7 @@ dependencies {
     implementation 'androidx.percentlayout:percentlayout:1.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.android.exoplayer:exoplayer:2.8.3'
-    implementation 'com.facebook.android:facebook-android-sdk:4.26.0'
+//    implementation 'com.facebook.android:facebook-android-sdk:4.26.0'
     implementation 'com.gmail.samehadar:iosdialog:1.0'
     implementation 'com.github.ybq:Android-SpinKit:1.2.0'
     implementation 'net.the4thdimension:audio-wife:1.0.3'
@@ -87,7 +87,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.3'
     implementation 'com.google.firebase:firebase-storage:16.0.1'
     implementation 'com.google.firebase:firebase-auth:16.0.3'
-    implementation 'com.google.android.gms:play-services-ads:15.0.1'
+//    implementation 'com.google.android.gms:play-services-ads:15.0.1'
 
 
     implementation 'com.github.MasayukiSuda:GPUVideo-android:v0.1.0'
@@ -106,7 +106,7 @@ dependencies {
     implementation 'com.github.danylovolokh:hashtag-helper:1.1.0'
     implementation 'com.mindorks.android:prdownloader:0.6.0'
     implementation 'nl.bravobit:android-ffmpeg:1.1.7'
-   // implementation 'com.writingminds:FFmpegAndroid:0.3.2'
+    // implementation 'com.writingminds:FFmpegAndroid:0.3.2'
     //implementation 'com.github.adrielcafe:AndroidAudioConverter:0.0.8'
     androidTestImplementation 'androidx.test:runner:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'

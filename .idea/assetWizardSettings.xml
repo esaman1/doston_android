@@ -166,8 +166,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_favourite" />
-                            <entry key="sourceFile" value="D:\Office_Work\Designs\Doston\Slicing\03a_Add_Sound\favourite.svg" />
+                            <entry key="outputName" value="ic_unfollow" />
+                            <entry key="sourceFile" value="D:\Office_Work\Designs\Doston\UnFollow.svg" />
                           </map>
                         </option>
                       </PersistentState>

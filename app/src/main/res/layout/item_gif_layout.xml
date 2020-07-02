@@ -4,7 +4,7 @@
     android:layout_height="120dp"
     android:gravity="center">
 
-    <com.doston.shortvideo.MessageChat_Classes.Doston_RoundCornersImageView
+    <com.desibitz.shortvideo.MessageChat_Classes.Doston_RoundCornersImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/gif_image"

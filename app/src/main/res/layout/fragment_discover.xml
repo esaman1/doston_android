@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/black"
-    tools:context="com.doston.shortvideo.UserDiscover_Classes.Doston_Discover_F">
+    tools:context="com.desibitz.shortvideo.UserDiscover_Classes.Doston_Discover_F">
 
     <RelativeLayout
         android:layout_width="match_parent"
