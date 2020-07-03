@@ -197,6 +197,7 @@ public class GallerySelectedVideo_A extends AppCompatActivity implements View.On
     // this will apped all the videos parts in one  fullvideo
     private boolean append() {
         final ProgressDialog progressDialog=new ProgressDialog(GallerySelectedVideo_A.this);
+        progressDialog.setCancelable(false);
         new Thread(new Runnable() {
             @Override
             public void run() {

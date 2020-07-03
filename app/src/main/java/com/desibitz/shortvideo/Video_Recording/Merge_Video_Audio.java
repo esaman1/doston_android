@@ -40,6 +40,7 @@ public class Merge_Video_Audio extends AsyncTask<String,String,String> {
         this.context=context;
         progressDialog=new ProgressDialog(context);
         progressDialog.setMessage("Please Wait...");
+        progressDialog.setCancelable(false);
     }
 
     @Override

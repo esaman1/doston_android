@@ -369,6 +369,7 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
     // this will apped all the videos parts in one  fullvideo
     private boolean append() {
        final ProgressDialog progressDialog=new ProgressDialog(Video_Recoder_A.this);
+        progressDialog.setCancelable(false);
         new Thread(new Runnable() {
             @Override
             public void run() {

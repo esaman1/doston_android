@@ -370,6 +370,7 @@ public class Doston_Discover_SoundList_F extends Doston_RootFragment implements 
     public void Down_load_mp3(final String id,final String sound_name, String url){
 
         final ProgressDialog progressDialog=new ProgressDialog(context);
+        progressDialog.setCancelable(false);
         progressDialog.setMessage("Please Wait...");
         progressDialog.show();
 
