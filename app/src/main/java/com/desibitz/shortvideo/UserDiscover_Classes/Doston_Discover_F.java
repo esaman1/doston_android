@@ -221,7 +221,7 @@ public class Doston_Discover_F extends Doston_RootFragment {
             e.printStackTrace();
         }
 
-        Log.d("resp",parameters.toString());
+        //Log.d("resp",parameters.toString());
 
         Doston_ApiRequest.Call_Api(context, Variables.searchByUsername, parameters, new Callback() {
             @Override
@@ -248,7 +248,7 @@ public class Doston_Discover_F extends Doston_RootFragment {
 //            e.printStackTrace();
 //        }
 
-//        Log.d("resp",parameters.toString());
+//        //Log.d("resp",parameters.toString());
 
         Doston_ApiRequest.Call_Api(context, Variables.searchPopulerUser, null, new Callback() {
             @Override
@@ -273,7 +273,7 @@ public class Doston_Discover_F extends Doston_RootFragment {
             e.printStackTrace();
         }
 
-        Log.d("resp",parameters.toString());
+        //Log.d("resp",parameters.toString());
 
         Doston_ApiRequest.Call_Api(context, Variables.discover, parameters, new Callback() {
             @Override

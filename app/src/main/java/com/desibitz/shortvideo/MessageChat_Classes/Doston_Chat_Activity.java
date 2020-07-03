@@ -111,7 +111,7 @@ public class Doston_Chat_Activity extends Fragment {
     String Receiver_name="";
     String Receiver_pic="null";
     public static String token="null";
-
+    long[] touchtime;
     EditText message;
 
     private DatabaseReference Adduser_to_inbox;
@@ -429,7 +429,7 @@ public class Doston_Chat_Activity extends Fragment {
         // when our touch action is Down is will start recording and when our Touch action is Up
         // it will stop the recording
         mic_btn= (ImageButton) view.findViewById(R.id.mic_btn);
-        final long[] touchtime = {System.currentTimeMillis()};
+        touchtime =new  long[] {System.currentTimeMillis()};
         mic_btn.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -1239,8 +1239,9 @@ public class Doston_Chat_Activity extends Fragment {
                 if (options[item].equals("Take Photo"))
 
                 {
-                    if(check_camrapermission())
-                         openCameraIntent();
+                    if(check_camrapermission()) {
+                        openCameraIntent();
+                    }
 
                 }
 
@@ -1349,7 +1350,7 @@ public class Doston_Chat_Activity extends Fragment {
         if (requestCode == Variables.permission_camera_code) {
 
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(context, "Tap again", Toast.LENGTH_SHORT).show();
+                openCameraIntent();
 
             } else {
 
@@ -1361,14 +1362,19 @@ public class Doston_Chat_Activity extends Fragment {
         if (requestCode == Variables.permission_Read_data) {
 
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(context, "Tap again", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "Tap again", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, 2);
             }
+
         }
 
         if (requestCode == Variables.permission_write_data) {
 
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(context, "Tap Again", Toast.LENGTH_SHORT).show();
+                touchtime[0] = System.currentTimeMillis();
+                dostonSendAudio.Runbeep("start");
+                Toast.makeText(context, "Recording...", Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -1376,7 +1382,9 @@ public class Doston_Chat_Activity extends Fragment {
         if (requestCode == Variables.permission_Recording_audio) {
 
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(context, "Tap Again", Toast.LENGTH_SHORT).show();
+                touchtime[0] = System.currentTimeMillis();
+                dostonSendAudio.Runbeep("start");
+                Toast.makeText(context, "Recording...", Toast.LENGTH_SHORT).show();
             }
         }
 

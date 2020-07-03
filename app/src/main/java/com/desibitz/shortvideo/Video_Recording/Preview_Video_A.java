@@ -200,7 +200,7 @@ public class Preview_Video_A extends AppCompatActivity  implements Player.EventL
                     @Override
                     public void onProgress(double progress) {
 
-                        Log.d("resp",""+(int) (progress*100));
+                        //Log.d("resp",""+(int) (progress*100));
                         Doston_Functions.Show_loading_progress((int)(progress*100));
 
 
@@ -227,13 +227,13 @@ public class Preview_Video_A extends AppCompatActivity  implements Player.EventL
 
                     @Override
                     public void onCanceled() {
-                        Log.d("resp", "onCanceled");
+                        //Log.d("resp", "onCanceled");
                     }
 
                     @Override
                     public void onFailed(Exception exception) {
 
-                        Log.d("resp",exception.toString());
+                        //Log.d("resp",exception.toString());
 
                         runOnUiThread(new Runnable() {
                             @Override

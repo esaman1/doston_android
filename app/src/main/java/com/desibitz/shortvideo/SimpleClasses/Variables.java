@@ -24,7 +24,7 @@ public class Variables {
     public static String root= Environment.getExternalStorageDirectory().toString();
 
 
-    public static int max_recording_duration=18000;
+    public static int max_recording_duration=15000;
     public static int recording_duration=20000;
 
     public static String outputfile=root + "/output.mp4";

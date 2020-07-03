@@ -27,6 +27,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -47,7 +48,13 @@ import com.desibitz.shortvideo.SimpleClasses.Doston_ApiRequest;
 import com.desibitz.shortvideo.SimpleClasses.Doston_Functions;
 import com.desibitz.shortvideo.SimpleClasses.Fragment_Callback;
 import com.desibitz.shortvideo.SimpleClasses.Variables;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -69,8 +76,8 @@ public class Doston_Profile_Tab_F extends Doston_RootFragment implements View.On
     View view;
     Context context;
     ImageView setting_btn;
-    LinearLayout follow_unfollow_ll;
-    ImageView follow_unfollow_img;
+//    LinearLayout follow_unfollow_ll;
+//    ImageView follow_unfollow_img;
     TextView follow_unfollow_txt;
     Bundle bundle;
     RelativeLayout tabs_main_layout;
@@ -149,8 +156,8 @@ public class Doston_Profile_Tab_F extends Doston_RootFragment implements View.On
         heart_count_txt = view.findViewById(R.id.heart_count_txt);
         user_bios = view.findViewById(R.id.user_bios);
 
-        follow_unfollow_ll = view.findViewById(R.id.follow_unfollow_ll);
-        follow_unfollow_img = view.findViewById(R.id.follow_unfollow_img);
+//        follow_unfollow_ll = view.findViewById(R.id.follow_unfollow_ll);
+//        follow_unfollow_img = view.findViewById(R.id.follow_unfollow_img);
         follow_unfollow_txt = view.findViewById(R.id.follow_unfollow_txt);
 
 
@@ -362,7 +369,7 @@ public class Doston_Profile_Tab_F extends Doston_RootFragment implements View.On
 
                 JSONArray user_videos = data.getJSONArray("user_videos");
                 if (!user_videos.toString().equals("[" + "0" + "]")) {
-                    video_count_txt.setText("(" + user_videos.length() + " Videos)");
+                    video_count_txt.setText(Doston_Functions.prettyCount(user_videos.length()+""));
                     create_popup_layout.setVisibility(View.GONE);
 
                 } else {
@@ -521,8 +528,25 @@ public class Doston_Profile_Tab_F extends Doston_RootFragment implements View.On
         editor.putString(Variables.u_pic, "");
         editor.putBoolean(Variables.islogin, false);
         editor.commit();
-        getActivity().finish();
-        startActivity(new Intent(getActivity(), Doston_MainMenuActivity.class));
+
+        GoogleSignInOptions gso = new GoogleSignInOptions.
+                Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).
+                build();
+
+        GoogleSignInClient googleSignInClient= GoogleSignIn.getClient(context,gso);
+        googleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    FirebaseAuth.getInstance().signOut(); // very important if you are using firebase.
+                    Intent login_intent = new Intent(getActivity(),Doston_MainMenuActivity.class);
+                    login_intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK); // clear previous task (optional)
+                    startActivity(login_intent);
+                    getActivity().finish();
+                }
+            }
+        });
+//        startActivity(new Intent(getActivity(), Doston_MainMenuActivity.class));
     }
 
     @Override

@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -101,8 +102,14 @@ public class Doston_Following_F extends Fragment {
 
                 switch (view.getId()){
                     case R.id.action_txt:
-                        if(user_id.equals(Variables.sharedPreferences.getString(Variables.u_id,"")))
-                        Follow_unFollow_User(item,postion);
+                        Log.d("UserNameCheck","user_id   "+user_id+ "_____ " +Variables.sharedPreferences.getString(Variables.u_id,""));
+
+//                        if(user_id.equals(Variables.sharedPreferences.getString(Variables.u_id,"")))
+//                        {                            Log.d("UserNameCheck","user_id   "+user_id+ "_____ " +Variables.sharedPreferences.getString(Variables.u_id,""));
+
+                            Follow_unFollow_User(item,postion);
+//                        }
+
                         break;
 
                     case R.id.mainlayout:
@@ -155,11 +162,12 @@ public class Doston_Following_F extends Fragment {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
+        Log.d("",""+user_id);
 
         Doston_ApiRequest.Call_Api(context, Variables.get_followings, parameters, new Callback() {
             @Override
             public void Responce(String resp) {
+                Log.d("Response_1144",""+resp);
                 Parse_following_data(resp);
             }
         });
@@ -272,6 +280,7 @@ public class Doston_Following_F extends Fragment {
                     item.follow_status_button=follow_Status.optString("follow_status_button");
 
 
+
                     datalist.add(item);
                     adapter.notifyItemInserted(i);
                 }
@@ -318,7 +327,7 @@ public class Doston_Following_F extends Fragment {
 
 
     public void Follow_unFollow_User(final Doston_Following_Get_Set item, final int position){
-
+        Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show();
         final String send_status;
         if(item.follow.equals("0")){
             send_status="1";

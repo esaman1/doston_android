@@ -495,7 +495,7 @@ public class Doston_WatchVideos_F extends AppCompatActivity implements Player.Ev
     @Override
     public void onKeyboardHeightChanged(int height, int orientation) {
 
-        Log.d("resp",""+height);
+        //Log.d("resp",""+height);
 
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(write_layout.getWidth(), write_layout.getHeight());
         params.bottomMargin = height;
@@ -1041,7 +1041,7 @@ public class Doston_WatchVideos_F extends AppCompatActivity implements Player.Ev
                     @Override
                     public void onProgress(double progress) {
 
-                        Log.d("resp",""+(int) (progress*100));
+                        //Log.d("resp",""+(int) (progress*100));
                         Doston_Functions.Show_loading_progress((int)((progress*100)/2)+50);
 
                     }
@@ -1065,13 +1065,13 @@ public class Doston_WatchVideos_F extends AppCompatActivity implements Player.Ev
 
                     @Override
                     public void onCanceled() {
-                        Log.d("resp", "onCanceled");
+                        //Log.d("resp", "onCanceled");
                     }
 
                     @Override
                     public void onFailed(Exception exception) {
 
-                        Log.d("resp",exception.toString());
+                        //Log.d("resp",exception.toString());
 
                         runOnUiThread(new Runnable() {
                             @Override

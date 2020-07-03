@@ -67,7 +67,6 @@ public class Doston_Following_Adapter extends RecyclerView.Adapter<Doston_Follow
             user_image=view.findViewById(R.id.user_image);
             user_name=view.findViewById(R.id.user_name);
             user_id=view.findViewById(R.id.user_id);
-
             action_txt=view.findViewById(R.id.action_txt);
         }
 
@@ -109,16 +108,16 @@ public class Doston_Following_Adapter extends RecyclerView.Adapter<Doston_Follow
                 .into(holder.user_image);
 
         holder.user_id.setText(item.username);
-
+        holder.action_txt.setVisibility(View.GONE);
         if(item.is_show_follow_unfollow_btn) {
-            holder.action_txt.setVisibility(View.VISIBLE);
+//            holder.action_txt.setVisibility(View.VISIBLE);
 
             if (following_or_fans.equals("following")) {
 
                 if (item.follow.equals("0")) {
                     holder.action_txt.setText("Follow");
                     holder.action_txt.setBackgroundResource(R.drawable.follow_btn_bg);
-                    holder.action_txt.setTextColor(ContextCompat.getColor(context, R.color.black));
+                    holder.action_txt.setTextColor(ContextCompat.getColor(context, R.color.white));
                 }
 
                 else {

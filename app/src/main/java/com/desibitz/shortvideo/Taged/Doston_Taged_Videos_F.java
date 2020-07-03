@@ -242,7 +242,7 @@ public class Doston_Taged_Videos_F extends Doston_RootFragment {
                         Doston_Home_Get_Set item=new Doston_Home_Get_Set();
                         item.fb_id=itemdata.optString("fb_id");
 
-                        Log.d("resp", item.fb_id);
+                        //Log.d("resp", item.fb_id);
 
                         item.first_name=user_info.optString("first_name");
                         item.last_name=user_info.optString("last_name");

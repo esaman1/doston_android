@@ -483,7 +483,7 @@ public class Doston_Home_F extends Doston_RootFragment implements Player.EventLi
             MediaSource videoSource = new ExtractorMediaSource.Factory(dataSourceFactory)
                     .createMediaSource(Uri.parse(item.video_url));
 
-            Log.d("resp",item.video_url);
+            //Log.d("resp",item.video_url);
 
 
              player.prepare(videoSource);
@@ -972,7 +972,7 @@ try
                     @Override
                     public void onProgress(double progress) {
 
-                        Log.d("resp",""+(int) (progress*100));
+                        //Log.d("resp",""+(int) (progress*100));
                         Doston_Functions.Show_loading_progress((int)((progress*100)/2)+50);
 
                     }
@@ -996,13 +996,13 @@ try
 
                     @Override
                     public void onCanceled() {
-                        Log.d("resp", "onCanceled");
+                        //Log.d("resp", "onCanceled");
                     }
 
                     @Override
                     public void onFailed(Exception exception) {
 
-                        Log.d("resp",exception.toString());
+                        //Log.d("resp",exception.toString());
 
                         getActivity().runOnUiThread(new Runnable() {
                             @Override

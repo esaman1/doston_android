@@ -32,7 +32,7 @@
                 <TextView
                     android:fontFamily="@font/roboto_medium"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:layout_marginLeft="10dp"
                     android:gravity="center_vertical"
                     android:id="@+id/username"
@@ -41,13 +41,13 @@
                     android:layout_height="match_parent"/>
 
                 <TextView
+                    android:visibility="gone"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@+id/username"
                     android:fontFamily="@font/roboto_medium"
                     android:textSize="16sp"
                     android:gravity="center_vertical"
                     android:textColor="#8a8a8a"
-                    android:id="@+id/video_count_txt"
                     android:text="(0 Video)"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
@@ -278,6 +278,240 @@
 
                 </LinearLayout>
 
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/top_layout"-->
+<!--                    android:padding="10dp"-->
+<!--                    android:background="@color/black"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:weightSum="3"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="250dp">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:padding="5dp"-->
+<!--                        android:weightSum="3"-->
+<!--                        android:layout_weight="2"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="0dp">-->
+
+<!--                        <LinearLayout-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent">-->
+
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_margin="10dp"-->
+<!--                                app:cardCornerRadius="10dp"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent">-->
+
+<!--                                <ImageView-->
+<!--                                    android:scaleType="centerCrop"-->
+<!--                                    android:background="@color/white"-->
+<!--                                    android:id="@+id/user_image"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"/>-->
+
+<!--                            </androidx.cardview.widget.CardView>-->
+
+
+<!--                        </LinearLayout>-->
+
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_marginStart="10dp"-->
+<!--                            android:padding="5dp"-->
+<!--                            android:weightSum="4.3"-->
+<!--                            android:orientation="vertical"-->
+<!--                            android:layout_weight="1.5"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="match_parent">-->
+
+<!--                            <TextView-->
+<!--                                android:visibility="gone"-->
+<!--                                android:fontFamily="@font/roboto_medium"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textSize="18sp"-->
+<!--                                android:gravity="center_vertical"-->
+<!--                                android:text="username"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="0dp"/>-->
+
+<!--                            <TextView-->
+<!--                                android:fontFamily="@font/roboto_medium"-->
+<!--                                android:textSize="16sp"-->
+<!--                                android:gravity="center_vertical"-->
+<!--                                android:textColor="#FFFFFF"-->
+<!--                                android:id="@+id/fullname"-->
+<!--                                android:text="name"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="0dp"/>-->
+
+<!--                            <TextView-->
+<!--                                android:fontFamily="@font/roboto_medium"-->
+<!--                                android:textSize="16sp"-->
+<!--                                android:gravity="start"-->
+<!--                                android:textColor="#FFFFFF"-->
+<!--                                android:id="@+id/user_bios"-->
+<!--                                android:text="bio"-->
+<!--                                android:layout_weight="3.3"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="0dp"/>-->
+
+<!--                            <Button-->
+<!--                                android:visibility="gone"-->
+<!--                                android:id="@+id/follow_unfollow_btn"-->
+<!--                                 android:layout_gravity="center_vertical"-->
+<!--                                android:textColor="#a4a4a4"-->
+<!--                                android:text="follow"-->
+<!--                                android:background="@drawable/follow_button_bg"-->
+<!--                                android:layout_weight="1.3"-->
+<!--                                android:layout_width="130dp"-->
+<!--                                android:layout_height="0dp"/>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:visibility="gone"-->
+<!--                            android:id="@+id/follow_unfollow_ll"-->
+<!--                            android:background="?attr/selectableItemBackground"-->
+<!--                            android:layout_gravity="center_horizontal"-->
+<!--                            android:orientation="vertical"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content">-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/follow_unfollow_img"-->
+<!--                            android:src="@drawable/ic_follow"-->
+<!--                             android:layout_width="match_parent"-->
+<!--                             android:layout_height="40dp"/>-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/follow_unfollow_txt"-->
+<!--                                android:layout_marginTop="5dp"-->
+<!--                                android:layout_gravity="center_horizontal"-->
+<!--                                android:textColor="#FFFFFF"-->
+<!--                                android:text="Follow"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"/>-->
+
+
+
+<!--                        </LinearLayout>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:weightSum="3"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="0dp">-->
+
+
+
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/following_layout"-->
+<!--                            android:gravity="center"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:orientation="vertical"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="match_parent">-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/follow_count_txt"-->
+<!--                                android:layout_marginBottom="3dp"-->
+<!--                                android:gravity="bottom|center"-->
+<!--                                android:textSize="18sp"-->
+<!--                                android:text="0"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:layout_width="100dp"-->
+<!--                                android:layout_height="0dp"/>-->
+
+<!--                            <TextView-->
+
+<!--                                android:textAlignment="center"-->
+<!--                                android:textSize="16sp"-->
+<!--                                android:text="Following"-->
+<!--                                android:textColor="#848484"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="0dp"/>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/fans_layout"-->
+<!--                            android:gravity="center"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:orientation="vertical"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="match_parent">-->
+
+<!--                            <TextView-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:id="@+id/fan_count_txt"-->
+<!--                                android:layout_marginBottom="3dp"-->
+<!--                                android:gravity="bottom|center"-->
+<!--                                android:textSize="18sp"-->
+
+<!--                                android:text="0"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:layout_width="100dp"-->
+<!--                                android:layout_height="0dp"/>-->
+
+<!--                            <TextView-->
+<!--                                android:textSize="16sp"-->
+<!--                                android:text="Followers"-->
+<!--                                android:textColor="#848484"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="0dp"/>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:gravity="center"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:orientation="vertical"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="match_parent">-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/heart_count_txt"-->
+<!--                                android:layout_marginBottom="3dp"-->
+<!--                                android:gravity="bottom|center"-->
+<!--                                android:textSize="18sp"-->
+<!--                                android:text="0"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:layout_width="100dp"-->
+<!--                                android:layout_height="0dp"/>-->
+
+<!--                            <TextView-->
+<!--                                android:textSize="16sp"-->
+<!--                                android:text="Likes"-->
+<!--                                android:textColor="#848484"-->
+<!--                                android:layout_weight="1"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="0dp"/>-->
+
+<!--                        </LinearLayout>-->
+
+
+<!--                    </LinearLayout>-->
+
+
+
+<!--                </LinearLayout>-->
                 <LinearLayout
                     android:id="@+id/top_layout"
                     android:padding="10dp"
@@ -290,14 +524,14 @@
                     <LinearLayout
                         android:padding="5dp"
                         android:weightSum="3"
-                        android:layout_weight="2"
+                        android:layout_weight="2.2"
                         android:layout_width="match_parent"
                         android:layout_height="0dp">
 
                         <LinearLayout
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent">
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
 
                             <androidx.cardview.widget.CardView
                                 android:layout_margin="10dp"
@@ -320,10 +554,10 @@
 
                         <LinearLayout
                             android:layout_marginStart="10dp"
-                            android:padding="5dp"
+                            android:padding="3dp"
                             android:weightSum="4.3"
                             android:orientation="vertical"
-                            android:layout_weight="1.5"
+                            android:layout_weight="2"
                             android:layout_width="0dp"
                             android:layout_height="match_parent">
 
@@ -342,7 +576,7 @@
                                 android:fontFamily="@font/roboto_medium"
                                 android:textSize="16sp"
                                 android:gravity="center_vertical"
-                                android:textColor="#FFFFFF"
+                                android:textColor="@color/maincolor"
                                 android:id="@+id/fullname"
                                 android:text="name"
                                 android:layout_weight="1"
@@ -350,24 +584,26 @@
                                 android:layout_height="0dp"/>
 
                             <TextView
+                                android:maxLength="150"
+                                android:maxLines="4"
                                 android:fontFamily="@font/roboto_medium"
-                                android:textSize="16sp"
+                                android:textSize="14sp"
                                 android:gravity="start"
                                 android:textColor="#FFFFFF"
                                 android:id="@+id/user_bios"
                                 android:text="bio"
-                                android:layout_weight="3.3"
+                                android:layout_weight="2.3"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"/>
 
                             <Button
                                 android:visibility="gone"
-                                android:id="@+id/follow_unfollow_btn"
-                                 android:layout_gravity="center_vertical"
-                                android:textColor="#a4a4a4"
+                                android:id="@+id/follow_unfollow_txt"
+                                android:layout_gravity="center"
+                                android:textColor="@color/white"
                                 android:text="follow"
                                 android:background="@drawable/follow_button_bg"
-                                android:layout_weight="1.3"
+                                android:layout_weight="1"
                                 android:layout_width="130dp"
                                 android:layout_height="0dp"/>
 
@@ -383,14 +619,13 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content">
 
-                        <ImageView
-                            android:id="@+id/follow_unfollow_img"
-                            android:src="@drawable/ic_follow"
-                             android:layout_width="match_parent"
-                             android:layout_height="40dp"/>
+                            <ImageView
+                                android:id="@+id/follow_unfollow_img"
+                                android:src="@drawable/ic_follow"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"/>
 
                             <TextView
-                                android:id="@+id/follow_unfollow_txt"
                                 android:layout_marginTop="5dp"
                                 android:layout_gravity="center_horizontal"
                                 android:textColor="#FFFFFF"
@@ -406,8 +641,8 @@
 
                     <LinearLayout
                         android:orientation="horizontal"
-                        android:weightSum="3"
-                        android:layout_weight="1"
+                        android:weightSum="4"
+                        android:layout_weight="0.8"
                         android:layout_width="match_parent"
                         android:layout_height="0dp">
 
@@ -427,7 +662,7 @@
                                 android:layout_marginBottom="3dp"
                                 android:gravity="bottom|center"
                                 android:textSize="18sp"
-                                android:text="0"
+                                android:text="50K"
                                 android:textColor="@color/white"
                                 android:layout_weight="1"
                                 android:layout_width="100dp"
@@ -461,7 +696,7 @@
                                 android:gravity="bottom|center"
                                 android:textSize="18sp"
 
-                                android:text="0"
+                                android:text="200K"
                                 android:textColor="@color/white"
                                 android:layout_weight="1"
                                 android:layout_width="100dp"
@@ -490,7 +725,7 @@
                                 android:layout_marginBottom="3dp"
                                 android:gravity="bottom|center"
                                 android:textSize="18sp"
-                                android:text="0"
+                                android:text="500"
                                 android:textColor="@color/white"
                                 android:layout_weight="1"
                                 android:layout_width="100dp"
@@ -506,6 +741,37 @@
 
                         </LinearLayout>
 
+                        <LinearLayout
+                            android:id="@+id/vidoes_count_layout"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/video_count_txt"
+                                android:layout_marginBottom="3dp"
+                                android:gravity="bottom|center"
+                                android:textSize="18sp"
+                                android:text="0"
+                                android:textColor="@color/white"
+                                android:layout_weight="1"
+                                android:layout_width="100dp"
+                                android:layout_height="0dp"/>
+
+                            <TextView
+
+                                android:textAlignment="center"
+                                android:textSize="16sp"
+                                android:text="Videos"
+                                android:textColor="#848484"
+                                android:layout_weight="1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"/>
+
+                        </LinearLayout>
 
                     </LinearLayout>
 

@@ -3,6 +3,7 @@ package com.desibitz.shortvideo.Inbox_Message_Classes;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -50,6 +51,7 @@ public class Doston_Inbox_F extends Doston_RootFragment {
     ProgressBar pbar;
 
     boolean isview_created=false;
+    Doston_Inbox_Get_Set doston_inbox_get_set;
 
     public Doston_Inbox_F() {
         // Required empty public constructor
@@ -79,10 +81,13 @@ public class Doston_Inbox_F extends Doston_RootFragment {
         dostonInbox_adapter =new Doston_Inbox_Adapter(context, inbox_arraylist, new Doston_Inbox_Adapter.OnItemClickListener() {
             @Override
             public void onItemClick(Doston_Inbox_Get_Set item) {
-
                 // if user allow the stroage permission then we open the chat view
+                doston_inbox_get_set =item;
                 if(check_ReadStoragepermission())
-                chatFragment(item.getId(),item.getName(),item.getPic());
+                {
+                    chatFragment(item.getId(),item.getName(),item.getPic());
+                }
+
 
 
             }
@@ -193,7 +198,24 @@ public class Doston_Inbox_F extends Doston_RootFragment {
         inbox_query.removeEventListener(eventListener2);
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == Variables.permission_Read_data) {
 
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                Toast.makeText(context, "Tap again", Toast.LENGTH_SHORT).show();
+                chatFragment(doston_inbox_get_set.getId(),doston_inbox_get_set.getName(),doston_inbox_get_set.getPic());
+            }
+
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+    }
 
     //open the chat fragment and on item click and pass your id and the other person id in which
     //you want to chat with them and this parameter is that is we move from match list or inbox list

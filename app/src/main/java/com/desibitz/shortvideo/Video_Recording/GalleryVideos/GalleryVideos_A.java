@@ -61,7 +61,7 @@ public class GalleryVideos_A extends AppCompatActivity {
                     int videoHeight=bmp.getHeight();
                     int videoWidth=bmp.getWidth();
 
-                    Log.d("resp",""+videoWidth+"---"+videoHeight);
+                    //Log.d("resp",""+videoWidth+"---"+videoHeight);
 
                 }
                 catch (Exception e){
@@ -112,7 +112,7 @@ public class GalleryVideos_A extends AppCompatActivity {
 //                    int videoHeight=bmp.getHeight();
 //                    int videoWidth=bmp.getWidth();
 //
-//                    Log.d("resp",""+videoWidth+"---"+videoHeight);
+//                    //Log.d("resp",""+videoWidth+"---"+videoHeight);
 //
 //                }
 //                catch (Exception e){
@@ -156,8 +156,9 @@ public class GalleryVideos_A extends AppCompatActivity {
 
     public  void  getAllVideoPath() {
         Uri uri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
+        String orderBy = android.provider.MediaStore.Video.Media.DATE_TAKEN;
         String[] projection = {MediaStore.Video.Media.DATA,MediaStore.Video.Media.DURATION };
-        Cursor cursor = this.getContentResolver().query(uri, projection, null, null, null);
+        Cursor cursor = this.getContentResolver().query(uri, projection, null, null, orderBy + " DESC");
 
         if (cursor != null) {
              while (cursor.moveToNext()) {
@@ -168,10 +169,10 @@ public class GalleryVideos_A extends AppCompatActivity {
                      item.video_duration_ms=Integer.parseInt(cursor.getString(cursor.getColumnIndex(MediaStore.Video.VideoColumns.DURATION)));
 
 //                 Log.d("resp----","Name "+item.video_path+"  Duration "+item.video_duration_ms);
-//                 Log.d("resp",""+item.video_duration_ms);
+//                 //Log.d("resp",""+item.video_duration_ms);
 
                      if(item.video_duration_ms>5000){
-                         Log.d("resp","Name "+item.video_path+"  Duration "+item.video_duration_ms);
+                         //Log.d("resp","Name "+item.video_path+"  Duration "+item.video_duration_ms);
                          item.video_time=change_sec_to_time(item.video_duration_ms);
                          data_list.add(item);
                      }
@@ -229,7 +230,7 @@ public class GalleryVideos_A extends AppCompatActivity {
                     @Override
                     public void onProgress(double progress) {
 
-                        Log.d("resp",""+(int) (progress*100));
+                        //Log.d("resp",""+(int) (progress*100));
                         Doston_Functions.Show_loading_progress((int)(progress*100));
 
                     }
@@ -255,13 +256,13 @@ public class GalleryVideos_A extends AppCompatActivity {
 
                     @Override
                     public void onCanceled() {
-                        Log.d("resp", "onCanceled");
+                        //Log.d("resp", "onCanceled");
                     }
 
                     @Override
                     public void onFailed(Exception exception) {
 
-                        Log.d("resp",exception.toString());
+                        //Log.d("resp",exception.toString());
 
                         runOnUiThread(new Runnable() {
                             @Override

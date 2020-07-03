@@ -20,6 +20,8 @@ import androidx.exifinterface.media.ExifInterface;
 import androidx.fragment.app.Fragment;
 import androidx.core.content.FileProvider;
 import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
@@ -41,9 +43,13 @@ import com.desibitz.shortvideo.SimpleClasses.Callback;
 import com.desibitz.shortvideo.SimpleClasses.Fragment_Callback;
 import com.desibitz.shortvideo.SimpleClasses.Doston_Functions;
 import com.desibitz.shortvideo.SimpleClasses.Variables;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -133,6 +139,7 @@ public class Doston_Edit_Profile_F extends Doston_RootFragment implements View.O
         return view;
     }
 
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -143,13 +150,10 @@ public class Doston_Edit_Profile_F extends Doston_RootFragment implements View.O
                 break;
 
             case R.id.save_btn:
+
                 if(Check_Validation()){
 
                     Call_Api_For_Edit_profile();
-//                    if(profile_pic_changed)
-//                    {
-//                        Save_Image();
-//                    }
 
 
                 }
@@ -197,26 +201,42 @@ public class Doston_Edit_Profile_F extends Doston_RootFragment implements View.O
         Doston_ApiRequest.Call_Api(context, Variables.deleteUserAccount, parameters, new Callback() {
             @Override
             public void Responce(String resp) {
-
+                clearDataFromApp();
                 Log.d("Response_byUser",""+resp);
 //                Parse_user_data(resp);
                 Doston_Functions.cancel_loader();
                 Toast.makeText(context, "Account deleted successfully", Toast.LENGTH_SHORT).show();
-                clearDataFromApp();
+
 
             }
         });
     }
 
     public void clearDataFromApp(){
-        SharedPreferences.Editor editor= Variables.sharedPreferences.edit();
-        editor.putString(Variables.u_id,"");
-        editor.putString(Variables.u_name,"");
-        editor.putString(Variables.u_pic,"");
-        editor.putBoolean(Variables.islogin,false);
+        SharedPreferences.Editor editor = Variables.sharedPreferences.edit();
+        editor.putString(Variables.u_id, "");
+        editor.putString(Variables.u_name, "");
+        editor.putString(Variables.u_pic, "");
+        editor.putBoolean(Variables.islogin, false);
         editor.commit();
-        getActivity().finish();
-        startActivity(new Intent(getActivity(), Doston_MainMenuActivity.class));
+
+        GoogleSignInOptions gso = new GoogleSignInOptions.
+                Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).
+                build();
+
+        GoogleSignInClient googleSignInClient= GoogleSignIn.getClient(context,gso);
+        googleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    FirebaseAuth.getInstance().signOut(); // very important if you are using firebase.
+                    Intent login_intent = new Intent(getActivity(),Doston_MainMenuActivity.class);
+                    login_intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK); // clear previous task (optional)
+                    startActivity(login_intent);
+                    getActivity().finish();
+                }
+            }
+        });
     }
 
 
@@ -603,6 +623,8 @@ public class Doston_Edit_Profile_F extends Doston_RootFragment implements View.O
                             Doston_Functions.cancel_loader();
                             getActivity().onBackPressed();
                         }
+                        FragmentTransaction ft = getFragmentManager().beginTransaction();
+                        ft.detach(Doston_Edit_Profile_F.this).attach(Doston_Edit_Profile_F.this).commit();
                         Toast.makeText(context, "Profile Update Successfully", Toast.LENGTH_SHORT).show();
 
                     }

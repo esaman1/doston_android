@@ -34,9 +34,10 @@
         android:orientation="vertical">
 
         <TextView
-
+            android:singleLine="true"
+            android:maxLines="1"
             android:id="@+id/username"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:gravity="center_vertical"
             android:layout_gravity="center_vertical"
             android:textColor="@color/white"

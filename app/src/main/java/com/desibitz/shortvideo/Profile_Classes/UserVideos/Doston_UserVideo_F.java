@@ -169,7 +169,7 @@ public class Doston_UserVideo_F extends Fragment {
                         item.last_name=user_info.optString("last_name");
                         item.profile_pic=user_info.optString("profile_pic");
 
-                        Log.d("resp", item.fb_id+" "+item.first_name);
+                        //Log.d("resp", item.fb_id+" "+item.first_name);
 
                         JSONObject count=itemdata.optJSONObject("count");
                         item.like_count=count.optString("like_count");

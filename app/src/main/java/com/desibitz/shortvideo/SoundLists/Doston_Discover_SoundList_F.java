@@ -126,7 +126,7 @@ public class Doston_Discover_SoundList_F extends Doston_RootFragment implements 
             @Override
             public void onItemClick(View view,int postion, Sounds_GetSet item) {
 
-                Log.d("resp",item.acc_path);
+                //Log.d("resp",item.acc_path);
 
                 if(view.getId()==R.id.done){
                     StopPlaying();
@@ -166,7 +166,7 @@ public class Doston_Discover_SoundList_F extends Doston_RootFragment implements 
             e.printStackTrace();
         }
 
-        Log.d("resp",parameters.toString());
+        //Log.d("resp",parameters.toString());
 
         Doston_ApiRequest.Call_Api(context, Variables.allSounds, parameters, new Callback() {
             @Override
@@ -195,7 +195,7 @@ public class Doston_Discover_SoundList_F extends Doston_RootFragment implements 
                 for(int i=msgArray.length()-1;i>=0;i--) {
                     JSONObject object=msgArray.getJSONObject(i);
 
-                    Log.d("resp",object.toString());
+                    //Log.d("resp",object.toString());
 
                     JSONArray section_array=object.optJSONArray("sections_sounds");
 

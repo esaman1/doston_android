@@ -273,8 +273,11 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
 
             cameraView.stopVideo();
 
+            Log.d("DurationForCheck",""+Variables.recording_duration/1000/3);
+            Log.d("DurationForCheck------",""+sec_passed);
+            ;
+            if(sec_passed>3) {
 
-            if(sec_passed>((Variables.recording_duration/1000)/3)) {
                 done_btn.setImageResource(R.drawable.ic_done);
                 done_btn.setEnabled(true);
             }
@@ -391,7 +394,7 @@ public class Video_Recoder_A extends AppCompatActivity implements View.OnClickLi
                         boolean isVideo = "yes".equals(hasVideo);
 
                         if (isVideo && file.length() > 3000) {
-                            Log.d("resp", videopaths.get(i));
+                            //Log.d("resp", videopaths.get(i));
                             video_list.add(videopaths.get(i));
                         }
                     }

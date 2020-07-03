@@ -81,7 +81,7 @@ public interface OnItemClickListener {
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE).placeholder(context.getResources().getDrawable(R.drawable.image_placeholder)).centerCrop())
                  .into(holder.gif_image);
 
-        Log.d("resp",Variables.gif_firstpart+gif_list.get(i)+Variables.gif_secondpart);
+        //Log.d("resp",Variables.gif_firstpart+gif_list.get(i)+Variables.gif_secondpart);
    }
 
 

@@ -250,7 +250,7 @@ public class Doston_Login_User extends Activity {
 //
 //            @Override
 //            public void onError(FacebookException error) {
-//                Log.d("resp",""+error.toString());
+//                //Log.d("resp",""+error.toString());
 //                Toast.makeText(Doston_Login_User.this, "Login Error"+error.toString(), Toast.LENGTH_SHORT).show();
 //            }
 //

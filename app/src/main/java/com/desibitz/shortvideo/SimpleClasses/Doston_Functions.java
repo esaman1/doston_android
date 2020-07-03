@@ -697,6 +697,7 @@ public class Doston_Functions {
                 Doston_Functions.cancel_loader();
                 try {
                     JSONObject response=new JSONObject(resp);
+
                     String code=response.optString("code");
                     if(code.equals("200")){
                         dostonApi_callBack.OnSuccess(response.toString());
@@ -731,7 +732,7 @@ public class Doston_Functions {
             e.printStackTrace();
         }
 
-        Log.d("resp",parameters.toString());
+        //Log.d("resp",parameters.toString());
 
         Doston_ApiRequest.Call_Api(activity, Variables.get_user_data, parameters, new Callback() {
             @Override

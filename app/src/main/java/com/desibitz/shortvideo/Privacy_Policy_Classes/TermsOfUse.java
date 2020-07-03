@@ -19,6 +19,7 @@ public class TermsOfUse extends AppCompatActivity {
         wv = (WebView) findViewById(R.id.webView1);
         back_btn = findViewById(R.id.back_btn);
         wv.loadUrl("file:///android_asset/html/termsofuse.html");
+        wv.getSettings().setJavaScriptEnabled(true);
 
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override

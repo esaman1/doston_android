@@ -9,6 +9,8 @@ import android.os.Bundle;
 
 import com.desibitz.shortvideo.MessageChat_Classes.Doston_Chat_Activity;
 import com.google.android.material.tabs.TabLayout;
+
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -17,6 +19,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Handler;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,6 +39,9 @@ import com.desibitz.shortvideo.Profile_Classes.Doston_Profile_Tab_F;
 import com.desibitz.shortvideo.R;
 import com.desibitz.shortvideo.SimpleClasses.Variables;
 import com.desibitz.shortvideo.Video_Recording.Video_Recoder_A;
+
+import java.security.Permission;
+import java.util.Arrays;
 
 
 public class Doston_MainMenuFragmentDoston extends Doston_RootFragment implements View.OnClickListener {
@@ -256,7 +262,15 @@ public class Doston_MainMenuFragmentDoston extends Doston_RootFragment implement
                     }
                     else {
                         Toast.makeText(context, "You have to login First", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getActivity(), Doston_Login_User.class);
+                        startActivity(intent);
+                        getActivity().overridePendingTransition(R.anim.in_from_bottom, R.anim.out_to_top);
                     }
+                }
+                else
+                {
+//                    Toast.makeText(context, "Permisson not granted", Toast.LENGTH_SHORT).show();
+
                 }
 
             }
@@ -544,6 +558,39 @@ public class Doston_MainMenuFragmentDoston extends Doston_RootFragment implement
         return false;
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode == 2)
+        {
+            if (grantResults[0]== PackageManager.PERMISSION_GRANTED &&
+                    grantResults[1]== PackageManager.PERMISSION_GRANTED &&
+                    grantResults[2]== PackageManager.PERMISSION_GRANTED &&
+                    grantResults[3]== PackageManager.PERMISSION_GRANTED)
+            {
+                if(Variables.sharedPreferences.getBoolean(Variables.islogin,false)) {
+
+                    Intent intent = new Intent(getActivity(), Video_Recoder_A.class);
+                    startActivity(intent);
+                    getActivity().overridePendingTransition(R.anim.in_from_bottom, R.anim.out_to_top);
+                }
+                else {
+                    Toast.makeText(context, "You have to login First", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(), Doston_Login_User.class);
+                    startActivity(intent);
+                    getActivity().overridePendingTransition(R.anim.in_from_bottom, R.anim.out_to_top);
+                }
+            }
+            else
+            {
+                Toast.makeText(context, "Permisson denied", Toast.LENGTH_SHORT).show();
+            }
+
+
+
+        }
+
+    }
 
     public static boolean hasPermissions(Context context, String... permissions) {
         if (context != null && permissions != null) {
