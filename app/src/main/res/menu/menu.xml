@@ -3,6 +3,11 @@
     <group>
 
         <item
+            android:id="@+id/shar_app"
+            android:title="Share App"/>
+
+
+        <item
             android:id="@+id/edit_Profile_id"
             android:title="Edit Profile"/>
 

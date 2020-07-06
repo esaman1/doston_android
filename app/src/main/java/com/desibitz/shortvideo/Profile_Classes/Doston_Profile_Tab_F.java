@@ -34,6 +34,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
+import com.desibitz.shortvideo.BuildConfig;
 import com.desibitz.shortvideo.Doston_See_Full_Image_F;
 import com.desibitz.shortvideo.Following_Classes.Doston_Following_F;
 import com.desibitz.shortvideo.Main_Menu_Classes.Doston_MainMenuActivity;
@@ -76,7 +77,7 @@ public class Doston_Profile_Tab_F extends Doston_RootFragment implements View.On
     View view;
     Context context;
     ImageView setting_btn;
-//    LinearLayout follow_unfollow_ll;
+    //    LinearLayout follow_unfollow_ll;
 //    ImageView follow_unfollow_img;
     TextView follow_unfollow_txt;
     Bundle bundle;
@@ -369,7 +370,7 @@ public class Doston_Profile_Tab_F extends Doston_RootFragment implements View.On
 
                 JSONArray user_videos = data.getJSONArray("user_videos");
                 if (!user_videos.toString().equals("[" + "0" + "]")) {
-                    video_count_txt.setText(Doston_Functions.prettyCount(user_videos.length()+""));
+                    video_count_txt.setText(Doston_Functions.prettyCount(user_videos.length() + ""));
                     create_popup_layout.setVisibility(View.GONE);
 
                 } else {
@@ -442,13 +443,22 @@ public class Doston_Profile_Tab_F extends Doston_RootFragment implements View.On
                         Open_Edit_profile();
                         break;
 
+                    case R.id.shar_app:
+                        Intent sendIntent = new Intent();
+                        sendIntent.setAction(Intent.ACTION_SEND);
+                        sendIntent.putExtra(Intent.EXTRA_TEXT,
+                                getString(R.string.app_name) +"\n https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID);
+                        sendIntent.setType("text/plain");
+                        startActivity(sendIntent);
+                        break;
+
                     case R.id.terms_of_use_id:
-                        Intent termsofuse = new Intent (context, TermsOfUse.class);
+                        Intent termsofuse = new Intent(context, TermsOfUse.class);
                         startActivity(termsofuse);
                         break;
 
                     case R.id.privacy_id:
-                        Intent privacyPolicy = new Intent (context, Privacy_Policy.class);
+                        Intent privacyPolicy = new Intent(context, Privacy_Policy.class);
                         startActivity(privacyPolicy);
                         break;
 
@@ -533,14 +543,14 @@ public class Doston_Profile_Tab_F extends Doston_RootFragment implements View.On
                 Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).
                 build();
 
-        GoogleSignInClient googleSignInClient= GoogleSignIn.getClient(context,gso);
+        GoogleSignInClient googleSignInClient = GoogleSignIn.getClient(context, gso);
         googleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()){
+                if (task.isSuccessful()) {
                     FirebaseAuth.getInstance().signOut(); // very important if you are using firebase.
-                    Intent login_intent = new Intent(getActivity(),Doston_MainMenuActivity.class);
-                    login_intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK); // clear previous task (optional)
+                    Intent login_intent = new Intent(getActivity(), Doston_MainMenuActivity.class);
+                    login_intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK); // clear previous task (optional)
                     startActivity(login_intent);
                     getActivity().finish();
                 }

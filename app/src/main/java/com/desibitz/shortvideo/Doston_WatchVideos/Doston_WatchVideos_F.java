@@ -419,7 +419,7 @@ public class Doston_WatchVideos_F extends AppCompatActivity implements Player.Ev
                         break;
 
                     case R.id.shared_layout:
-                        final Doston_VideoAction_F fragment = new Doston_VideoAction_F(item.video_id, new Fragment_Callback() {
+                        final Doston_VideoAction_F fragment = new Doston_VideoAction_F(item.video_url,item.video_id, new Fragment_Callback() {
                             @Override
                             public void Responce(Bundle bundle) {
 
@@ -1056,6 +1056,7 @@ public class Doston_WatchVideos_F extends AppCompatActivity implements Player.Ev
                                 Doston_Functions.cancel_determinent_loader();
                                 Delete_file_no_watermark(item);
                                 Scan_file(item);
+                                Toast.makeText(context, "Downloaded Successfully", Toast.LENGTH_SHORT).show();
 
                             }
                         });

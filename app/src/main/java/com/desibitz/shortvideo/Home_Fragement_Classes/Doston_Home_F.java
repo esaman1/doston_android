@@ -125,6 +125,9 @@ public class Doston_Home_F extends Doston_RootFragment implements Player.EventLi
     LinearLayout no_internet_ll;
     TextView refresh_btn_no_internet;
 
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -262,7 +265,7 @@ public class Doston_Home_F extends Doston_RootFragment implements Player.EventLi
 //                            is_add_show = true;
 //                        } else{
                             is_add_show=false;
-                            final Doston_VideoAction_F fragment = new Doston_VideoAction_F(item.video_id, new Fragment_Callback() {
+                            final Doston_VideoAction_F fragment = new Doston_VideoAction_F(item.video_url,item.video_id, new Fragment_Callback() {
                                 @Override
                                 public void Responce(Bundle bundle) {
 
@@ -410,6 +413,7 @@ public class Doston_Home_F extends Doston_RootFragment implements Player.EventLi
 
     }
 
+
     public void Singal_Video_Parse_data(int pos,String responce){
 
         try {
@@ -505,18 +509,32 @@ public class Doston_Home_F extends Doston_RootFragment implements Player.EventLi
 
         final RelativeLayout mainlayout = layout.findViewById(R.id.mainlayout);
         playerView.setOnTouchListener(new View.OnTouchListener() {
+
+
             private GestureDetector gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
+                @Override
+                public boolean onDown(MotionEvent e) {
+                    return false;
+                }
+
+                @Override
+                public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+                    return false;
+                }
 
                 @Override
                 public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
                      super.onFling(e1, e2, velocityX, velocityY);
                     float deltaX = e1.getX() - e2.getX();
                     float deltaXAbs = Math.abs(deltaX);
+                    Log.d("velocityX_GGHH",""+velocityX);
                     // Only when swipe distance between minimal and maximal distance value then we treat it as effective swipe
                     if((deltaXAbs > 100) && (deltaXAbs < 1000)) {
                         if(deltaX > 0)
                         {
+                            onPause();
                             OpenProfile(item,true);
+
                         }
                     }
 
@@ -962,7 +980,7 @@ try
 
          Bitmap myLogo = ((BitmapDrawable)getResources().getDrawable(R.drawable.watermark)).getBitmap();
 //         Bitmap bitmap_resize=Bitmap.createScaledBitmap(myLogo, 64, 26, true);
-         Bitmap bitmap_resize=getResizedBitmap(myLogo,51,20);
+         Bitmap bitmap_resize=getResizedBitmap(myLogo,70,25);
          GlWatermarkFilter filter=new GlWatermarkFilter(bitmap_resize, GlWatermarkFilter.Position.LEFT_TOP);
          new GPUMp4Composer(Environment.getExternalStorageDirectory() +"/DesiBitz/"+item.video_id+"no_watermark"+".mp4",
                 Environment.getExternalStorageDirectory() +"/DesiBitz/"+item.video_id+".mp4")
@@ -987,6 +1005,7 @@ try
                                 Doston_Functions.cancel_determinent_loader();
                                 Delete_file_no_watermark(item);
                                 Scan_file(item);
+                                Toast.makeText(context, "Downloaded Successfully", Toast.LENGTH_SHORT).show();
 
                             }
                         });
