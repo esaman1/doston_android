@@ -82,6 +82,7 @@ public class Doston_VideoAction_F extends BottomSheetDialogFragment implements V
         video_id = id;
         video_url = url;
         this.fragment_callback = fragment_callback;
+        //hello
     }
 
     @Override
